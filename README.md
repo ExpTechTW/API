@@ -27,10 +27,10 @@
 * URL 次服務器: http://exptech.mywire.org:910/
 * POST Body: API=[Put Your API Key Here]&&function=[Put Function ID]&&value=[Put Value Here]
 
-## 可用功能 - Function ID
-* Nothing 只使用 API=[Put Your API Key Here] 不添加其他任何參數，可以測試連線
-* translation-en value 參數放入的文字，將會被轉換成英文，然後返回值
-* translation-TW value 參數放入的文字，將會被轉換成中文，然後返回值
+## 可用功能 - Function ID | 說明
+* Nothing | 只使用 API=[Put Your API Key Here] 不添加其他任何參數，可以測試連線
+* translation-en | value 參數放入的文字，將會被轉換成英文，然後返回值
+* translation-TW | value 參數放入的文字，將會被轉換成中文，然後返回值
 
 ## 貢獻者
 * whes1015 - 程式開發
