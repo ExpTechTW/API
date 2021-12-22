@@ -44,7 +44,7 @@
 {
   const axios = require('axios')
   
-  let APIhost=""
+  let APIhost="http://150.117.110.118:10000/"
   let APIkey="放入你的 API Key"
   let Data={
   "Function":"et",
@@ -93,13 +93,15 @@
 {
   "state":"Success",
   "response":
-    [{
+    [
+    {
     threatType: 'SOCIAL_ENGINEERING',
     platformType: 'ANY_PLATFORM',
     threat: { url: 'http://discord-gifft.com/' },
     cacheDuration: '300s',
     threatEntryType: 'URL'
-    }]
+    }
+    ]
 }
 ```
 - 說明: 用來檢測惡意網址的功能
