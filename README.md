@@ -54,9 +54,7 @@
   "Function":"et",
   "Type":"urlchecker",
   "FormatVersion":"當前 FormatVersion 請至 #資訊 查看",
-  "value":{
-    "url":"http://discord-gifft.com/"
-    }
+  "value":"免費nitro?\nhttp://discord-gifft.com"
   }
   
   axios
@@ -86,9 +84,7 @@ Data ={
   "Function":"et",
   "Type":"urlchecker",
   "FormatVersion":"當前 FormatVersion 請至 #資訊 查看",
-  "value":{
-    "url":"http://discord-gifft.com/"
-    }
+  "value":"免費nitro?\nhttp://discord-gifft.com"
   }
 
 header = {"content-type": "application/x-www-form-urlencoded"}
