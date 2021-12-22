@@ -40,6 +40,7 @@
 * 1.獲取 API Key 詳情請參考 [這裡](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 
 ## 範例
+#### discord.js
 ```javascript
 {
   const axios = require('axios')
