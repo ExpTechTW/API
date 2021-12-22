@@ -27,6 +27,8 @@
 - [開始](#開始)
   - [使用服務](#使用服務)
 - [範例](#範例)
+  - [注意](#注意)
+  - [OnlinePost](#OnlinePost)
   - [discord.js](#discordjs)
   - [discord.py](#discordpy)
 - [功能](#功能)
@@ -46,7 +48,7 @@
 ### 注意
 - 請務必使用最新的 FormatVersion 來請求服務
 
-#### [online post](https://reqbin.com/)
+#### [OnlinePost](https://reqbin.com/)
 - 選 POST 模式
 - content-type 選 application/x-www-form-urlencoded
 - 複製下方文字到 Content
