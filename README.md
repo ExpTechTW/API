@@ -23,9 +23,12 @@
 * 官方 [Discord](https://discord.gg/rkPu3msUf3)
 
 # 索引
+- [資訊](#資訊)
 - [開始](#開始)
   - [使用服務](#使用服務)
 - [範例](#範例)
+  - [discord.js](#discord.js)
+  - [discord.py](#discord.py)
 - [功能](#功能)
   - [功能列表](#功能列表)
 - [貢獻者](#貢獻者)
@@ -72,30 +75,23 @@
 }
 ```
 
-discord.py
+#### discord.py
 ```python
-import requests [as 別名]
-# 或者: from requests import post [as 別名]
-def getTicket():
-    # put the ip address or dns of your apic-em controller in this url
-    url = "https://" + controller + "/api/v1/ticket"
+import requests
 
-    #the username and password to access the APIC-EM Controller
-    payload = {"username":"usernae","password":"password"}
+url = "http://150.117.110.118:10000/"
 
-    #Content type must be included in the header
-    header = {"content-type": "application/json"}
+payload = {"username":"usernae","password":"password"}
 
-    #Performs a POST on the specified url to get the service ticket
-    response= requests.post(url,data=json.dumps(payload), headers=header, verify=False)
+header = {"content-type": "application/json"}
 
-    #convert response to json format
-    r_json=response.json()
+response= requests.post(url,data=json.dumps(payload), headers=header, verify=False)
 
-    #parse the json to get the service ticket
-    ticket = r_json["response"]["serviceTicket"]
+r_json=response.json()
 
-    return ticket
+ticket = r_json["response"]["serviceTicket"]
+
+
 ```
 
 ## 功能
