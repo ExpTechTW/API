@@ -1,4 +1,4 @@
-# ExpTech_Discord_Bot GitHub
+# ExpTech_API GitHub
 <img alt="Discord" src="https://img.shields.io/discord/857181425908318218">
 編程、設計、創意、實用
 <br>
@@ -81,7 +81,14 @@ import requests
 
 url = "http://150.117.110.118:10000/"
 
-Data = {"username":"usernae","password":"password"}
+Data ={
+  "Function":"et",
+  "Type":"urlchecker",
+  "FormatVersion":"當前 FormatVersion 請至 #資訊 查看",
+  "value":{
+    "url":"http://discord-gifft.com/"
+    }
+  }
 
 header = {"content-type": "application/x-www-form-urlencoded"}
 
