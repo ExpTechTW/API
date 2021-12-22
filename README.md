@@ -31,8 +31,8 @@
 - [貢獻者](#貢獻者)
 
 # 資訊
-- 當前 API Version => 21w52-pre1
-- 當前 FormatVersion => 1
+- 當前 API Version => ```21w52-pre1```
+- 當前 FormatVersion => ```1```
 
 # 文檔
 ## 開始
@@ -40,7 +40,36 @@
 * 1.獲取 API Key 詳情請參考 [這裡](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 
 ## 範例
-
+```javascript
+{
+  const axios = require('axios')
+  
+  let APIhost=""
+  let APIkey="放入你的 API Key"
+  let Data={
+  "Function":"et",
+  "Type":"urlchecker",
+  "FormatVersion":"當前 FormatVersion 請至 #資訊 查看",
+  "value":{
+    "url":"http://discord-gifft.com/"
+    }
+  }
+  
+  axios
+      .post(APIhost,"APIkey="+APIkey+"&&Data="+Data)
+      .then(res => {
+        if(res.data["response"]==="undefined"){
+          console.log("文本中沒有檢測到網址")
+        }
+        else if(res.data["response"].lenght!=0){
+          console.log("文本中含有危險網址")
+        } 
+        else {
+          console.log("文本中沒有危險網址")
+        }
+      })
+}
+```
 
 ## 功能
 #### 功能列表
@@ -56,18 +85,21 @@
   "Function":"",
   "Type":"",
   "FormatVersion":"當前 FormatVersion 請至 #資訊 查看",
-  "value":{
-    "url":"欲檢測 URL 網址"
-  }
+  "value":"免費nitro?\nhttp://discord-gifft.com/"
 }
 ```
 - 範例回應: 
 ```json
 {
   "state":"Success",
-  "response":{
-    "url":"safe"/"dangerous"/"unknown"
-  }
+  "response":
+    [{
+    threatType: 'SOCIAL_ENGINEERING',
+    platformType: 'ANY_PLATFORM',
+    threat: { url: 'http://discord-gifft.com/' },
+    cacheDuration: '300s',
+    threatEntryType: 'URL'
+    }]
 }
 ```
 - 說明: 用來檢測惡意網址的功能
