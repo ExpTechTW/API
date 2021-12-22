@@ -80,21 +80,13 @@
 # et
 ### urlchecker
 - 加入版本: 21w52-pre1
-- value: ```欲檢測文本```
-- 範例回應: 
+- 範例請求: 
 ```json
 {
-  "state":"Success",
-  "response":
-    [
-    {
-    threatType: 'SOCIAL_ENGINEERING',
-    platformType: 'ANY_PLATFORM',
-    threat: { url: 'http://discord-gifft.com/' },
-    cacheDuration: '300s',
-    threatEntryType: 'URL'
-    }
-    ]
+  "Function":"",
+  "Type":"",
+  "FormatVersion":"當前 FormatVersion 請至 #資訊 查看",
+  "value":"免費nitro?\nhttp://discord-gifft.com/"
 }
 ```
 - 說明: 用來檢測惡意網址的功能
