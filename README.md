@@ -79,7 +79,8 @@
 ```python
 import requests
 
-url = "http://150.117.110.118:10000/"
+APIhost="http://150.117.110.118:10000/"
+APIkey="放入你的 API Key"
 
 Data ={
   "Function":"et",
@@ -92,7 +93,7 @@ Data ={
 
 header = {"content-type": "application/x-www-form-urlencoded"}
 
-response= requests.post(url,data="APIkey="+APIkey+"&&Data="+Data, headers=header, verify=False)
+response= requests.post(APIhost,data="APIkey="+APIkey+"&&Data="+Data, headers=header, verify=False)
 
 Json=response.json()
 
