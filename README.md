@@ -43,6 +43,9 @@
 * 1.獲取 API Key 詳情請參考 [這裡](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 
 ## 範例
+### 注意
+- 請務必使用最新的 FormatVersion 來請求服務
+
 #### [online post](https://reqbin.com/)
 - 選 POST 模式
 - content-type 選 application/x-www-form-urlencoded
@@ -55,29 +58,34 @@ APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Value
 ```javascript
 {
   const axios = require('axios')
-  
-  let APIhost="http://150.117.110.118:10000/"
-  let APIkey="放入你的 API Key"
-  let Data=
-  "APIkey="+APIkey+
-  "&&Function=et"+
-  "&&Type=urlchecker"+
-  "&&FormatVersion=當前 FormatVersion 請至 #資訊 查看"+
-  "&&Value=免費nitro?http://discord-gifft.com"
-  
-  axios
-      .post(APIhost,Data)
-      .then(res => {
-        if(res.data["response"]==="undefined"){
-          console.log("文本中沒有檢測到網址")
+
+let APIhost = "http://150.117.110.118:10000/"
+let APIkey = "放入你的 API Key"
+let FormatVersion = 1
+let Data =
+    "APIkey=" + APIkey +
+    "&&Function=et" +
+    "&&Type=urlchecker" +
+    "&&FormatVersion=" + FormatVersion +
+    "&&Value=免費nitro?http://discord-gifft.com"
+
+axios
+    .post(APIhost, Data)
+    .then(res => {
+        if (res.data["state"] === "Success") {
+            if (res.data["response"] === "undefined") {
+                console.log("文本中沒有檢測到網址")
+            }
+            else if (res.data["response"].lenght != 0) {
+                console.log("文本中含有危險網址")
+            }
+            else {
+                console.log("文本中沒有危險網址")
+            }
+        } else {
+            console.log(`錯誤: ${res.data["response"]}`)
         }
-        else if(res.data["response"].lenght!=0){
-          console.log("文本中含有危險網址")
-        } 
-        else {
-          console.log("文本中沒有危險網址")
-        }
-      })
+    })
 }
 ```
 
@@ -85,28 +93,28 @@ APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Value
 ```python
 import requests
 
-APIhost="http://150.117.110.118:10000/"
-APIkey="放入你的 API Key"
+APIhost = "http://150.117.110.118:10000/"
+APIkey = "放入你的 API Key"
+FormatVersion = 1
 
-Data=
-  "APIkey="+APIkey+
-  "&&Function=et"+
-  "&&Type=urlchecker"+
-  "&&FormatVersion=當前 FormatVersion 請至 #資訊 查看"+
-  "&&Value=免費nitro?http://discord-gifft.com"
+Data = "APIkey="+APIkey+"&&Function=et"+"&&Type=urlchecker" + "&&FormatVersion=" + FormatVersion + "&&Value=免費nitro?http://discord-gifft.com"
 
 header = {"content-type": "application/x-www-form-urlencoded"}
 
-response= requests.post(APIhost,data=Data, headers=header, verify=False)
+response = requests.post(APIhost, data=Data.encode('utf-8'), headers=header, verify=False)
 
-Json=response.json()
+Json = response.json()
 
-if Json["response"]==="undefined":
- print("文本中沒有檢測到網址")
-elif len(Json["response"])!=0:
- print("文本中含有危險網址")
+if Json["state"] == "Success":
+    if Json["response"] == "undefined":
+        print("文本中沒有檢測到網址")
+    elif len(Json["response"]) != 0:
+        print("文本中含有危險網址")
+    else:
+        print("文本中沒有危險網址")
 else:
- print("文本中沒有危險網址")
+    print("錯誤: {}".format(Json["response"]))
+
 ```
 
 ## 功能
