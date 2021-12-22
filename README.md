@@ -80,14 +80,9 @@
 # et
 ### urlchecker
 - 加入版本: 21w52-pre1
-- 範例請求: 
-```json
-{
-  "Function":"",
-  "Type":"",
-  "FormatVersion":"當前 FormatVersion 請至 #資訊 查看",
-  "value":"免費nitro?\nhttp://discord-gifft.com/"
-}
+- value: 
+```
+"免費nitro?\nhttp://discord-gifft.com"
 ```
 - 說明: 用來檢測惡意網址的功能
 
