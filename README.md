@@ -91,7 +91,7 @@ Json=response.json()
 
 if Json["response"]==="undefined":
  print("文本中沒有檢測到網址")
-elif len(res.data["response"].lenght)!=0:
+elif len(Json["response"])!=0:
  print("文本中含有危險網址")
 else:
  print("文本中沒有危險網址")
