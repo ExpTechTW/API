@@ -77,18 +77,10 @@
 ##### [et](#et)
 - [urlchecker](#urlchecker)
 
-#et
+# et
 ### urlchecker
 - 加入版本: 21w52-pre1
-- 範例請求: 
-```json
-{
-  "Function":"",
-  "Type":"",
-  "FormatVersion":"當前 FormatVersion 請至 #資訊 查看",
-  "value":"免費nitro?\nhttp://discord-gifft.com/"
-}
-```
+- value: ```欲檢測文本```
 - 範例回應: 
 ```json
 {
