@@ -55,7 +55,7 @@
   "&&Function=et"+
   "&&Type=urlchecker"+
   "&&FormatVersion=當前 FormatVersion 請至 #資訊 查看"+
-  "&&value=免費nitro?\nhttp://discord-gifft.com"
+  "&&value=免費nitro?http://discord-gifft.com"
   
   axios
       .post(APIhost,Data)
@@ -85,7 +85,7 @@ Data=
   "&&Function=et"+
   "&&Type=urlchecker"+
   "&&FormatVersion=當前 FormatVersion 請至 #資訊 查看"+
-  "&&value=免費nitro?\nhttp://discord-gifft.com"
+  "&&value=免費nitro?http://discord-gifft.com"
 
 header = {"content-type": "application/x-www-form-urlencoded"}
 
