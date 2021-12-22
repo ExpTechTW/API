@@ -109,12 +109,12 @@ else:
 # et
 ### urlchecker
 - 加入版本: 21w52-pre1
+- 說明: 用來檢測惡意網址的功能
 - Port: ```10000```
 - value: 
 ```
 "免費nitro?\nhttp://discord-gifft.com"
 ```
-- 說明: 用來檢測惡意網址的功能
 
 # 貢獻者
 * whes1015 - 程式開發
