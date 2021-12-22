@@ -50,6 +50,8 @@
 
 #### [OnlinePost](https://reqbin.com/)
 - 選 POST 模式
+- APIhost 
+```http://150.117.110.118:10000/```
 - content-type 選 application/x-www-form-urlencoded
 - 複製下方文字到 Content
 ```
