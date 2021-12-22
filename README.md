@@ -50,15 +50,26 @@
 #et
 ### urlchecker
 - 加入版本: 21w52-pre1
-- 範例請求: ```json{
+- 範例請求: 
+```json
+{
   "Function":"",
   "Type":"",
   "FormatVersion":[查看當前 FormatVersion](#資訊),
   "value":{
     "url":"欲檢測 URL 網址"
   }
-}```
-- 範例回應: ```false```
+}
+```
+- 範例回應: 
+```json
+{
+  "state":"Success",
+  "response":{
+    "url":""
+  }
+}
+```
 - 說明: 用來檢測惡意網址的功能
 
 # 貢獻者
