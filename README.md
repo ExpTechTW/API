@@ -92,7 +92,7 @@ Data ={
 
 header = {"content-type": "application/x-www-form-urlencoded"}
 
-response= requests.post(url,data=json.dumps(Data), headers=header, verify=False)
+response= requests.post(url,data="APIkey="+APIkey+"&&Data="+Data, headers=header, verify=False)
 
 Json=response.json()
 
