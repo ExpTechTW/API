@@ -50,15 +50,15 @@
   
   let APIhost="http://150.117.110.118:10000/"
   let APIkey="放入你的 API Key"
-  let Data={
-  "Function":"et",
-  "Type":"urlchecker",
-  "FormatVersion":"當前 FormatVersion 請至 #資訊 查看",
-  "value":"免費nitro?\nhttp://discord-gifft.com"
-  }
+  let Data=
+  "APIkey="+APIkey+
+  "&&Function=et"+
+  "&&Type=urlchecker"+
+  "&&FormatVersion=當前 FormatVersion 請至 #資訊 查看"+
+  "&&value=免費nitro?\nhttp://discord-gifft.com"
   
   axios
-      .post(APIhost,"APIkey="+APIkey+"&&Data="+Data)
+      .post(APIhost,Data)
       .then(res => {
         if(res.data["response"]==="undefined"){
           console.log("文本中沒有檢測到網址")
@@ -80,16 +80,16 @@ import requests
 APIhost="http://150.117.110.118:10000/"
 APIkey="放入你的 API Key"
 
-Data ={
-  "Function":"et",
-  "Type":"urlchecker",
-  "FormatVersion":"當前 FormatVersion 請至 #資訊 查看",
-  "value":"免費nitro?\nhttp://discord-gifft.com"
-  }
+Data=
+  "APIkey="+APIkey+
+  "&&Function=et"+
+  "&&Type=urlchecker"+
+  "&&FormatVersion=當前 FormatVersion 請至 #資訊 查看"+
+  "&&value=免費nitro?\nhttp://discord-gifft.com"
 
 header = {"content-type": "application/x-www-form-urlencoded"}
 
-response= requests.post(APIhost,data="APIkey="+APIkey+"&&Data="+Data, headers=header, verify=False)
+response= requests.post(APIhost,data=Data, headers=header, verify=False)
 
 Json=response.json()
 
