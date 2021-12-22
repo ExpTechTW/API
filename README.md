@@ -81,17 +81,20 @@ import requests
 
 url = "http://150.117.110.118:10000/"
 
-payload = {"username":"usernae","password":"password"}
+Data = {"username":"usernae","password":"password"}
 
-header = {"content-type": "application/json"}
+header = {"content-type": "application/x-www-form-urlencoded"}
 
-response= requests.post(url,data=json.dumps(payload), headers=header, verify=False)
+response= requests.post(url,data=json.dumps(Data), headers=header, verify=False)
 
-r_json=response.json()
+Json=response.json()
 
-ticket = r_json["response"]["serviceTicket"]
-
-
+if Json["response"]==="undefined":
+ print("文本中沒有檢測到網址")
+elif len(res.data["response"].lenght)!=0:
+ print("文本中含有危險網址")
+else:
+ print("文本中沒有危險網址")
 ```
 
 ## 功能
