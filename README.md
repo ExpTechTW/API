@@ -19,90 +19,47 @@
 </p>
 
 # 項目概要
-* 這是一個由 ExpTech.tw 開發的 Discord 機器人
-* [邀請鏈接]( https://reurl.cc/Xloo6D)
+* 這是一個由 ExpTech.tw 開發的集成 API
 * 官方 [Discord](https://discord.gg/rkPu3msUf3)
 
 # 索引
 - [開始](#開始)
-  - [註冊服務](#註冊服務)
-- [權限](#權限)
-- [指令](#指令)
-  - [指令列表](#指令列表)
+  - [註冊服務](#使用服務)
+- [權限](#範例)
+- [指令](#功能)
+  - [指令列表](#功能列表)
 - [貢獻者](#貢獻者)
+
+# 資訊
+- 當前 API Version => 21w52-pre1
+- 當前 FormatVersion => 1
 
 # 文檔
 ## 開始
-#### 註冊服務
-* 1.邀請 Discord 機器人
-* 2.使用 /et register 申請服務
-* 3.使用 /et set apikey [你的 API Key] 來註冊服務
+#### 使用服務
+* 1.獲取 API Key 詳情請參考 [這裡](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 
-## 權限
-- 4 - owner - 擁有者
-- 3 - admin - 管理員
-- 2 - helper - 幫手
-- 1 - user - 普通用戶 (默認)
-- 0 - guest - 訪客或熊孩子 (禁用所有指令)
+## 範例
 
-## 指令
-#### 指令列表
-##### [/et](#et)
-- [register](#register)
-- [set](#set)
-  - [apikey](#apikey)
-  - [urlchecker](#urlchecker)
-##### [/mc](#mc)
-- [je](#je)
-  - [certified](#certified)
-- [be](#be)
-  - [certified](#certified)
 
-# /et
-## register 
-- 完整指令: ```/et register```
+## 功能
+#### 功能列表
+##### [et](#et)
+- [urlchecker](#urlchecker)
+
+#et
+### urlchecker
 - 加入版本: 21w52-pre1
-- 權限: ≥ 4
-- 默認: ```null```
-- 選項: ```null```
-- 說明: 每個伺服器可以申請一個 API Key 用來註冊 ExpTech_Discord_Bot 的服務
-，或是用來自製機器人，每個 API Key 的每日請求限制為 50000 次。
-
-## set
-#### apikey
-- 完整指令: ```/et set apikey [你的 API Key]```
-- 加入版本: 21w52-pre1
-- 權限: ≥ 4
-- 默認: ```null```
-- 選項: ```String```
-- 說明: 用來向 ExpTech_Discord_Bot 註冊服務
-
-#### urlchecker
-- 完整指令: ```/et set urlchecker [選項]```
-- 加入版本: 21w52-pre1
-- 權限: ≥ 3
-- 默認: ```false```
-- 選項: ```false``` ```true```
+- 範例請求: ```json{
+  "Function":"",
+  "Type":"",
+  "FormatVersion":[查看當前 FormatVersion](#資訊),
+  "value":{
+    "url":"欲檢測 URL 網址"
+  }
+}```
+- 範例回應: ```false```
 - 說明: 用來檢測惡意網址的功能
-
-# /mc
-## je
-#### certified
-- 完整指令: ```/mc je certified [玩家代號]```
-- 加入版本: 21w52-pre1
-- 權限: ≥ 1
-- 默認: ```null```
-- 選項: ```String```
-- 說明: Minecraft Java Edition 帳號認證
-
-## be
-#### certified
-- 完整指令: ```/mc be certified [玩家代號]```
-- 加入版本: 21w52-pre1
-- 權限: ≥ 1
-- 默認: ```null```
-- 選項: ```String```
-- 說明: Minecraft Bedrock Edition 帳號認證
 
 # 貢獻者
 * whes1015 - 程式開發
