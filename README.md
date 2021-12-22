@@ -43,6 +43,14 @@
 * 1.獲取 API Key 詳情請參考 [這裡](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 
 ## 範例
+#### [online post](https://reqbin.com/)
+- 選 POST 模式
+- content-type 選 application/x-www-form-urlencoded
+- 複製下方文字到 Content
+```
+APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Value=免費nitro?http://discord-gifft.com
+```
+
 #### discordjs
 ```javascript
 {
@@ -55,7 +63,7 @@
   "&&Function=et"+
   "&&Type=urlchecker"+
   "&&FormatVersion=當前 FormatVersion 請至 #資訊 查看"+
-  "&&value=免費nitro?http://discord-gifft.com"
+  "&&Value=免費nitro?http://discord-gifft.com"
   
   axios
       .post(APIhost,Data)
@@ -85,7 +93,7 @@ Data=
   "&&Function=et"+
   "&&Type=urlchecker"+
   "&&FormatVersion=當前 FormatVersion 請至 #資訊 查看"+
-  "&&value=免費nitro?http://discord-gifft.com"
+  "&&Value=免費nitro?http://discord-gifft.com"
 
 header = {"content-type": "application/x-www-form-urlencoded"}
 
