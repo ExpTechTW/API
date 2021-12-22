@@ -55,7 +55,7 @@
 {
   "Function":"",
   "Type":"",
-  "FormatVersion":[查看當前 FormatVersion](#資訊),
+  "FormatVersion":[當前 FormatVersion 請至 #資訊 查看],
   "value":{
     "url":"欲檢測 URL 網址"
   }
@@ -66,7 +66,7 @@
 {
   "state":"Success",
   "response":{
-    "url":""
+    "url":"safe/dangerous/unknown"
   }
 }
 ```
