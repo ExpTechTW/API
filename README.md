@@ -27,8 +27,8 @@
 - [開始](#開始)
   - [使用服務](#使用服務)
 - [範例](#範例)
-  - [discord.js](#discord.js)
-  - [discord.py](#discord.py)
+  - [discord.js](#discordjs)
+  - [discord.py](#discordpy)
 - [功能](#功能)
   - [功能列表](#功能列表)
 - [貢獻者](#貢獻者)
@@ -43,7 +43,7 @@
 * 1.獲取 API Key 詳情請參考 [這裡](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 
 ## 範例
-#### discord.js
+#### discordjs
 ```javascript
 {
   const axios = require('axios')
@@ -75,7 +75,7 @@
 }
 ```
 
-#### discord.py
+#### discordpy
 ```python
 import requests
 
