@@ -58,10 +58,9 @@
 APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Value=免費nitro?http://discord-gifft.com
 ```
 
-#### discordjs
+#### JavaScript
 ```javascript
-{
-  const axios = require('axios')
+const axios = require('axios')
 
 let APIhost = "http://150.117.110.118:10000/"
 let APIkey = "放入你的 API Key"
@@ -90,10 +89,9 @@ axios
             console.log(`錯誤: ${res.data["response"]}`)
         }
     })
-}
 ```
 
-#### discordpy
+#### Python
 ```python
 import requests
 
@@ -121,17 +119,42 @@ else:
 
 ```
 
+#### Java
+```java
+URL url = new URL("http://150.117.110.118:10000/");
+HttpURLConnection http = (HttpURLConnection)url.openConnection();
+http.setRequestMethod("POST");
+http.setDoOutput(true);
+http.setConnectTimeout(1000);
+http.setRequestProperty("Authorization", "Bearer mt0dgHmLJMVQhvjpNXDyA83vA_PxH23Y");
+http.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+byte[] out = data.getBytes(StandardCharsets.UTF_8);
+OutputStream stream = http.getOutputStream();
+stream.write(out);String inputLine;
+StringBuilder response = new StringBuilder();
+if(http.getResponseCode() == 200){
+BufferedReader in = new BufferedReader(new InputStreamReader(http.getInputStream()));
+while ((inputLine = in .readLine()) != null) {
+  response.append(inputLine);
+} in .close();
+  return response.toString();
+}else {
+  this.getLogger().warning("API service did not respond");
+}
+http.disconnect();
+```
+
 ## 功能
 #### 功能列表
 ##### [et](#et)
-- [urlchecker](#urlchecker)
+- [urlChecker](#urlchecker)
 
 # et
-### urlchecker
+### urlChecker
 - 加入版本: 21w52-pre1
 - 說明: 用來檢測惡意網址的功能
 - Port: ```10000```
-- Value: ```String```
+- Value: ```Url=<url>```
 - Response: ```Array``` ```All URL inspections passed``` ```No URL found```
 
 # 貢獻者
