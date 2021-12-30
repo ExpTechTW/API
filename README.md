@@ -77,7 +77,7 @@ axios
     .post(APIhost, Data)
     .then(res => {
         if (res.data["state"] === "Success") {
-            if (res.data["response"] === "undefined") {
+            if (res.data["response"] === "All URL inspections passed") {
                 console.log("文本中沒有檢測到網址")
             }
             else if (res.data["response"].lenght != 0) {
@@ -109,7 +109,7 @@ response = requests.post(APIhost, data=Data.encode('utf-8'), headers=header, ver
 Json = response.json()
 
 if Json["state"] == "Success":
-    if Json["response"] == "undefined":
+    if Json["response"] == "All URL inspections passed":
         print("文本中沒有檢測到網址")
     elif len(Json["response"]) != 0:
         print("文本中含有危險網址")
