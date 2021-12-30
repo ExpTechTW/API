@@ -63,7 +63,7 @@ APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Url=�
 ```javascript
 const axios = require('axios')
 
-let APIhost = "http://150.117.110.118:10000/"
+let APIhost = "http://150.117.110.118:10150/"
 let APIkey = "放入你的 API Key"
 let FormatVersion = 1
 let Data =
@@ -71,7 +71,7 @@ let Data =
     "&&Function=et" +
     "&&Type=urlchecker" +
     "&&FormatVersion=" + FormatVersion +
-    "&&Value=免費nitro?http://discord-gifft.com"
+    "&&Url=免費nitro?http://discord-gifft.com"
 
 axios
     .post(APIhost, Data)
@@ -96,11 +96,11 @@ axios
 ```python
 import requests
 
-APIhost = "http://150.117.110.118:10000/"
+APIhost = "http://150.117.110.118:10150/"
 APIkey = "放入你的 API Key"
 FormatVersion = 1
 
-Data = "APIkey="+APIkey+"&&Function=et"+"&&Type=urlchecker" + "&&FormatVersion=" + FormatVersion + "&&Value=免費nitro?http://discord-gifft.com"
+Data = "APIkey="+APIkey+"&&Function=et"+"&&Type=urlchecker" + "&&FormatVersion=" + FormatVersion + "&&Url=免費nitro?http://discord-gifft.com"
 
 header = {"content-type": "application/x-www-form-urlencoded"}
 
@@ -122,7 +122,8 @@ else:
 
 #### Java
 ```java
-URL url = new URL("http://150.117.110.118:10000/");
+data="APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Url=免費nitro?http://discord-gifft.com"
+URL url = new URL("http://150.117.110.118:10150/");
 HttpURLConnection http = (HttpURLConnection)url.openConnection();
 http.setRequestMethod("POST");
 http.setDoOutput(true);
@@ -131,7 +132,8 @@ http.setRequestProperty("Authorization", "Bearer mt0dgHmLJMVQhvjpNXDyA83vA_PxH23
 http.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 byte[] out = data.getBytes(StandardCharsets.UTF_8);
 OutputStream stream = http.getOutputStream();
-stream.write(out);String inputLine;
+stream.write(out);
+String inputLine;
 StringBuilder response = new StringBuilder();
 if(http.getResponseCode() == 200){
 BufferedReader in = new BufferedReader(new InputStreamReader(http.getInputStream()));
