@@ -52,11 +52,11 @@
 #### [OnlinePost](https://reqbin.com/)
 - 選 POST 模式
 - APIhost 
-```http://150.117.110.118:10000/```
+```http://150.117.110.118:10150/```
 - content-type 選 application/x-www-form-urlencoded
 - 複製下方文字到 Content
 ```
-APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Value=免費nitro?http://discord-gifft.com
+APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Url=免費nitro?http://discord-gifft.com
 ```
 
 #### JavaScript
