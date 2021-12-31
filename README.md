@@ -77,18 +77,25 @@ axios
     .post(APIhost, Data)
     .then(res => {
         if (res.data["state"] === "Success") {
-            if (res.data["response"] === "All URL inspections passed") {
-                console.log("文本中沒有檢測到網址")
-            }
-            else if (res.data["response"].lenght != 0) {
-                console.log("文本中含有危險網址")
-            }
-            else {
-                console.log("文本中沒有危險網址")
+            //如果主要服務器正常則換回
+            if (res.data["response"] === "API main Service is working") {
+                APIhost = "http://150.117.110.118:10150/"
+            } else {
+                if (res.data["response"] === "All URL inspections passed") {
+                    console.log("文本中沒有檢測到網址")
+                }
+                else if (res.data["response"].lenght != 0) {
+                    console.log("文本中含有危險網址")
+                }
+                else {
+                    console.log("文本中沒有危險網址")
+                }
             }
         } else {
             console.log(`錯誤: ${res.data["response"]}`)
         }
+    }).catch(err => {
+        APIhost = "http://220.134.162.44:10150/"
     })
 ```
 
