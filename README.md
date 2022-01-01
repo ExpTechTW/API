@@ -77,29 +77,26 @@ let Data =
     "&&Value=免費nitro?http://discord-gifft.com"
 
 axios
-    .post(APIhost, Data)
-    .then(res => {
-        if (res.data["state"] === "Success") {
-            //如果主要服務器正常則換回
-            if (res.data["response"] === "API main Service is working") {
-                APIhost = "http://150.117.110.118:10150/"
-            } else {
+        .post(APIhost, Data)
+        .then(res => {
+            if (res.data["state"] === "Success") {
+                console.log(res.data)
                 if (res.data["response"] === "All URL inspections passed") {
-                    console.log("文本中沒有檢測到網址")
-                }
-                else if (res.data["response"].lenght != 0) {
-                    console.log("文本中含有危險網址")
-                }
-                else {
                     console.log("文本中沒有危險網址")
                 }
+                else if (res.data["response"] === "No URL found") {
+                    console.log("文本中沒有網址")
+                }
+                else {
+                    console.log("文本中含有危險網址")
+                    msg.delete()
+                }
+            } else {
+                console.log(`錯誤: ${res.data["response"]}`)
             }
-        } else {
-            console.log(`錯誤: ${res.data["response"]}`)
-        }
-    }).catch(err => {
-        APIhost = "http://220.134.162.44:10150/"
-    })
+        }).catch(err => {
+            APIhost = "http://220.134.162.44:10150/"
+        })
 ```
 
 #### Python
