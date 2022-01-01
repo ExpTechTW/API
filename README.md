@@ -39,7 +39,7 @@
 # 資訊
 - API 主要-服務器 ```http://150.117.110.118:10150/```
 - API 備用-服務器 ```http://220.134.162.44:10150/```
-- 當前 API Version => ```21w52-pre1```
+- 當前 API Version => ```22w01-pre1```
 - 當前 FormatVersion => ```1```
 
 # 文檔
@@ -165,8 +165,7 @@ http.disconnect();
 ### urlChecker
 - 加入版本: 21w52-pre1
 - 說明: 用來檢測惡意網址的功能
-- Port: ```10000```
-- Value: ```Url=<url>```
+- 參數: ```Url=<url>```
 - Response: ```Array``` ```All URL inspections passed``` ```No URL found```
 
 # 貢獻者
