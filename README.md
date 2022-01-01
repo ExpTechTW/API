@@ -39,7 +39,7 @@
 # 資訊
 - API 主要-服務器 ```http://150.117.110.118:10150/```
 - API 備用-服務器 ```http://220.134.162.44:10150/```
-- 當前 API Version => ```22w01-pre1```
+- 當前 API Version => ```22w01-pre2```
 - 當前 FormatVersion => ```1```
 
 # 注意
@@ -74,7 +74,7 @@ let Data =
     "&&Function=et" +
     "&&Type=urlchecker" +
     "&&FormatVersion=" + FormatVersion +
-    "&&Url=免費nitro?http://discord-gifft.com"
+    "&&Value=免費nitro?http://discord-gifft.com"
 
 axios
     .post(APIhost, Data)
@@ -110,7 +110,7 @@ APIhost = "http://150.117.110.118:10150/"
 APIkey = "放入你的 API Key"
 FormatVersion = 1
 
-Data = "APIkey="+APIkey+"&&Function=et"+"&&Type=urlchecker" + "&&FormatVersion=" + FormatVersion + "&&Url=免費nitro?http://discord-gifft.com"
+Data = "APIkey="+APIkey+"&&Function=et"+"&&Type=urlchecker" + "&&FormatVersion=" + FormatVersion + "&&Value=免費nitro?http://discord-gifft.com"
 
 header = {"content-type": "application/x-www-form-urlencoded"}
 
@@ -132,7 +132,7 @@ else:
 
 #### Java
 ```java
-data="APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Url=免費nitro?http://discord-gifft.com"
+data="APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Value=免費nitro?http://discord-gifft.com"
 URL url = new URL("http://150.117.110.118:10150/");
 HttpURLConnection http = (HttpURLConnection)url.openConnection();
 http.setRequestMethod("POST");
@@ -167,9 +167,9 @@ http.disconnect();
 ### urlChecker
 - 加入版本: 21w52-pre1
 - 說明: 用來檢測惡意網址的功能
-- 參數: ```Url```
+- 參數: ```Value```
 - Response: ```Array``` ```All URL inspections passed``` ```No URL found```
-- 範例: ```APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Url=<放入檢測文本>```
+- 範例: ```APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Value=<放入檢測文本>```
 
 ### md5
 - 加入版本: 22w01-pre2
