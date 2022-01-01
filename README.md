@@ -59,7 +59,7 @@
 - content-type 選 application/x-www-form-urlencoded
 - 複製下方文字到 Content
 ```
-APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Url=免費nitro?http://discord-gifft.com
+APIkey=<放你的 API Key>
 ```
 
 #### JavaScript
@@ -161,13 +161,22 @@ http.disconnect();
 #### 功能列表
 ##### [et](#et)
 - [urlChecker](#urlchecker)
+- [md5](#md5)
 
 # et
 ### urlChecker
 - 加入版本: 21w52-pre1
 - 說明: 用來檢測惡意網址的功能
-- 參數: ```Url=<url>```
+- 參數: ```Url```
 - Response: ```Array``` ```All URL inspections passed``` ```No URL found```
+- 範例: ```APIkey=<放你的 API Key>&&Function=et&&Type=urlchecker&&FormatVersion=1&&Url=<放入檢測文本>```
+
+### md5
+- 加入版本: 22w01-pre2
+- 說明: 用來計算 md5 值的功能
+- 參數: ```Value```
+- Response: ```md5 值```
+- 範例: ```APIkey=<放你的 API Key>&&Function=et&&Type=md5&&FormatVersion=1&&Value=<放入欲取得 md5 值的文本>```
 
 # 貢獻者
 * whes1015 - 程式開發
