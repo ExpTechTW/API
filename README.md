@@ -42,15 +42,16 @@
 - 當前 API Version => ```22w01-pre1```
 - 當前 FormatVersion => ```1```
 
+# 注意
+- 請務必使用最新的 FormatVersion 來請求服務
+- ```APIkey``` ```Function``` ```Type``` ```FormatVersion``` 為必須參數
+
 # 文檔
 ## 開始
 #### 使用服務
 * 1.獲取 API Key 詳情請參考 [這裡](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 
 ## 範例
-### 注意
-- 請務必使用最新的 FormatVersion 來請求服務
-
 #### [OnlinePost](https://reqbin.com/)
 - 選 POST 模式
 - APIhost 
