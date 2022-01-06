@@ -234,14 +234,14 @@ return curl_exec($curl);
 - 說明: 用來檢測惡意網址的功能
 - 參數: ```Value```
 - Response: ```Array``` ```All URL inspections passed``` ```No URL found```
-- 指令: $api et urlChecker <value>
+- 指令: ```$api et urlChecker <value>```
 
 ### md5
 - 加入版本: 22w01-pre2
 - 說明: 用來計算 md5 值的功能
 - 參數: ```Value```
 - Response: ```md5 值```
-- 指令: $api et md5 <value>
+- 指令: ```$api et md5 <value>```
 
 # 貢獻者
 * whes1015 - 程式開發
