@@ -23,5 +23,9 @@
     "minecraft:snow[layers=2]": "雪 (2層)",
     "minecraft:cornflower": "矢車菊",
     "minecraft:dandelion": "蒲公英",
-    "minecraft:azure_bluet": "雛草"
+    "minecraft:azure_bluet": "雛草",
+    "minecraft:copper_ore": "銅礦",
+    "minecraft:andesite": "安山岩",
+    "minecraft:granite": "花崗岩",
+    "minecraft:torch": "火把"
 }
