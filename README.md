@@ -1,5 +1,5 @@
 # ExpTech_API GitHub
-<img alt="Discord" src="https://img.shields.io/discord/857181425908318218">
+<img alt="Discord" src="https://img.shields.io/discord/926545182407688273">
 編程、設計、創意、實用
 <br>
 努力成為真正的高手
