@@ -39,7 +39,6 @@
 
 # 資訊
 - API 主要-服務器 ```http://150.117.110.118:10150/```
-- 當前 FormatVersion => ```1```
 
 # 注意
 - 請務必使用最新的 FormatVersion 來請求服務
@@ -232,16 +231,32 @@ return curl_exec($curl);
 ### urlChecker
 - 加入版本: 21w52-pre1
 - 說明: 用來檢測惡意網址的功能
-- 參數: ```Value```
-- Response: ```Array``` ```All URL inspections passed``` ```No URL found```
-- 指令: ```$api et urlChecker <value>```
+- FormatVersion: ```1```
+- 範例: 
+```
+{
+  "APIkey": "<放入你的 API Key>",
+  "Function": "et",
+  "Type": "urlChecker",
+  "FormatVersion": 1,
+  "Value": "<欲檢測文本>"
+}
+```
 
 ### md5
 - 加入版本: 22w01-pre2
 - 說明: 用來計算 md5 值的功能
-- 參數: ```Value```
-- Response: ```md5 值```
-- 指令: ```$api et md5 <value>```
+- FormatVersion: ```1```
+- 範例: 
+```
+{
+  "APIkey": "<放入你的 API Key>",
+  "Function": "et",
+  "Type": "md5",
+  "FormatVersion": 1,
+  "Value": "<欲 md5 文本>"
+}
+```
 
 # 貢獻者
 * whes1015 - 程式開發
