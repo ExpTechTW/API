@@ -226,6 +226,11 @@ return curl_exec($curl);
 ##### [et](#et)
 - [urlChecker](#urlchecker)
 - [md5](#md5)
+##### [serverData](#serverData)
+- [BlockValue](#BlockValue)
+- [Inventory](#Inventory)
+##### [economy](#economy)
+- [assets](#assets)
 
 # et
 ### urlChecker
@@ -255,6 +260,38 @@ return curl_exec($curl);
   "Type": "md5",
   "FormatVersion": 1,
   "Value": "<欲 md5 文本>"
+}
+```
+
+
+# serverData
+### BlockValue
+- 加入版本: 22w04-pre1
+- 說明: 用來獲取玩家方塊挖掘統計的功能
+- FormatVersion: ```1```
+- 範例: 
+```
+{
+  "APIkey": "<放入你的 API Key>",
+  "Function": "serverData",
+  "Type": "BlockValue",
+  "FormatVersion": 1,
+  "Value": "<欲獲取方塊挖掘統計的玩家 ID/name>"
+}
+```
+
+### Inventory
+- 加入版本: 22w04-pre1
+- 說明: 用來獲取玩家背包物品詳情的功能
+- FormatVersion: ```1```
+- 範例: 
+```
+{
+  "APIkey": "<放入你的 API Key>",
+  "Function": "serverData",
+  "Type": "Inventory",
+  "FormatVersion": 1,
+  "Value": "<欲獲取背包物品詳情的玩家 ID/name>"
 }
 ```
 
