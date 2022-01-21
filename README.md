@@ -20,7 +20,7 @@
 
 # 項目概要
 * 這是一個由 ExpTech.tw 開發的集成 API
-* 官方 [Discord](https://discord.gg/rkPu3msUf3)
+* 官方 [Discord](https://discord.gg/5dbHqV8ees)
 
 # 索引
 - [資訊](#資訊)
