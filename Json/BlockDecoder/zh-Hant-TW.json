@@ -141,5 +141,14 @@
     "minecraft:cobblestone_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=low]": "鵝卵石牆",
     "minecraft:cobblestone_wall[east=tall,north=none,south=none,up=true,waterlogged=false,west=none]": "鵝卵石牆",
     "minecraft:shulker_box[facing=north]": "界伏盒",
-    "minecraft:sticky_piston[extended=false,facing=up]":"黏性活塞"
+    "minecraft:sticky_piston[extended=false,facing=up]":"黏性活塞【未啟用,朝上】",
+    "minecraft:tnt[unstable=false]": "炸藥【未點燃】",
+    "minecraft:fire[age=1,east=false,north=false,south=false,up=false,west=false]": "火【1歲】",
+    "minecraft:fire[age=3,east=false,north=false,south=false,up=false,west=false]": "火【3歲】",
+    "minecraft:fire[age=4,east=false,north=false,south=false,up=false,west=false]": "火【4歲】",
+    "minecraft:kelp_plant": "海草",
+    "minecraft:fire[age=2,east=false,north=false,south=false,up=false,west=false]": "火【2歲】",
+    "minecraft:fire[age=7,east=true,north=false,south=true,up=false,west=false]": "火【7歲】",
+    "minecraft:bee_nest[facing=south,honey_level=0]": "蜂窩【面朝=南,存放蜂蜜0】",
+    "minecraft:white_banner[rotation=0]": "白色旗幟【轉向0度】"
 }
