@@ -141,5 +141,5 @@
     "minecraft:cobblestone_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=low]": "鵝卵石牆",
     "minecraft:cobblestone_wall[east=tall,north=none,south=none,up=true,waterlogged=false,west=none]": "鵝卵石牆",
     "minecraft:shulker_box[facing=north]": "界伏盒",
-    "minecraft:sticky_piston[extended=false,facing=up]":"黏性活塞”
+    "minecraft:sticky_piston[extended=false,facing=up]":"黏性活塞"
 }
