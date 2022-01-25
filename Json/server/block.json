@@ -1,234 +1,314 @@
 {
     "StatisticComplex": [
         {
-            "name": "ENTITY_KILLED_BY"
+            "name": "ENTITY_KILLED_BY",
+            "zh-Hant-TW": "玩家被實體 統計"
         },
         {
-            "name": "KILL_ENTITY"
+            "name": "KILL_ENTITY",
+            "zh-Hant-TW": "玩家殺死的實體 統計"
         },
         {
-            "name": "DROP"
+            "name": "DROP",
+            "zh-Hant-TW": "丟棄的物品 統計"
         },
         {
-            "name": "PICKUP"
+            "name": "PICKUP",
+            "zh-Hant-TW": "撿起的掉落物品 統計"
         },
         {
-            "name": "CRAFT_ITEM"
+            "name": "USE_ITEM",
+            "zh-Hant-TW": "使用 統計"
         },
         {
-            "name": "BREAK_ITEM"
+            "name": "CRAFT_ITEM",
+            "zh-Hant-TW": "合成、熔煉 統計"
         },
         {
-            "name": "MINE_BLOCK"
+            "name": "BREAK_ITEM",
+            "zh-Hant-TW": "耐久度 統計"
+        },
+        {
+            "name": "MINE_BLOCK",
+            "zh-Hant-TW": "開採方塊 統計"
         }
     ],
     "Statistic": [
         {
-            "name": "DAMAGE_DEALT_RESISTED"
+            "name": "DAMAGE_DEALT_RESISTED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "TRAPPED_CHEST_TRIGGERED"
+            "name": "TRAPPED_CHEST_TRIGGERED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "TRADED_WITH_VILLAGER"
+            "name": "TRADED_WITH_VILLAGER",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "SLEEP_IN_BED"
+            "name": "SLEEP_IN_BED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "TOTAL_WORLD_TIME"
+            "name": "TOTAL_WORLD_TIME",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "PLAY_ONE_MINUTE"
+            "name": "PLAY_ONE_MINUTE",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "TARGET_HIT"
+            "name": "TARGET_HIT",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "TALKED_TO_VILLAGER"
+            "name": "TALKED_TO_VILLAGER",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "SNEAK_TIME"
+            "name": "SNEAK_TIME",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "TIME_SINCE_DEATH"
+            "name": "TIME_SINCE_DEATH",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "SHULKER_BOX_OPENED"
+            "name": "SHULKER_BOX_OPENED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "CLEAN_SHULKER_BOX"
+            "name": "CLEAN_SHULKER_BOX",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "RAID_WIN"
+            "name": "RAID_WIN",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "RAID_TRIGGER"
+            "name": "RAID_TRIGGER",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "PLAYER_KILLS"
+            "name": "PLAYER_KILLS",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "FLOWER_POTTED"
+            "name": "FLOWER_POTTED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "DEATHS"
+            "name": "DEATHS",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "NOTEBLOCK_TUNED"
+            "name": "NOTEBLOCK_TUNED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "NOTEBLOCK_PLAYED"
+            "name": "NOTEBLOCK_PLAYED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "RECORD_PLAYED"
+            "name": "RECORD_PLAYED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "MOB_KILLS"
+            "name": "MOB_KILLS",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "JUMP"
+            "name": "JUMP",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "ITEM_ENCHANTED"
+            "name": "ITEM_ENCHANTED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "DROP_COUNT"
+            "name": "DROP_COUNT",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "INTERACT_WITH_GRINDSTONE"
+            "name": "INTERACT_WITH_GRINDSTONE",
+            "zh-Hant-TW": "開採方塊 統計"
         },
-        {
+        {,
+            "zh-Hant-TW": "開採方塊 統計"
             "name": "CRAFTING_TABLE_INTERACTION"
         },
         {
-            "name": "INTERACT_WITH_CARTOGRAPHY_TABLE"
+            "name": "INTERACT_WITH_CARTOGRAPHY_TABLE",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "INTERACT_WITH_CAMPFIRE"
+            "name": "INTERACT_WITH_CAMPFIRE",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "BREWINGSTAND_INTERACTION"
+            "name": "BREWINGSTAND_INTERACTION",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "FURNACE_INTERACTION"
+            "name": "FURNACE_INTERACTION",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "INTERACT_WITH_BLAST_FURNACE"
+            "name": "INTERACT_WITH_BLAST_FURNACE",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "BEACON_INTERACTION"
+            "name": "BEACON_INTERACTION",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "INTERACT_WITH_ANVIL"
+            "name": "INTERACT_WITH_ANVIL",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "HOPPER_INSPECTED"
+            "name": "HOPPER_INSPECTED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "LEAVE_GAME"
+            "name": "LEAVE_GAME",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "FISH_CAUGHT"
+            "name": "FISH_CAUGHT",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "ENDERCHEST_OPENED"
+            "name": "ENDERCHEST_OPENED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "DROPPER_INSPECTED"
+            "name": "DROPPER_INSPECTED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "WALK_UNDER_WATER_ONE_CM"
+            "name": "WALK_UNDER_WATER_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "WALK_ON_WATER_ONE_CM"
+            "name": "WALK_ON_WATER_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "WALK_ONE_CM"
+            "name": "WALK_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "SWIM_ONE_CM"
+            "name": "SWIM_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "SPRINT_ONE_CM"
+            "name": "SPRINT_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "FLY_ONE_CM"
+            "name": "FLY_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "FALL_ONE_CM"
+            "name": "FALL_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "CROUCH_ONE_CM"
+            "name": "CROUCH_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "CLIMB_ONE_CM"
+            "name": "CLIMB_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "STRIDER_ONE_CM"
+            "name": "STRIDER_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "PIG_ONE_CM"
+            "name": "PIG_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "MINECART_ONE_CM"
+            "name": "MINECART_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "HORSE_ONE_CM"
+            "name": "HORSE_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "AVIATE_ONE_CM"
+            "name": "AVIATE_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "BOAT_ONE_CM"
+            "name": "BOAT_ONE_CM",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "DISPENSER_INSPECTED"
+            "name": "DISPENSER_INSPECTED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "DAMAGE_TAKEN"
+            "name": "DAMAGE_TAKEN",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "DAMAGE_RESISTED"
+            "name": "DAMAGE_RESISTED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "DAMAGE_DEALT_RESISTED"
+            "name": "DAMAGE_DEALT_RESISTED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "DAMAGE_DEALT_ABSORBED"
+            "name": "DAMAGE_DEALT_ABSORBED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "DAMAGE_DEALT"
+            "name": "DAMAGE_DEALT",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "DAMAGE_BLOCKED_BY_SHIELD"
+            "name": "DAMAGE_BLOCKED_BY_SHIELD",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "DAMAGE_ABSORBED"
+            "name": "DAMAGE_ABSORBED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "CHEST_OPENED"
+            "name": "CHEST_OPENED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "CAULDRON_FILLED"
+            "name": "CAULDRON_FILLED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "CAKE_SLICES_EATEN"
+            "name": "CAKE_SLICES_EATEN",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "BELL_RING"
+            "name": "BELL_RING",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "OPEN_BARREL"
+            "name": "OPEN_BARREL",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "BANNER_CLEANED"
+            "name": "BANNER_CLEANED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "ARMOR_CLEANED"
+            "name": "ARMOR_CLEANED",
+            "zh-Hant-TW": "開採方塊 統計"
         },
         {
-            "name": "ANIMALS_BRED"
+            "name": "ANIMALS_BRED",
+            "zh-Hant-TW": "開採方塊 統計"
         }
     ],
     "ID": [
