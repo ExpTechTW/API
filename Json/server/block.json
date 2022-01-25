@@ -35,7 +35,11 @@
     ],
     "Statistic": [
         {
-            "name": "DAMAGE_DEALT_RESISTED",
+            "name": "TIME_SINCE_REST",
+            "zh-Hant-TW": "距離上次睡覺"
+        },
+        {
+            "name": "CAULDRON_USED",
             "zh-Hant-TW": "從鍋釜取水次數"
         },
         {
