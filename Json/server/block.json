@@ -35,6 +35,26 @@
     ],
     "Statistic": [
         {
+            "name": "INTERACT_WITH_STONECUTTER",
+            "zh-Hant-TW": "切石機使用次數"
+        },
+        {
+            "name": "INTERACT_WITH_SMOKER",
+            "zh-Hant-TW": "煙燻爐使用次數"
+        },
+        {
+            "name": "INTERACT_WITH_SMITHING_TABLE",
+            "zh-Hant-TW": "鍛造台使用次數"
+        },
+        {
+            "name": "INTERACT_WITH_LOOM",
+            "zh-Hant-TW": "紡織機使用次數"
+        },
+        {
+            "name": "INTERACT_WITH_LECTERN",
+            "zh-Hant-TW": "講台使用次數"
+        },
+        {
             "name": "TIME_SINCE_REST",
             "zh-Hant-TW": "距離上次睡覺"
         },
