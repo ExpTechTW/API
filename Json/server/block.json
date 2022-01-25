@@ -1,13 +1,223 @@
-"Statistic":["DAMAGE_DEALT_RESISTED","TRAPPED_CHEST_TRIGGERED","TRADED_WITH_VILLAGER","SLEEP_IN_BED","TOTAL_WORLD_TIME","PLAY_ONE_MINUTE","TARGET_HIT","TALKED_TO_VILLAGER","SNEAK_TIME","TIME_SINCE_DEATH","SHULKER_BOX_OPENED","CLEAN_SHULKER_BOX","RAID_WIN","RAID_TRIGGER","PLAYER_KILLS","FLOWER_POTTED","DEATHS","NOTEBLOCK_TUNED","NOTEBLOCK_PLAYED","RECORD_PLAYED","MOB_KILLS","JUMP","ITEM_ENCHANTED","DROP_COUNT","INTERACT_WITH_GRINDSTONE","CRAFTING_TABLE_INTERACTION","INTERACT_WITH_CARTOGRAPHY_TABLE","INTERACT_WITH_CAMPFIRE","BREWINGSTAND_INTERACTION","FURNACE_INTERACTION","INTERACT_WITH_BLAST_FURNACE","BEACON_INTERACTION","INTERACT_WITH_ANVIL","HOPPER_INSPECTED","LEAVE_GAME","FISH_CAUGHT","ENDERCHEST_OPENED","DROPPER_INSPECTED","WALK_UNDER_WATER_ONE_CM","WALK_ON_WATER_ONE_CM","WALK_ONE_CM","SWIM_ONE_CM","SPRINT_ONE_CM","FLY_ONE_CM","FALL_ONE_CM","CROUCH_ONE_CM","CLIMB_ONE_CM","STRIDER_ONE_CM","PIG_ONE_CM","MINECART_ONE_CM","HORSE_ONE_CM","AVIATE_ONE_CM","BOAT_ONE_CM","DISPENSER_INSPECTED","DAMAGE_TAKEN","DAMAGE_RESISTED","DAMAGE_DEALT_RESISTED","DAMAGE_DEALT_ABSORBED","DAMAGE_DEALT","DAMAGE_BLOCKED_BY_SHIELD","DAMAGE_ABSORBED","CHEST_OPENED","CAULDRON_FILLED","CAKE_SLICES_EATEN","BELL_RING","OPEN_BARREL","BANNER_CLEANED","ARMOR_CLEANED","ANIMALS_BRED"],
-"ID":[
-  {
-    "name":"SAND",
-    "type":"block",
-    "zh-Hant-TW":"沙"
-  },
-  {
-    "name":"DIRT",
-    "type":"block",
-    "zh-Hant-TW":"泥土"
-  }
-]
+{
+    "Statistic": [
+        {
+            "name": "DAMAGE_DEALT_RESISTED"
+        },
+        {
+            "name": "TRAPPED_CHEST_TRIGGERED"
+        },
+        {
+            "name": "TRADED_WITH_VILLAGER"
+        },
+        {
+            "name": "SLEEP_IN_BED"
+        },
+        {
+            "name": "TOTAL_WORLD_TIME"
+        },
+        {
+            "name": "PLAY_ONE_MINUTE"
+        },
+        {
+            "name": "TARGET_HIT"
+        },
+        {
+            "name": "TALKED_TO_VILLAGER"
+        },
+        {
+            "name": "SNEAK_TIME"
+        },
+        {
+            "name": "TIME_SINCE_DEATH"
+        },
+        {
+            "name": "SHULKER_BOX_OPENED"
+        },
+        {
+            "name": "CLEAN_SHULKER_BOX"
+        },
+        {
+            "name": "RAID_WIN"
+        },
+        {
+            "name": "RAID_TRIGGER"
+        },
+        {
+            "name": "PLAYER_KILLS"
+        },
+        {
+            "name": "FLOWER_POTTED"
+        },
+        {
+            "name": "DEATHS"
+        },
+        {
+            "name": "NOTEBLOCK_TUNED"
+        },
+        {
+            "name": "NOTEBLOCK_PLAYED"
+        },
+        {
+            "name": "RECORD_PLAYED"
+        },
+        {
+            "name": "MOB_KILLS"
+        },
+        {
+            "name": "JUMP"
+        },
+        {
+            "name": "ITEM_ENCHANTED"
+        },
+        {
+            "name": "DROP_COUNT"
+        },
+        {
+            "name": "INTERACT_WITH_GRINDSTONE"
+        },
+        {
+            "name": "CRAFTING_TABLE_INTERACTION"
+        },
+        {
+            "name": "INTERACT_WITH_CARTOGRAPHY_TABLE"
+        },
+        {
+            "name": "INTERACT_WITH_CAMPFIRE"
+        },
+        {
+            "name": "BREWINGSTAND_INTERACTION"
+        },
+        {
+            "name": "FURNACE_INTERACTION"
+        },
+        {
+            "name": "INTERACT_WITH_BLAST_FURNACE"
+        },
+        {
+            "name": "BEACON_INTERACTION"
+        },
+        {
+            "name": "INTERACT_WITH_ANVIL"
+        },
+        {
+            "name": "HOPPER_INSPECTED"
+        },
+        {
+            "name": "LEAVE_GAME"
+        },
+        {
+            "name": "FISH_CAUGHT"
+        },
+        {
+            "name": "ENDERCHEST_OPENED"
+        },
+        {
+            "name": "DROPPER_INSPECTED"
+        },
+        {
+            "name": "WALK_UNDER_WATER_ONE_CM"
+        },
+        {
+            "name": "WALK_ON_WATER_ONE_CM"
+        },
+        {
+            "name": "WALK_ONE_CM"
+        },
+        {
+            "name": "SWIM_ONE_CM"
+        },
+        {
+            "name": "SPRINT_ONE_CM"
+        },
+        {
+            "name": "FLY_ONE_CM"
+        },
+        {
+            "name": "FALL_ONE_CM"
+        },
+        {
+            "name": "CROUCH_ONE_CM"
+        },
+        {
+            "name": "CLIMB_ONE_CM"
+        },
+        {
+            "name": "STRIDER_ONE_CM"
+        },
+        {
+            "name": "PIG_ONE_CM"
+        },
+        {
+            "name": "MINECART_ONE_CM"
+        },
+        {
+            "name": "HORSE_ONE_CM"
+        },
+        {
+            "name": "AVIATE_ONE_CM"
+        },
+        {
+            "name": "BOAT_ONE_CM"
+        },
+        {
+            "name": "DISPENSER_INSPECTED"
+        },
+        {
+            "name": "DAMAGE_TAKEN"
+        },
+        {
+            "name": "DAMAGE_RESISTED"
+        },
+        {
+            "name": "DAMAGE_DEALT_RESISTED"
+        },
+        {
+            "name": "DAMAGE_DEALT_ABSORBED"
+        },
+        {
+            "name": "DAMAGE_DEALT"
+        },
+        {
+            "name": "DAMAGE_BLOCKED_BY_SHIELD"
+        },
+        {
+            "name": "DAMAGE_ABSORBED"
+        },
+        {
+            "name": "CHEST_OPENED"
+        },
+        {
+            "name": "CAULDRON_FILLED"
+        },
+        {
+            "name": "CAKE_SLICES_EATEN"
+        },
+        {
+            "name": "BELL_RING"
+        },
+        {
+            "name": "OPEN_BARREL"
+        },
+        {
+            "name": "BANNER_CLEANED"
+        },
+        {
+            "name": "ARMOR_CLEANED"
+        },
+        {
+            "name": "ANIMALS_BRED"
+        }
+    ],
+    "ID": [
+        {
+            "name": "SAND",
+            "type": "block",
+            "zh-Hant-TW": "沙"
+        },
+        {
+            "name": "DIRT",
+            "type": "block",
+            "zh-Hant-TW": "泥土"
+        }
+    ]
+}
