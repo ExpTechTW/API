@@ -1,4 +1,27 @@
 {
+    "StatisticComplex": [
+        {
+            "name": "ENTITY_KILLED_BY"
+        },
+        {
+            "name": "KILL_ENTITY"
+        },
+        {
+            "name": "DROP"
+        },
+        {
+            "name": "PICKUP"
+        },
+        {
+            "name": "CRAFT_ITEM"
+        },
+        {
+            "name": "BREAK_ITEM"
+        },
+        {
+            "name": "MINE_BLOCK"
+        }
+    ],
     "Statistic": [
         {
             "name": "DAMAGE_DEALT_RESISTED"
