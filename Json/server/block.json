@@ -36,279 +36,279 @@
     "Statistic": [
         {
             "name": "DAMAGE_DEALT_RESISTED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "從鍋釜取水次數"
         },
         {
             "name": "TRAPPED_CHEST_TRIGGERED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "陷阱儲物箱觸發次數"
         },
         {
             "name": "TRADED_WITH_VILLAGER",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "與村民交易次數"
         },
         {
             "name": "SLEEP_IN_BED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "睡覺次數"
         },
         {
             "name": "TOTAL_WORLD_TIME",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "世界開啟時間"
         },
         {
             "name": "PLAY_ONE_MINUTE",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "遊戲時間"
         },
         {
             "name": "TARGET_HIT",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "擊中標靶次數"
         },
         {
             "name": "TALKED_TO_VILLAGER",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "與村民對話次數"
         },
         {
             "name": "SNEAK_TIME",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "潛行時間"
         },
         {
             "name": "TIME_SINCE_DEATH",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "距離上次死亡"
         },
         {
             "name": "SHULKER_BOX_OPENED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "界伏盒開啟次數"
         },
         {
             "name": "CLEAN_SHULKER_BOX",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "界伏盒清洗次數"
         },
         {
             "name": "RAID_WIN",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "擊敗突襲次數"
         },
         {
             "name": "RAID_TRIGGER",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "突襲觸發次數"
         },
         {
             "name": "PLAYER_KILLS",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "玩家擊殺數"
         },
         {
             "name": "FLOWER_POTTED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "盆栽放置數量"
         },
         {
             "name": "DEATHS",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "死亡次數"
         },
         {
             "name": "NOTEBLOCK_TUNED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "音階盒調音次數"
         },
         {
             "name": "NOTEBLOCK_PLAYED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "音階盒演奏次數"
         },
         {
             "name": "RECORD_PLAYED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "唱片播放"
         },
         {
             "name": "MOB_KILLS",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "生物擊殺數"
         },
         {
             "name": "JUMP",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "跳躍次數"
         },
         {
             "name": "ITEM_ENCHANTED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "物品附魔數量"
         },
         {
             "name": "DROP_COUNT",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "丟棄物品數量"
         },
         {
             "name": "INTERACT_WITH_GRINDSTONE",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "砂輪使用次數"
         },
-        {,
-            "zh-Hant-TW": "開採方塊 統計"
-            "name": "CRAFTING_TABLE_INTERACTION"
+        {
+            "name": "CRAFTING_TABLE_INTERACTION",
+            "zh-Hant-TW": "工作台使用次數"
         },
         {
             "name": "INTERACT_WITH_CARTOGRAPHY_TABLE",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "製圖台使用次數"
         },
         {
             "name": "INTERACT_WITH_CAMPFIRE",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "營火使用次數"
         },
         {
             "name": "BREWINGSTAND_INTERACTION",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "釀造台使用次數"
         },
         {
             "name": "FURNACE_INTERACTION",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "熔爐使用次數"
         },
         {
             "name": "INTERACT_WITH_BLAST_FURNACE",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "高爐使用次數"
         },
         {
             "name": "BEACON_INTERACTION",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "烽火台使用次數"
         },
         {
             "name": "INTERACT_WITH_ANVIL",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "鐵砧使用次數"
         },
         {
             "name": "HOPPER_INSPECTED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "漏斗搜索次數"
         },
         {
             "name": "LEAVE_GAME",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "離開遊戲次數"
         },
         {
             "name": "FISH_CAUGHT",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "捕獲魚量"
         },
         {
             "name": "ENDERCHEST_OPENED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "終界箱開啟次數"
         },
         {
             "name": "DROPPER_INSPECTED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "投擲器搜索次數"
         },
         {
             "name": "WALK_UNDER_WATER_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "水面下的行走距離"
         },
         {
             "name": "WALK_ON_WATER_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "水面上的行走距離"
         },
         {
             "name": "WALK_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "行走距離"
         },
         {
             "name": "SWIM_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "游泳距離"
         },
         {
             "name": "SPRINT_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "疾走距離"
         },
         {
             "name": "FLY_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "飛行距離"
         },
         {
             "name": "FALL_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "掉落高度"
         },
         {
             "name": "CROUCH_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "蹲行距離"
         },
         {
             "name": "CLIMB_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "攀爬距離"
         },
         {
             "name": "STRIDER_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "騎熾足獸移動距離"
         },
         {
             "name": "PIG_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "騎豬移動距離"
         },
         {
             "name": "MINECART_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "乘坐礦車距離"
         },
         {
             "name": "HORSE_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "騎馬移動距離"
         },
         {
             "name": "AVIATE_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "鞘翅飛行距離"
         },
         {
             "name": "BOAT_ONE_CM",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "坐船航行距離"
         },
         {
             "name": "DISPENSER_INSPECTED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "發射器搜索次數"
         },
         {
             "name": "DAMAGE_TAKEN",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "承受傷害總量"
         },
         {
             "name": "DAMAGE_RESISTED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "抵銷的傷害量"
         },
         {
             "name": "DAMAGE_DEALT_RESISTED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "造成傷害（被抵銷）"
         },
         {
             "name": "DAMAGE_DEALT_ABSORBED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "造成傷害（被吸收）"
         },
         {
             "name": "DAMAGE_DEALT",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "造成傷害總量"
         },
         {
             "name": "DAMAGE_BLOCKED_BY_SHIELD",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "盾牌抵擋的傷害總量"
         },
         {
             "name": "DAMAGE_ABSORBED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "吸收的傷害量"
         },
         {
             "name": "CHEST_OPENED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "儲物箱開啟次數"
         },
         {
             "name": "CAULDRON_FILLED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "鍋釜填滿次數"
         },
         {
             "name": "CAKE_SLICES_EATEN",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "已吃掉的蛋糕片數量"
         },
         {
             "name": "BELL_RING",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "敲鐘次數"
         },
         {
             "name": "OPEN_BARREL",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "木桶開啟次數"
         },
         {
             "name": "BANNER_CLEANED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "清洗的旗幟數量"
         },
         {
             "name": "ARMOR_CLEANED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "清洗的盔甲數量"
         },
         {
             "name": "ANIMALS_BRED",
-            "zh-Hant-TW": "開採方塊 統計"
+            "zh-Hant-TW": "動物繁殖數"
         }
     ],
     "ID": [
