@@ -1,8 +1,12 @@
 [
   {
-    "name":"SAND"
+    "name":"SAND",
+    "type":"block",
+    "zh-Hant-TW":"沙"
   },
   {
-    "name":"DIRT"
+    "name":"DIRT",
+    "type":"block",
+    "zh-Hant-TW":"泥土"
   }
 ]
