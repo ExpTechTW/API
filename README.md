@@ -265,7 +265,7 @@ return curl_exec($curl);
 
 
 # serverData
-### ~~BlockValue~~ (棄用 22w05-pre1 [由 Statistic 取代])
+### BlockValue ( 棄用 22w05-pre1 [由 Statistic 取代] )
 - 加入版本: 22w04-pre1
 - 說明: 用來獲取玩家方塊挖掘統計的功能
 - FormatVersion: ```1```
