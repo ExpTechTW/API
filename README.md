@@ -229,6 +229,7 @@ return curl_exec($curl);
 ##### [serverData](#serverData)
 - [BlockValue](#BlockValue)
 - [Inventory](#Inventory)
+- [Statistic](#Statistic)
 ##### [economy](#economy)
 - [assets](#assets)
 
@@ -292,6 +293,21 @@ return curl_exec($curl);
   "Type": "Inventory",
   "FormatVersion": 1,
   "Value": "<欲獲取背包物品詳情的玩家 ID/name>"
+}
+```
+
+### Statistic
+- 加入版本: 22w05-pre1
+- 說明: 用來獲取玩家各項統計數據的功能
+- FormatVersion: ```1```
+- 範例: 
+```
+{
+  "APIkey": "<放入你的 API Key>",
+  "Function": "serverData",
+  "Type": "Statistic",
+  "FormatVersion": 1,
+  "Value": "<欲獲取方塊挖掘統計的玩家 ID/name>"
 }
 ```
 
