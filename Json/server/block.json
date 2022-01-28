@@ -337,14 +337,494 @@
     ],
     "ID": [
         {
+            "name": "TALL_GRASS",
+            "type": "block",
+            "zh-Hant-TW": "芒草"
+        },
+        {
+            "name": "GRASS",
+            "type": "block",
+            "zh-Hant-TW": "草"
+        },
+        {
+            "name": "ROSE_BUSH",
+            "type": "block",
+            "zh-Hant-TW": "玫瑰叢"
+        },
+        {
+            "name": "STONE",
+            "type": "block",
+            "zh-Hant-TW": "石頭"
+        },
+        {
+            "name": "GRASS_BLOCK",
+            "type": "block",
+            "zh-Hant-TW": "草地"
+        },
+        {
             "name": "SAND",
             "type": "block",
             "zh-Hant-TW": "沙"
         },
         {
+            "name": "OXEYE_DAISY",
+            "type": "block",
+            "zh-Hant-TW": "雛菊"
+        },
+        {
+            "name": "POPPY",
+            "type": "block",
+            "zh-Hant-TW": "罌粟"
+        },
+        {
+            "name": "SANDSTONE",
+            "type": "block",
+            "zh-Hant-TW": "砂岩"
+        },
+        {
             "name": "DIRT",
             "type": "block",
             "zh-Hant-TW": "泥土"
+        },
+        {
+            "name": "IRON_ORE",
+            "type": "block",
+            "zh-Hant-TW": "鐵礦"
+        },
+        {
+            "name": "GOLD_ORE",
+            "type": "block",
+            "zh-Hant-TW": "金礦"
+        },
+        {
+            "name": "DIAMOND_ORE",
+            "type": "block",
+            "zh-Hant-TW": "鑽石礦"
+        },
+        {
+            "name": "DIORITE",
+            "type": "block",
+            "zh-Hant-TW": "閃長岩"
+        },
+        {
+            "name": "DEEPSLATE_DIAMOND_ORE",
+            "type": "block",
+            "zh-Hant-TW": "深板岩鑽石礦"
+        },
+        {
+            "name": "SNOW",
+            "type": "block",
+            "zh-Hant-TW": "雪"
+        },
+        {
+            "name": "CORNFLOWER",
+            "type": "block",
+            "zh-Hant-TW": "矢車菊"
+        },
+        {
+            "name": "DANDELION",
+            "type": "block",
+            "zh-Hant-TW": "蒲公英"
+        },
+        {
+            "name": "AZURE_BLUET",
+            "type": "block",
+            "zh-Hant-TW": "雛草"
+        },
+        {
+            "name": "COPPER_ORE",
+            "type": "block",
+            "zh-Hant-TW": "銅礦"
+        },
+        {
+            "name": "ANDESITE",
+            "type": "block",
+            "zh-Hant-TW": "安山岩"
+        },
+        {
+            "name": "GRANITE",
+            "type": "block",
+            "zh-Hant-TW": "花崗岩"
+        },
+        {
+            "name": "TORCH",
+            "type": "block",
+            "zh-Hant-TW": "火把"
+        },
+        {
+            "name": "OAK_PLANKS",
+            "type": "block",
+            "zh-Hant-TW": "橡木木板"
+        },
+        {
+            "name": "SUGAR_CANE",
+            "type": "block",
+            "zh-Hant-TW": "甘蔗"
+        },
+        {
+            "name": "BREWING_STAND",
+            "type": "block",
+            "zh-Hant-TW": "釀造台"
+        },
+        {
+            "name": "DEEPSLATE",
+            "type": "block",
+            "zh-Hant-TW": "深板岩"
+        },
+        {
+            "name": "TUFF",
+            "type": "block",
+            "zh-Hant-TW": "凝灰石"
+        },
+        {
+            "name": "COBBLESTONE",
+            "type": "block",
+            "zh-Hant-TW": "鵝卵石"
+        },
+        {
+            "name": "CACTUS",
+            "type": "block",
+            "zh-Hant-TW": "仙人掌"
+        },
+        {
+            "name": "FLOWERING_AZALEA_LEAVES",
+            "type": "block",
+            "zh-Hant-TW": "杜鵑花"
+        },
+        {
+            "name": "NETHERRACK",
+            "type": "block",
+            "zh-Hant-TW": "地獄岩"
+        },
+        {
+            "name": "GLASS",
+            "type": "block",
+            "zh-Hant-TW": "玻璃"
+        },
+        {
+            "name": "SPRUCE_LEAVES",
+            "type": "block",
+            "zh-Hant-TW": "杉木樹葉"
+        },
+        {
+            "name": "SPRUCE_LOG",
+            "type": "block",
+            "zh-Hant-TW": "杉木原木"
+        },
+        {
+            "name": "WHEAT",
+            "type": "block",
+            "zh-Hant-TW": "小麥"
+        },
+        {
+            "name": "CARROTS",
+            "type": "block",
+            "zh-Hant-TW": "胡蘿蔔"
+        },
+        {
+            "name": "DEEPSLATE_REDSTONE_ORE",
+            "type": "block",
+            "zh-Hant-TW": "深層紅石礦"
+        },
+        {
+            "name": "BIG_DRIPLEAF",
+            "type": "block",
+            "zh-Hant-TW": "大型垂滴葉"
+        },
+        {
+            "name": "YELLOW_SHULKER_BOX",
+            "type": "block",
+            "zh-Hant-TW": "黃色界伏盒"
+        },
+        {
+            "name": "IRON_ORE",
+            "type": "block",
+            "zh-Hant-TW": "鐵礦"
+        },
+        {
+            "name": "LIGHT_BLUE_CONCRETE",
+            "type": "block",
+            "zh-Hant-TW": "淺藍色混凝土"
+        },
+        {
+            "name": "OAK_LEAVES",
+            "type": "block",
+            "zh-Hant-TW": "橡木樹葉"
+        },
+        {
+            "name": "OAK_LOG",
+            "type": "block",
+            "zh-Hant-TW": "橡木原木"
+        },
+        {
+            "name": "BIRCH_LOG",
+            "type": "block",
+            "zh-Hant-TW": "樺木原木"
+        },
+        {
+            "name": "BIRCH_LEAVES",
+            "type": "block",
+            "zh-Hant-TW": "樺木樹葉"
+        },
+        {
+            "name": "COAL_ORE",
+            "type": "block",
+            "zh-Hant-TW": "煤炭礦"
+        },
+        {
+            "name": "GRAVEL",
+            "type": "block",
+            "zh-Hant-TW": "礫石"
+        },
+        {
+            "name": "BLUE_SHULKER_BOX",
+            "type": "block",
+            "zh-Hant-TW": "藍色界伏盒"
+        },
+        {
+            "name": "CHEST",
+            "type": "block",
+            "zh-Hant-TW": "箱子"
+        },
+        {
+            "name": "SHULKER_BOX",
+            "type": "block",
+            "zh-Hant-TW": "界伏盒"
+        },
+        {
+            "name": "CRAFTING_TABLE",
+            "type": "block",
+            "zh-Hant-TW": "工作台"
+        },
+        {
+            "name": "SMOOTH_STONE_SLAB",
+            "type": "block",
+            "zh-Hant-TW": "平滑石半磚"
+        },
+        {
+            "name": "LEVER",
+            "type": "block",
+            "zh-Hant-TW": "拉桿"
+        },
+        {
+            "name": "PISTON",
+            "type": "block",
+            "zh-Hant-TW": "活塞"
+        },
+        {
+            "name": "OBSERVER",
+            "type": "block",
+            "zh-Hant-TW": "觀察者"
+        },
+        {
+            "name": "SMALL_DRIPLEAF",
+            "type": "block",
+            "zh-Hant-TW": "小型垂滴葉"
+        },
+        {
+            "name": "STONE_BRICKS",
+            "type": "block",
+            "zh-Hant-TW": "石磚"
+        },
+        {
+            "name": "LIME_SHULKER_BOX",
+            "type": "block",
+            "zh-Hant-TW": "綠色界伏盒"
+        },
+        {
+            "name": "CRIMSON_ROOTS",
+            "type": "block",
+            "zh-Hant-TW": "緋紅菌索"
+        },
+        {
+            "name": "CRIMSON_NYLIUM",
+            "type": "block",
+            "zh-Hant-TW": "詭異菌岩"
+        },
+        {
+            "name": "NETHER_WART_BLOCK",
+            "type": "block",
+            "zh-Hant-TW": "地獄疣塊"
+        },
+        {
+            "name": "FIRE",
+            "type": "block",
+            "zh-Hant-TW": "火"
+        },
+        {
+            "name": "BAMBOO",
+            "type": "block",
+            "zh-Hant-TW": "竹子"
+        },
+        {
+            "name": "WEEPING_VINES_PLANT",
+            "type": "block",
+            "zh-Hant-TW": "垂淚藤"
+        },
+        {
+            "name": "NETHER_GOLD_ORE",
+            "type": "block",
+            "zh-Hant-TW": "地獄金礦"
+        },
+        {
+            "name": "CRIMSON_PLANKS",
+            "type": "block",
+            "zh-Hant-TW": "緋紅木板"
+        },
+        {
+            "name": "SOUL_SOIL",
+            "type": "block",
+            "zh-Hant-TW": "靈魂土"
+        },
+        {
+            "name": "LARGE_FERN",
+            "type": "block",
+            "zh-Hant-TW": "大型蕨"
+        },
+        {
+            "name": "SWEET_BERRY_BUSH",
+            "type": "block",
+            "zh-Hant-TW": "甜莓"
+        },
+        {
+            "name": "SOUL_FIRE",
+            "type": "block",
+            "zh-Hant-TW": "靈魂火"
+        },
+        {
+            "name": "POWDER_SNOW",
+            "type": "block",
+            "zh-Hant-TW": "細雪"
+        },
+        {
+            "name": "SMOOTH_STONE",
+            "type": "block",
+            "zh-Hant-TW": "平滑石頭"
+        },
+        {
+            "name": "RED_SHULKER_BOX",
+            "type": "block",
+            "zh-Hant-TW": "紅色界伏盒"
+        },
+        {
+            "name": "WHITE_SHULKER_BOX",
+            "type": "block",
+            "zh-Hant-TW": "白色界伏盒"
+        },
+        {
+            "name": "BIRCH_TRAPDOOR",
+            "type": "block",
+            "zh-Hant-TW": "白樺木地板門"
+        },
+        {
+            "name": "FERN",
+            "type": "block",
+            "zh-Hant-TW": "蕨"
+        },
+        {
+            "name": "ICE",
+            "type": "block",
+            "zh-Hant-TW": "冰"
+        },
+        {
+            "name": "SEAGRASS",
+            "type": "block",
+            "zh-Hant-TW": "海草"
+        },
+        {
+            "name": "SPRUCE_PLANKS",
+            "type": "block",
+            "zh-Hant-TW": "雲杉木板"
+        },
+        {
+            "name": "DIAMOND_BLOCK",
+            "type": "block",
+            "zh-Hant-TW": "鑽石塊"
+        },
+        {
+            "name": "REDSTONE_WIRE",
+            "type": "block",
+            "zh-Hant-TW": "紅石線路"
+        },
+        {
+            "name": "REPEATER",
+            "type": "block",
+            "zh-Hant-TW": "中繼器"
+        },
+        {
+            "name": "END_STONE",
+            "type": "block",
+            "zh-Hant-TW": "終界石"
+        },
+        {
+            "name": "ANVIL",
+            "type": "block",
+            "zh-Hant-TW": "鐵砧"
+        },
+        {
+            "name": "OBSIDIAN",
+            "type": "block",
+            "zh-Hant-TW": "黑曜石"
+        },
+        {
+            "name": "ACACIA_TRAPDOOR",
+            "type": "block",
+            "zh-Hant-TW": "相思木地板門"
+        },
+        {
+            "name": "DIRT_PATH",
+            "type": "block",
+            "zh-Hant-TW": "土徑"
+        },
+        {
+            "name": "COBBLESTONE_WALL",
+            "type": "block",
+            "zh-Hant-TW": "鵝卵石牆"
+        },
+        {
+            "name": "LEAD",
+            "type": "block",
+            "zh-Hant-TW": "拴繩"
+        },
+        {
+            "name": "DIAMOND_PICKAXE",
+            "type": "block",
+            "zh-Hant-TW": "鑽石鎬"
+        },
+        {
+            "name": "MAGENTA_BANNER",
+            "type": "block",
+            "zh-Hant-TW": "品紅色旗幟"
+        },
+        {
+            "name": "STICKY_PISTON",
+            "type": "block",
+            "zh-Hant-TW": "黏性活塞"
+        },
+        {
+            "name": "WHITE_BANNER",
+            "type": "block",
+            "zh-Hant-TW": "白色旗幟"
+        },
+        {
+            "name": "SNOWBALL",
+            "type": "block",
+            "zh-Hant-TW": "雪球"
+        },
+        {
+            "name": "ARROW",
+            "type": "block",
+            "zh-Hant-TW": "箭矢"
+        },
+        {
+            "name": "WOODEN_SWORD",
+            "type": "block",
+            "zh-Hant-TW": "木劍"
+        },
+        {
+            "name": "TNT",
+            "type": "block",
+            "zh-Hant-TW": "炸藥"
         }
     ]
 }
