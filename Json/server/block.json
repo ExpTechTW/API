@@ -363,7 +363,7 @@
         },
         {
             "name": "SAND",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-Hant-TW": "沙"
         },
         {
