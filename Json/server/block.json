@@ -337,14 +337,154 @@
     ],
     "ID": [
         {
+            "name": "TALL_GRASS",
+            "type": "block",
+            "zh-Hant-TW": "芒草"
+        },
+        {
+            "name": "GRASS",
+            "type": "block",
+            "zh-Hant-TW": "草"
+        },
+        {
+            "name": "ROSE_BUSH",
+            "type": "block",
+            "zh-Hant-TW": "玫瑰叢"
+        },
+        {
+            "name": "STONE",
+            "type": "block",
+            "zh-Hant-TW": "石頭"
+        },
+        {
+            "name": "GRASS_BLOCK",
+            "type": "block",
+            "zh-Hant-TW": "草地"
+        },
+        {
             "name": "SAND",
             "type": "block",
             "zh-Hant-TW": "沙"
         },
         {
+            "name": "OXEYE_DAISY",
+            "type": "block",
+            "zh-Hant-TW": "雛菊"
+        },
+        {
+            "name": "POPPY",
+            "type": "block",
+            "zh-Hant-TW": "罌粟"
+        },
+        {
+            "name": "SANDSTONE",
+            "type": "block",
+            "zh-Hant-TW": "砂岩"
+        },
+        {
             "name": "DIRT",
             "type": "block",
             "zh-Hant-TW": "泥土"
+        },
+        {
+            "name": "IRON_ORE",
+            "type": "block",
+            "zh-Hant-TW": "鐵礦"
+        },
+        {
+            "name": "GOLD_ORE",
+            "type": "block",
+            "zh-Hant-TW": "金礦"
+        },
+        {
+            "name": "DIAMOND_ORE",
+            "type": "block",
+            "zh-Hant-TW": "鑽石礦"
+        },
+        {
+            "name": "DIORITE",
+            "type": "block",
+            "zh-Hant-TW": "閃長岩"
+        },
+        {
+            "name": "DEEPSLATE_DIAMOND_ORE",
+            "type": "block",
+            "zh-Hant-TW": "深板岩鑽石礦"
+        },
+        {
+            "name": "SNOW",
+            "type": "block",
+            "zh-Hant-TW": "雪"
+        },
+        {
+            "name": "CORNFLOWER",
+            "type": "block",
+            "zh-Hant-TW": "矢車菊"
+        },
+        {
+            "name": "DANDELION",
+            "type": "block",
+            "zh-Hant-TW": "蒲公英"
+        },
+        {
+            "name": "AZURE_BLUET",
+            "type": "block",
+            "zh-Hant-TW": "雛草"
+        },
+        {
+            "name": "COPPER_ORE",
+            "type": "block",
+            "zh-Hant-TW": "銅礦"
+        },
+        {
+            "name": "ANDESITE",
+            "type": "block",
+            "zh-Hant-TW": "安山岩"
+        },
+        {
+            "name": "GRANITE",
+            "type": "block",
+            "zh-Hant-TW": "花崗岩"
+        },
+        {
+            "name": "TORCH",
+            "type": "block",
+            "zh-Hant-TW": "火把"
+        },
+        {
+            "name": "OAK_PLANKS",
+            "type": "block",
+            "zh-Hant-TW": "橡木木板"
+        },
+        {
+            "name": "SUGAR_CANE",
+            "type": "block",
+            "zh-Hant-TW": "甘蔗"
+        },
+        {
+            "name": "BREWING_STAND",
+            "type": "block",
+            "zh-Hant-TW": "釀造台"
+        },
+        {
+            "name": "DEEPSLATE",
+            "type": "block",
+            "zh-Hant-TW": "深板岩"
+        },
+        {
+            "name": "TUFF",
+            "type": "block",
+            "zh-Hant-TW": "凝灰石"
+        },
+        {
+            "name": "COBBLESTONE",
+            "type": "block",
+            "zh-Hant-TW": "鵝卵石"
+        },
+        {
+            "name": "鵝卵石",
+            "type": "block",
+            "zh-Hant-TW": "仙人掌"
         }
     ]
 }
