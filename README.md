@@ -270,6 +270,7 @@ return curl_exec($curl);
 - 加入版本: 22w04-pre1 ( 棄用 22w05-pre1 由 [Statistic](#Statistic) 取代 )
 - 說明: 用來獲取玩家方塊挖掘統計的功能
 - FormatVersion: ```1```
+- 附加參數: ```ServerUUID```
 - 範例: 
 ```
 {
@@ -285,6 +286,7 @@ return curl_exec($curl);
 - 加入版本: 22w04-pre1
 - 說明: 用來獲取玩家背包物品詳情的功能
 - FormatVersion: ```1```
+- 附加參數: ```ServerUUID```
 - 範例: 
 ```
 {
@@ -300,6 +302,7 @@ return curl_exec($curl);
 - 加入版本: 22w05-pre1
 - 說明: 用來獲取玩家各項統計數據的功能
 - FormatVersion: ```1```
+- 附加參數: ```Addition.type``` ```ServerUUID```
 - 範例: 
 ```
 {
