@@ -338,27 +338,27 @@
     "ID": [
         {
             "name": "TALL_GRASS",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "芒草"
         },
         {
             "name": "GRASS",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "草"
         },
         {
             "name": "ROSE_BUSH",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "玫瑰叢"
         },
         {
             "name": "STONE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "石頭"
         },
         {
             "name": "GRASS_BLOCK",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "草地"
         },
         {
@@ -368,462 +368,462 @@
         },
         {
             "name": "OXEYE_DAISY",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "雛菊"
         },
         {
             "name": "POPPY",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "罌粟"
         },
         {
             "name": "SANDSTONE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "砂岩"
         },
         {
             "name": "DIRT",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "泥土"
         },
         {
             "name": "IRON_ORE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "鐵礦"
         },
         {
             "name": "GOLD_ORE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "金礦"
         },
         {
             "name": "DIAMOND_ORE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "鑽石礦"
         },
         {
             "name": "DIORITE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "閃長岩"
         },
         {
             "name": "DEEPSLATE_DIAMOND_ORE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "深板岩鑽石礦"
         },
         {
             "name": "SNOW",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "雪"
         },
         {
             "name": "CORNFLOWER",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "矢車菊"
         },
         {
             "name": "DANDELION",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "蒲公英"
         },
         {
             "name": "AZURE_BLUET",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "雛草"
         },
         {
             "name": "COPPER_ORE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "銅礦"
         },
         {
             "name": "ANDESITE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "安山岩"
         },
         {
             "name": "GRANITE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "花崗岩"
         },
         {
             "name": "TORCH",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "火把"
         },
         {
             "name": "OAK_PLANKS",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "橡木木板"
         },
         {
             "name": "SUGAR_CANE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "甘蔗"
         },
         {
             "name": "BREWING_STAND",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "釀造台"
         },
         {
             "name": "DEEPSLATE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "深板岩"
         },
         {
             "name": "TUFF",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "凝灰石"
         },
         {
             "name": "COBBLESTONE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "鵝卵石"
         },
         {
             "name": "CACTUS",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "仙人掌"
         },
         {
             "name": "FLOWERING_AZALEA_LEAVES",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "杜鵑花"
         },
         {
             "name": "NETHERRACK",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "地獄岩"
         },
         {
             "name": "GLASS",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "玻璃"
         },
         {
             "name": "SPRUCE_LEAVES",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "杉木樹葉"
         },
         {
             "name": "SPRUCE_LOG",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "杉木原木"
         },
         {
             "name": "WHEAT",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "小麥"
         },
         {
             "name": "CARROTS",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "胡蘿蔔"
         },
         {
             "name": "DEEPSLATE_REDSTONE_ORE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "深層紅石礦"
         },
         {
             "name": "BIG_DRIPLEAF",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "大型垂滴葉"
         },
         {
             "name": "YELLOW_SHULKER_BOX",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "黃色界伏盒"
         },
         {
             "name": "IRON_ORE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "鐵礦"
         },
         {
             "name": "LIGHT_BLUE_CONCRETE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "淺藍色混凝土"
         },
         {
             "name": "OAK_LEAVES",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "橡木樹葉"
         },
         {
             "name": "OAK_LOG",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "橡木原木"
         },
         {
             "name": "BIRCH_LOG",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "樺木原木"
         },
         {
             "name": "BIRCH_LEAVES",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "樺木樹葉"
         },
         {
             "name": "COAL_ORE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "煤炭礦"
         },
         {
             "name": "GRAVEL",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "礫石"
         },
         {
             "name": "BLUE_SHULKER_BOX",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "藍色界伏盒"
         },
         {
             "name": "CHEST",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "箱子"
         },
         {
             "name": "SHULKER_BOX",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "界伏盒"
         },
         {
             "name": "CRAFTING_TABLE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "工作台"
         },
         {
             "name": "SMOOTH_STONE_SLAB",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "平滑石半磚"
         },
         {
             "name": "LEVER",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "拉桿"
         },
         {
             "name": "PISTON",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "活塞"
         },
         {
             "name": "OBSERVER",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "觀察者"
         },
         {
             "name": "SMALL_DRIPLEAF",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "小型垂滴葉"
         },
         {
             "name": "STONE_BRICKS",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "石磚"
         },
         {
             "name": "LIME_SHULKER_BOX",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "綠色界伏盒"
         },
         {
             "name": "CRIMSON_ROOTS",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "緋紅菌索"
         },
         {
             "name": "CRIMSON_NYLIUM",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "詭異菌岩"
         },
         {
             "name": "NETHER_WART_BLOCK",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "地獄疣塊"
         },
         {
             "name": "FIRE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "火"
         },
         {
             "name": "BAMBOO",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "竹子"
         },
         {
             "name": "WEEPING_VINES_PLANT",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "垂淚藤"
         },
         {
             "name": "NETHER_GOLD_ORE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "地獄金礦"
         },
         {
             "name": "CRIMSON_PLANKS",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "緋紅木板"
         },
         {
             "name": "SOUL_SOIL",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "靈魂土"
         },
         {
             "name": "LARGE_FERN",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "大型蕨"
         },
         {
             "name": "SWEET_BERRY_BUSH",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "甜莓"
         },
         {
             "name": "SOUL_FIRE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "靈魂火"
         },
         {
             "name": "POWDER_SNOW",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "細雪"
         },
         {
             "name": "SMOOTH_STONE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "平滑石頭"
         },
         {
             "name": "RED_SHULKER_BOX",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "紅色界伏盒"
         },
         {
             "name": "WHITE_SHULKER_BOX",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "白色界伏盒"
         },
         {
             "name": "BIRCH_TRAPDOOR",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "白樺木地板門"
         },
         {
             "name": "FERN",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "蕨"
         },
         {
             "name": "ICE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "冰"
         },
         {
             "name": "SEAGRASS",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "海草"
         },
         {
             "name": "SPRUCE_PLANKS",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "雲杉木板"
         },
         {
             "name": "DIAMOND_BLOCK",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "鑽石塊"
         },
         {
             "name": "REDSTONE_WIRE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "紅石線路"
         },
         {
             "name": "REPEATER",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "中繼器"
         },
         {
             "name": "END_STONE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "終界石"
         },
         {
             "name": "ANVIL",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "鐵砧"
         },
         {
             "name": "OBSIDIAN",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "黑曜石"
         },
         {
             "name": "ACACIA_TRAPDOOR",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "相思木地板門"
         },
         {
             "name": "DIRT_PATH",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "土徑"
         },
         {
             "name": "COBBLESTONE_WALL",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "鵝卵石牆"
         },
         {
             "name": "LEAD",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "拴繩"
         },
         {
             "name": "DIAMOND_PICKAXE",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "鑽石鎬"
         },
         {
             "name": "MAGENTA_BANNER",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "品紅色旗幟"
         },
         {
             "name": "STICKY_PISTON",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "黏性活塞"
         },
         {
             "name": "WHITE_BANNER",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "白色旗幟"
         },
         {
             "name": "SNOWBALL",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "雪球"
         },
         {
             "name": "ARROW",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "箭矢"
         },
         {
             "name": "WOODEN_SWORD",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "木劍"
         },
         {
             "name": "TNT",
-            "type": [],
+            "type": ["DROP","PICKUP"],
             "zh-TW": "炸藥"
         }
     ]
