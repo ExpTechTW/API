@@ -1,26 +1,10 @@
 # ExpTech_API GitHub
 <img alt="Discord" src="https://img.shields.io/discord/926545182407688273">
-編程、設計、創意、實用
-<br>
-努力成為真正的高手
-<br />
-<p align="center">
-  <a href="https://github.com/ExpTech-tw/Example/">
-    <img src="image/ExpTech.png" alt="ExpTech" width="150" height="150">
-  </a>
-  <h3 align="center">ExpTech</h3>
-  <p align="center">
-    ! 用科技創造無限可能 !
-    <br />
-    ·
-    <a href="https://github.com/ExpTech-tw/Example/issues">錯誤回報</a>
-    ·
-  </p>
-</p>
 
-# 項目概要
-* 這是一個由 ExpTech.tw 開發的集成 API
-* 官方 [Discord](https://discord.gg/5dbHqV8ees)
+------
+
+- 這是一個由 ExpTech.tw 開發的集成 API
+- 官方 [Discord](https://discord.gg/5dbHqV8ees)
 
 # 索引
 - [資訊](#資訊)
@@ -42,6 +26,7 @@
 - ```ws://150.117.110.118:1015```
 #### POST (HTTP)
 - ```http://150.117.110.118:10150```
+### [API 服務器 即時狀態](https://stats.uptimerobot.com/KElQPHqKVk/789445691)
 
 # 注意
 - 請務必使用最新的 FormatVersion 來請求服務
@@ -65,7 +50,8 @@
 }
 ```
 
-#### JavaScript `POST (HTTP)`
+#### JavaScript
+`POST (HTTP)`
 ```javascript
 const axios = require('axios')
 
