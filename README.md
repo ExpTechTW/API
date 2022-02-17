@@ -51,9 +51,9 @@
 - [RecordTree](https://github.com/ExpTechTW/RecordTree)
 - [ExpTech_Website](https://github.com/ExpTechTW/ExpTech_Website)
 - [ExpTech_Core](https://github.com/ExpTechTW/ExpTech_Core)
-- [ExpTech_Economy](https://github.com/ExpTechTW/ExpTech_Economy)
-- [ExpTech_DataRecord](https://github.com/ExpTechTW/ExpTech_DataRecord)
-- [ExpTech_BanSystem](https://github.com/ExpTechTW/ExpTech_BanSystem)
+  - [ExpTech_Economy](https://github.com/ExpTechTW/ExpTech_Economy)
+  - [ExpTech_DataRecord](https://github.com/ExpTechTW/ExpTech_DataRecord)
+  - [ExpTech_BanSystem](https://github.com/ExpTechTW/ExpTech_BanSystem)
 - [ExpTech_DC_Bot](https://github.com/ExpTechTW/ExpTech_DC_Bot)
 - [ExpTech_Discord_Bot](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 ##### `第三方合作伙伴`
