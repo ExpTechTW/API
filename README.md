@@ -38,7 +38,10 @@
 - `APIkey` `Function` `Type` `FormatVersion` 為必須參數
 
 ## 貢獻者
-* whes1015 - 程式開發
+- whes1015 `程式開發` `附加資料庫` `文檔`
+- jiajun190808 `附加資料庫`
+- darian-YT `附加資料庫`
+- smile-minecraft `附加資料庫`
 
 ## 項目
 #### WebSocket
