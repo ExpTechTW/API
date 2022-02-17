@@ -65,7 +65,7 @@
 }
 ```
 
-#### JavaScript
+#### JavaScript `POST (HTTP)`
 ```javascript
 const axios = require('axios')
 
@@ -103,7 +103,7 @@ axios
         })
 ```
 
-#### Python
+#### Python `POST (HTTP)`
 ```python
 import requests
 
@@ -137,7 +137,7 @@ else:
     print("錯誤: {}".format(Json["response"]))
 ```
 
-#### Java
+#### Java `POST (HTTP)`
 ```java
 public static String Post(JsonObject Jsondata)  {
         String data = Jsondata.toString();
@@ -202,7 +202,7 @@ public static String Post(JsonObject Jsondata)  {
     }
 ```
 
-#### PHP
+#### PHP `POST (HTTP)`
 ```PHP
 $APIkey="放入你的 API Key";
 $FormatVersion=1;
@@ -239,6 +239,7 @@ return curl_exec($curl);
 # et
 ### urlChecker
 - 加入版本: 21w52-pre1
+- 傳輸協定: `POST (HTTP)`
 - 說明: 用來檢測惡意網址的功能
 - FormatVersion: ```1```
 - 範例: 
@@ -254,6 +255,7 @@ return curl_exec($curl);
 
 ### md5
 - 加入版本: 22w01-pre2
+- 傳輸協定: `POST (HTTP)`
 - 說明: 用來計算 md5 值的功能
 - FormatVersion: ```1```
 - 範例: 
@@ -271,6 +273,7 @@ return curl_exec($curl);
 # serverData
 ### BlockValue
 - 加入版本: 22w04-pre1 ( 棄用 22w05-pre1 由 [Statistic](#Statistic) 取代 )
+- 傳輸協定: `POST (HTTP)`
 - 說明: 用來獲取玩家方塊挖掘統計的功能
 - FormatVersion: ```1```
 - 附加參數: ```ServerUUID```
@@ -287,6 +290,7 @@ return curl_exec($curl);
 
 ### Inventory
 - 加入版本: 22w04-pre1
+- 傳輸協定: `POST (HTTP)`
 - 說明: 用來獲取玩家背包物品詳情的功能
 - FormatVersion: ```1```
 - 附加參數: ```ServerUUID```
@@ -303,6 +307,7 @@ return curl_exec($curl);
 
 ### Statistic
 - 加入版本: 22w05-pre1
+- 傳輸協定: `POST (HTTP)`
 - 說明: 用來獲取玩家各項統計數據的功能
 - FormatVersion: ```1```
 - 附加參數: ```Addition.type``` ```ServerUUID```
