@@ -1,13 +1,12 @@
-## 功能
-#### 功能列表
-##### [et](#et)
+## 功能列表
+#### [et](#et)
 - [urlChecker](#urlchecker)
 - [md5](#md5)
-##### [serverData](#serverData)
+#### [serverData](#serverData)
 - [BlockValue](#BlockValue)
 - [Inventory](#Inventory)
 - [Statistic](#Statistic)
-##### [economy](#economy)
+#### [economy](#economy)
 - [assets](#assets)
 
 # et
