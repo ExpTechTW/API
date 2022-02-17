@@ -41,7 +41,7 @@
 - whes1015 `程式開發` `附加資料庫` `文檔`
 - jiajun190808 `附加資料庫`
 - darian-YT `附加資料庫`
-- smile-minecraft `附加資料庫`
+- smile-minecraft `附加資料庫` `第三方合作伙伴`
 
 ## 項目
 #### WebSocket
@@ -60,7 +60,7 @@
 - [ExpTech_DC_Bot](https://github.com/ExpTechTW/ExpTech_DC_Bot)
 - [ExpTech_Discord_Bot](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 ##### `第三方合作伙伴`
-- [Bot](https://github.com/ExpTechTW/ExpTech_DC_Bot)
+- [bot](https://github.com/smile-minecraft/bot) `smile-minecraft`
 
 ## 發佈規則
 - 如果新版本中有錯誤，且尚未列出，請將錯誤資訊提交到 ```issue```
