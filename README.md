@@ -8,6 +8,7 @@
 
 ## 索引
 - [資訊](#資訊)
+- [開始](#開始)
 - [文檔](#文檔)
 - [注意](#注意)
 - [貢獻者](#貢獻者)
@@ -22,16 +23,12 @@
 - `http://150.117.110.118:10150`
 #### [API 服務器 即時狀態](https://stats.uptimerobot.com/KElQPHqKVk/789445691)
 
-## 文檔
-#### 開始
+## 開始
 - 獲取 API Key 詳情請參考 [這裡](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
------
-#### 程式
+
+## 文檔
 - [程式文檔](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/CODE.md)
------
-#### 規則
 - [規則文檔](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/RULE.md)
------
 
 ## 注意
 - 請務必使用最新的 `FormatVersion` 來請求服務
