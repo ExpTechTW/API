@@ -28,7 +28,7 @@
 - [程式文檔](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/CODE.md)
 -----
 #### 規則
-- [規則文檔](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/HTTP_POST.md)
+- [規則文檔](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/RULE.md)
 -----
 
 # 注意
