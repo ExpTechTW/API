@@ -20,7 +20,7 @@
 - [功能](#功能)
   - [功能列表](#功能列表)
 - [貢獻者](#貢獻者)
-- [依賴此 API 的項目](#依賴此 API 的項目)
+- [項目](#項目)
 
 # 資訊
 #### WebSocket
@@ -315,7 +315,7 @@ return curl_exec($curl);
 # 貢獻者
 * whes1015 - 程式開發
 
-# 依賴此 API 的項目
+# 項目
 #### WebSocket
 - [ET_Smart_Socket](https://github.com/ExpTechTW/ET_Smart_Socket)
 -----
