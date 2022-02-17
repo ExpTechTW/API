@@ -45,11 +45,12 @@
 
 # serverData
 ### BlockValue
-- 加入版本: 22w04-pre1 ( 棄用 22w05-pre1 由 [Statistic](#Statistic) 取代 )
+- 加入版本: 22w04-pre1 `22w05-pre1棄用 Statistic 取代`
 - 傳輸協定: `POST (HTTP)`
 - 說明: 用來獲取玩家方塊挖掘統計的功能
 - FormatVersion: ```1```
 - 附加參數: ```ServerUUID```
+- 依賴: [`ExpTech_Core`](https://github.com/ExpTechTW/ExpTech_Core) [`ExpTech_DataRecord`](https://github.com/ExpTechTW/ExpTech_DataRecord)
 - 範例: 
 ```
 {
@@ -67,6 +68,7 @@
 - 說明: 用來獲取玩家背包物品詳情的功能
 - FormatVersion: ```1```
 - 附加參數: ```ServerUUID```
+- 依賴: [`ExpTech_Core`](https://github.com/ExpTechTW/ExpTech_Core) [`ExpTech_Economy`](https://github.com/ExpTechTW/ExpTech_Economy)
 - 範例: 
 ```
 {
@@ -84,6 +86,7 @@
 - 說明: 用來獲取玩家各項統計數據的功能
 - FormatVersion: ```1```
 - 附加參數: ```Addition.type``` ```ServerUUID```
+- 依賴: [`ExpTech_Core`](https://github.com/ExpTechTW/ExpTech_Core) [`ExpTech_DataRecord`](https://github.com/ExpTechTW/ExpTech_DataRecord)
 - 範例: 
 ```
 {
