@@ -38,7 +38,10 @@
 - [貢獻者](#貢獻者)
 
 # 資訊
-- API 主要-服務器 ```http://150.117.110.118:10150/```
+#### WebSocket
+- ```ws://localhost:1015```
+#### POST (HTTP)
+- ```http://150.117.110.118:10150```
 
 # 注意
 - 請務必使用最新的 FormatVersion 來請求服務
@@ -316,3 +319,18 @@ return curl_exec($curl);
 
 # 貢獻者
 * whes1015 - 程式開發
+
+# 依賴此 API 的項目
+#### WebSocket
+- [ET_Smart_Socket](https://github.com/ExpTechTW/ET_Smart_Socket)
+-----
+#### POST (HTTP)
+- [Answer](https://github.com/ExpTechTW/Answer)
+- [RecordTree](https://github.com/ExpTechTW/RecordTree)
+- [ExpTech_Website](https://github.com/ExpTechTW/ExpTech_Website)
+- [ExpTech_Core](https://github.com/ExpTechTW/ExpTech_Core)
+- [ExpTech_Economy](https://github.com/ExpTechTW/ExpTech_Economy)
+- [ExpTech_DataRecord](https://github.com/ExpTechTW/ExpTech_DataRecord)
+- [ExpTech_BanSystem](https://github.com/ExpTechTW/ExpTech_BanSystem)
+- [ExpTech_DC_Bot](https://github.com/ExpTechTW/ExpTech_DC_Bot)
+- [ExpTech_Discord_Bot](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
