@@ -89,7 +89,8 @@ axios
         })
 ```
 
-#### Python `POST (HTTP)`
+#### Python
+`POST (HTTP)`
 ```python
 import requests
 
@@ -123,7 +124,8 @@ else:
     print("錯誤: {}".format(Json["response"]))
 ```
 
-#### Java `POST (HTTP)`
+#### Java
+`POST (HTTP)`
 ```java
 public static String Post(JsonObject Jsondata)  {
         String data = Jsondata.toString();
@@ -188,7 +190,8 @@ public static String Post(JsonObject Jsondata)  {
     }
 ```
 
-#### PHP `POST (HTTP)`
+#### PHP
+`POST (HTTP)`
 ```PHP
 $APIkey="放入你的 API Key";
 $FormatVersion=1;
