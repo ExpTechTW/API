@@ -45,7 +45,8 @@
 
 # serverData
 ### BlockValue
-- 加入版本: 22w04-pre1 `22w05-pre1棄用 Statistic 取代`
+`22w05-pre1棄用 由 Statistic 取代`
+- 加入版本: 22w04-pre1
 - 傳輸協定: `POST (HTTP)`
 - 說明: 用來獲取玩家方塊挖掘統計的功能
 - FormatVersion: ```1```
