@@ -24,7 +24,7 @@
 
 ## 文檔
 #### 開始
-- 1.獲取 API Key 詳情請參考 [這裡](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
+- 獲取 API Key 詳情請參考 [這裡](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 -----
 #### 程式
 - [程式文檔](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/CODE.md)
