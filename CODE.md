@@ -40,4 +40,3 @@
 -----
 ### C++
 - [urlChecker](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/urlChecker.py)
------
