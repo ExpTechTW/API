@@ -37,20 +37,20 @@
 -----
 ### Java
 #### `POST (HTTP)`
-- [urlChecker](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/urlChecker.py)
+- [function](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/function.java)
 #### `WebSocket`
 -----
 ### PHP
 #### `POST (HTTP)`
-- [urlChecker](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/urlChecker.py)
+- [function](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/function.php)
 #### `WebSocket`
 -----
 ### Dart
 #### `POST (HTTP)`
-- [urlChecker](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/urlChecker.py)
+- [function](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/function.dart)
 #### `WebSocket`
 -----
 ### C++
 #### `POST (HTTP)`
-- [urlChecker](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/urlChecker.py)
+- [function](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/function.cpp)
 #### `WebSocket`
