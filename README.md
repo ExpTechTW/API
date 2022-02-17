@@ -42,9 +42,11 @@
 
 ## 項目
 #### WebSocket
+##### `ExpTech`
 - [ET_Smart_Socket](https://github.com/ExpTechTW/ET_Smart_Socket)
 -----
 #### POST (HTTP)
+##### `ExpTech`
 - [Answer](https://github.com/ExpTechTW/Answer)
 - [RecordTree](https://github.com/ExpTechTW/RecordTree)
 - [ExpTech_Website](https://github.com/ExpTechTW/ExpTech_Website)
@@ -54,6 +56,8 @@
 - [ExpTech_BanSystem](https://github.com/ExpTechTW/ExpTech_BanSystem)
 - [ExpTech_DC_Bot](https://github.com/ExpTechTW/ExpTech_DC_Bot)
 - [ExpTech_Discord_Bot](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
+##### `第三方合作伙伴`
+- [Bot](https://github.com/ExpTechTW/ExpTech_DC_Bot)
 
 ## 發佈規則
 - 如果新版本中有錯誤，且尚未列出，請將錯誤資訊提交到 ```issue```
