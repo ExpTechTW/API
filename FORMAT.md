@@ -4,7 +4,7 @@
 
 # et
 ### urlChecker
-#### `FormatVersion: 1`
+#### FormatVersion 1
 - 狀態: `支援`
 ```
 {
