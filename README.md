@@ -27,7 +27,6 @@
 - 獲取 API Key 詳情請參考 [這裡](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 - 每個 API Key 每日請求上限次數為 50000 次
 - 每秒超過 50 次請求會觸發 懲罰性限速 3000ms 為期一小時
-- 請務必使用最新的 `FormatVersion` 來請求服務
 - `APIkey` `Function` `Type` `FormatVersion` 為必須參數
 ##### `WebSocket`
 - 
