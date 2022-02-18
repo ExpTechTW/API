@@ -11,7 +11,6 @@
 
 # et
 ### urlChecker
-- 加入版本: 21w52-pre1
 - 傳輸協定: `POST (HTTP)`
 - 說明: 用來檢測惡意網址的功能
 - FormatVersion: `2`  `1`
@@ -27,7 +26,6 @@
 ```
 
 ### md5
-- 加入版本: 22w01-pre2
 - 傳輸協定: `POST (HTTP)`
 - 說明: 用來計算 md5 值的功能
 - FormatVersion: ```1```
@@ -45,8 +43,7 @@
 
 # serverData
 ### BlockValue
-`22w05-pre1棄用 由 Statistic 取代`
-- 加入版本: 22w04-pre1
+`棄用 由 Statistic 取代`
 - 傳輸協定: `POST (HTTP)`
 - 說明: 用來獲取玩家方塊挖掘統計的功能
 - FormatVersion: ```1```
@@ -64,7 +61,6 @@
 ```
 
 ### Inventory
-- 加入版本: 22w04-pre1
 - 傳輸協定: `POST (HTTP)`
 - 說明: 用來獲取玩家背包物品詳情的功能
 - FormatVersion: ```1```
@@ -82,7 +78,6 @@
 ```
 
 ### Statistic
-- 加入版本: 22w05-pre1
 - 傳輸協定: `POST (HTTP)`
 - 說明: 用來獲取玩家各項統計數據的功能
 - FormatVersion: ```1```
