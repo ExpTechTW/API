@@ -34,6 +34,7 @@
 ## 文檔
 - [程式文檔](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/CODE.md)
 - [規則文檔](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/RULE.md)
+- [格式文檔](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/FORMAT.md)
 
 ## 貢獻者
 - whes1015 `程式開發` `附加資料庫` `文檔`
