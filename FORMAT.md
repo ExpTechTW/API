@@ -4,7 +4,8 @@
 
 # et
 ### urlChecker
-##### FormatVersion:  `1`
+#### `FormatVersion: 1`
+- 狀態: `支援`
 ```
 {
   "APIkey": "<放入你的 API Key>",
