@@ -17,12 +17,20 @@
 
 ## 資訊
 #### WebSocket
+##### IP
 - `ws://150.117.110.118:1015`
+##### DDNS
+- `ws://exptech.mywire.org:1015`
 #### POST (HTTP)
+##### IP
 - `http://150.117.110.118:10150`
+##### DDNS
+- `http://exptech.mywire.org:10150`
 #### [API 服務器 即時狀態](https://stats.uptimerobot.com/KElQPHqKVk/789445691)
 
 ## 注意
+- 此 API 為 固定 IP DDNS 非必須
+- DDNS 會導致 150+ms 的查詢延遲 自行評估使用
 ##### `POST (HTTP)`
 - 獲取 API Key 詳情請參考 [這裡](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 - 每個 API Key 每日請求上限次數為 50000 次
