@@ -8,9 +8,8 @@
 
 ## 索引
 - [資訊](#資訊)
-- [開始](#開始)
-- [文檔](#文檔)
 - [注意](#注意)
+- [文檔](#文檔)
 - [貢獻者](#貢獻者)
 - [項目](#項目)
 - [發佈規則](#發佈規則)
@@ -23,18 +22,16 @@
 - `http://150.117.110.118:10150`
 #### [API 服務器 即時狀態](https://stats.uptimerobot.com/KElQPHqKVk/789445691)
 
-## 開始
+## 注意
 - 獲取 API Key 詳情請參考 [這裡](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 - 每個 API Key 每日請求上限次數為 50000 次
 - 每秒超過 50 次請求會觸發 懲罰性限速 3000ms 為期一小時
+- 請務必使用最新的 `FormatVersion` 來請求服務
+- `APIkey` `Function` `Type` `FormatVersion` 為必須參數
 
 ## 文檔
 - [程式文檔](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/CODE.md)
 - [規則文檔](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/RULE.md)
-
-## 注意
-- 請務必使用最新的 `FormatVersion` 來請求服務
-- `APIkey` `Function` `Type` `FormatVersion` 為必須參數
 
 ## 貢獻者
 - whes1015 `程式開發` `附加資料庫` `文檔`
