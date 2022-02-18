@@ -14,7 +14,7 @@
 - 加入版本: 21w52-pre1
 - 傳輸協定: `POST (HTTP)`
 - 說明: 用來檢測惡意網址的功能
-- FormatVersion: ```1```
+- FormatVersion: `2`  `1`
 - 範例: 
 ```
 {
