@@ -3,7 +3,7 @@
 
 ------
 
-- 這是一個由 ExpTech.tw 開發的集成 API
+- 這是一個由 ExpTech.tw 開發的集成 API 服務
 - 官方 [Discord](https://discord.gg/5dbHqV8ees)
 
 ## 索引
@@ -57,6 +57,7 @@
 -----
 #### POST (HTTP)
 ##### `ExpTech`
+- [ExpTech-Home](https://github.com/ExpTechTW/ExpTech-Home)
 - [Answer](https://github.com/ExpTechTW/Answer)
 - [RecordTree](https://github.com/ExpTechTW/RecordTree)
 - [ExpTech_Website](https://github.com/ExpTechTW/ExpTech_Website)
