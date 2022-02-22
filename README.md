@@ -53,7 +53,7 @@
 ## 項目
 #### WebSocket
 ##### `ExpTech`
-- [ET_Smart_Socket](https://github.com/ExpTechTW/ET_Smart_Socket)
+- ET_Smart_Socket
 -----
 #### POST (HTTP)
 ##### `ExpTech`
