@@ -1,5 +1,6 @@
 {
  "ExpTech":"https://raw.githubusercontent.com/ExpTechTW/API/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/StaticDatabase/Images/ExpTech.jpeg",
   "LoginAnimation":"https://raw.githubusercontent.com/ExpTechTW/API/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/StaticDatabase/Lottie/Load-22.02.04.json",
-  "ErrorAnimation":"https://raw.githubusercontent.com/ExpTechTW/API/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/StaticDatabase/Lottie/Error-22.02.05.json"
+  "ErrorAnimation":"https://raw.githubusercontent.com/ExpTechTW/API/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/StaticDatabase/Lottie/Error-22.02.05.json",
+ "NotSupportAnimation":"https://raw.githubusercontent.com/ExpTechTW/API/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/StaticDatabase/Lottie/NotSupport.json"
 }
