@@ -17,7 +17,7 @@
 ```
 #### FormatVersion 2
 - 狀態: `支援`
-- 向下兼容 FormatVersion `≥1`
+- 向下兼容 FormatVersion `≤1`
 - 新增 FuzzyMatch 選項 `默認 false`
 - 啟用 FuzzyMatch 可以最大程度的檢測惡意網址
 ```
