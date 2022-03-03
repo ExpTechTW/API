@@ -59,7 +59,6 @@
 ##### `ExpTech`
 - [ExpTech-Home](https://github.com/ExpTechTW/ExpTech-Home)
 - [Answer](https://github.com/ExpTechTW/Answer)
-- [RecordTree](https://github.com/ExpTechTW/RecordTree)
 - [ExpTech_Website](https://github.com/ExpTechTW/ExpTech_Website)
 - [ExpTech_Core](https://github.com/ExpTechTW/ExpTech_Core)
   - [ExpTech_Economy](https://github.com/ExpTechTW/ExpTech_Economy)
