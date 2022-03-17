@@ -2,12 +2,12 @@
 #### [et](#et) `POST (HTTP)`
 - [urlChecker](#urlchecker) `POST (HTTP)`
 - [md5](#md5) `POST (HTTP)`
-#### [serverData](#serverData) `POST (HTTP)`
-- [BlockValue](#BlockValue) `POST (HTTP)`
-- [Inventory](#Inventory) `POST (HTTP)`
-- [Statistic](#Statistic) `POST (HTTP)`
-#### [economy](#economy) `POST (HTTP)`
-- [assets](#assets) `POST (HTTP)`
+#### [data](#data) `POST (HTTP)`
+- [earthquake](#earthquake) `POST (HTTP)`
+#### [serverData](#serverData) `POST (HTTP)` `棄用`
+- [BlockValue](#BlockValue) `POST (HTTP)` `棄用`
+- [Inventory](#Inventory) `POST (HTTP)` `棄用`
+- [Statistic](#Statistic) `POST (HTTP)` `棄用`
 
 # et
 ### urlChecker
@@ -40,6 +40,20 @@
 }
 ```
 
+# data
+### earthquake
+- 傳輸協定: `POST (HTTP)`
+- 說明: 用來獲取地震資訊的功能
+- FormatVersion: `1`
+- 範例: 
+```
+{
+  "APIkey": "<放入你的 API Key>",
+  "Function": "data",
+  "Type": "earthquake",
+  "FormatVersion": 1
+}
+```
 
 # serverData
 ### BlockValue
@@ -61,6 +75,7 @@
 ```
 
 ### Inventory
+`棄用 停止支援`
 - 傳輸協定: `POST (HTTP)`
 - 說明: 用來獲取玩家背包物品詳情的功能
 - FormatVersion: ```1```
@@ -78,6 +93,7 @@
 ```
 
 ### Statistic
+`棄用 停止支援`
 - 傳輸協定: `POST (HTTP)`
 - 說明: 用來獲取玩家各項統計數據的功能
 - FormatVersion: ```1```
