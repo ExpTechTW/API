@@ -57,6 +57,8 @@
 -----
 #### POST (HTTP)
 ##### `ExpTech`
+- [DWHS](https://github.com/ExpTechTW/DWHS)
+- [ExpTech_Service](https://github.com/ExpTechTW/ExpTech_Service)
 - [ExpTech-Home](https://github.com/ExpTechTW/ExpTech-Home)
 - [Answer](https://github.com/ExpTechTW/Answer)
 - [ExpTech_Website](https://github.com/ExpTechTW/ExpTech_Website)
