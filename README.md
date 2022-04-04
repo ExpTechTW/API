@@ -66,6 +66,9 @@
   - [ExpTech_Economy](https://github.com/ExpTechTW/ExpTech_Economy)
   - [ExpTech_DataRecord](https://github.com/ExpTechTW/ExpTech_DataRecord)
   - [ExpTech_BanSystem](https://github.com/ExpTechTW/ExpTech_BanSystem)
+  - [ExpTech_Here](https://github.com/ExpTechTW/ExpTech_Here)
+  - [ExpTech_Organization](https://github.com/ExpTechTW/ExpTech_Organization)
+  - [ExpTech_FreeCamera](https://github.com/ExpTechTW/ExpTech_FreeCamera)
 - [ExpTech_DC_Bot](https://github.com/ExpTechTW/ExpTech_DC_Bot)
 - [ExpTech_Discord_Bot](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
 ##### `第三方合作伙伴`
