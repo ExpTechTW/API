@@ -22,7 +22,15 @@
 }
 `
 #### `WebSocket`
-- 無
+- [websocket-test](http://www.websocket-test.com/)
+- APIhost
+`ws://150.117.110.118:910`
+- 複製下方文字到 發送內容
+`
+{
+"APIkey":"<放你的 API Key>"
+}
+`
 
 ## 程式
 ### JavaScript
