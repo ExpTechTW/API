@@ -31,13 +31,15 @@
 ## 注意
 - 此 API 為 固定 IP DDNS 非必須
 - DDNS 會導致 150+ms 的查詢延遲 自行評估使用
-##### `POST (HTTP)`
-- 獲取 API Key 請前往 [這裡](http://150.117.110.118/)
+- 獲取 API Key 請前往 [這裡](http://150.117.110.118/service/)
 - 每個 API Key 每日請求上限次數為 50000 次
-- 每秒超過 50 次請求會觸發 懲罰性限速 3000ms 為期一小時
+- 每個 IP 每秒超過 10 次請求會觸發 懲罰性限速 3000ms 為期一小時
+- 每個 IP 每秒超過 50 次請求會觸發 IP封鎖 為期一小時
 - `APIkey` `Function` `Type` `FormatVersion` 為必須參數
-##### `WebSocket`
+##### `POST (HTTP)`
 - 
+##### `WebSocket`
+- `EID` 為 `WebSocket` 除上述參數之外還額外需要的 必須參數
 
 ## 文檔
 - [程式文檔](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/CODE.md)
