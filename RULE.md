@@ -1,3 +1,34 @@
+## 注意
+- 在 請求內容中 加入 `"Info":true` 可獲得 Service Info
+```json
+{
+  "APIkey":"<放入你的 API Key>",
+  "Info":true
+}
+```
+- Response
+```json5
+{
+    "state": "Success",
+    "response": null,
+    "ver": "5.1",
+    "service": {
+        "state": "Normal", // 服務狀態 [ Normal Unstable Busy Repair ]
+        "queue": 0, // API 等待隊列
+        "TimeUse": 1, // 從接收到回應費時 (單位 ms)
+        "StartTime": 1649154512513, // 接收到請求時的 UNIX 時間戳，可用於計算網路延遲 (單位 ms)
+        "EndTime": 1649154512514, // 回應時的 UNIX 時間戳 (單位 ms)
+        "Day": 189, // 今日累計服務次數 (所有用戶)
+        "Hour": 189, // 上個整點以來累計服務次數 (所有用戶)
+        "Speed": 0, // API 調用限速，代表此 APIkey 多少毫秒可以調用一次 API 服務
+        "Times": { // 此 APIkey 本日所有使用服務統計
+            "times": 189,
+            "data-earthquake": 189
+        }
+    }
+}
+```
+
 ## 規則列表
 #### [et](#et) `POST (HTTP)`
 - [urlChecker](#urlchecker) `POST (HTTP)`
