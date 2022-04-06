@@ -34,15 +34,65 @@
 ```
 
 ## 規則列表
+#### [RDTS](#RDTS) `POST (HTTP)` `WebSocket`
+- []() `*`
+- []() `*`
+- []() `*`
 #### [et](#et) `POST (HTTP)`
-- [urlChecker](#urlchecker) `POST (HTTP)`
-- [md5](#md5) `POST (HTTP)`
+- [urlChecker](#urlchecker) `*`
+- [md5](#md5) `*`
 #### [data](#data) `POST (HTTP)`
-- [earthquake](#earthquake) `POST (HTTP)`
+- [earthquake](#earthquake) `*`
 #### [serverData](#serverData) `POST (HTTP)` `棄用`
-- [BlockValue](#BlockValue) `POST (HTTP)` `棄用`
-- [Inventory](#Inventory) `POST (HTTP)` `棄用`
-- [Statistic](#Statistic) `POST (HTTP)` `棄用`
+- [BlockValue](#BlockValue) `*` `棄用`
+- [Inventory](#Inventory) `*` `棄用`
+- [Statistic](#Statistic) `*` `棄用`
+
+# RDTS
+### save
+- 傳輸協定: `POST (HTTP)` `WebSocket`
+- 說明: 使用 EID 為識別對象的資料儲存功能
+- FormatVersion: `1`
+- 範例: 
+```
+{
+  "APIkey": "<放入你的 API Key>",
+  "Function": "RDTS",
+  "Type": "save",
+  "FormatVersion": 1,
+  "EID": 1,
+  "Value": "<欲儲存資料 String Int Json Array>"
+}
+```
+### send
+- 傳輸協定: `POST (HTTP)` `WebSocket`
+- 說明: 傳送資料到特定 EID 設備的功能
+- FormatVersion: `1`
+- 範例: 
+```
+{
+  "APIkey": "<放入你的 API Key>",
+  "Function": "RDTS",
+  "Type": "send",
+  "FormatVersion": 1,
+  "EID": 1,
+  "Value": "<欲傳送資料 String Int Json Array>"
+}
+```
+### get
+- 傳輸協定: `POST (HTTP)` `WebSocket`
+- 說明: 使用 EID 為識別對象的資料獲取功能
+- FormatVersion: `1`
+- 範例: 
+```
+{
+  "APIkey": "<放入你的 API Key>",
+  "Function": "RDTS",
+  "Type": "get",
+  "FormatVersion": 1,
+  "EID": 1
+}
+```
 
 # et
 ### urlChecker
