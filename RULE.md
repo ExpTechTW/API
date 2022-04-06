@@ -35,9 +35,9 @@
 
 ## 規則列表
 #### [RDTS](#RDTS) `POST (HTTP)` `WebSocket`
-- []() `*`
-- []() `*`
-- []() `*`
+- [save](#save) `*`
+- [send](#send) `*`
+- [get](#get) `*`
 #### [et](#et) `POST (HTTP)`
 - [urlChecker](#urlchecker) `*`
 - [md5](#md5) `*`
