@@ -39,7 +39,7 @@
 ##### `POST (HTTP)`
 - 
 ##### `WebSocket`
-- `EID` 為 `WebSocket` 除上述參數之外還額外需要的 必須參數
+- `UUID` 為 `WebSocket` 除上述參數之外還額外需要的 必須參數
 
 ## 文檔
 - [規則文檔](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/RULE.md)
