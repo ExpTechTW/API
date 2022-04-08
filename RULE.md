@@ -51,7 +51,7 @@
 # RDTS
 ### save
 - 傳輸協定: `POST (HTTP)` `WebSocket`
-- 說明: 使用 EID 為識別對象的資料儲存功能
+- 說明: 使用 UUID 為識別對象的資料儲存功能
 - FormatVersion: `1`
 - 範例: 
 ```
@@ -60,13 +60,13 @@
   "Function": "RDTS",
   "Type": "save",
   "FormatVersion": 1,
-  "EID": 1,
+  "UUID": 1,
   "Value": "<欲儲存資料 String Int Json Array>"
 }
 ```
 ### send
 - 傳輸協定: `POST (HTTP)` `WebSocket`
-- 說明: 傳送資料到特定 EID 設備的功能
+- 說明: 傳送資料到特定 UUID 設備的功能
 - FormatVersion: `1`
 - 範例: 
 ```
@@ -75,13 +75,13 @@
   "Function": "RDTS",
   "Type": "send",
   "FormatVersion": 1,
-  "EID": 1,
+  "UUID": 1,
   "Value": "<欲傳送資料 String Int Json Array>"
 }
 ```
 ### get
 - 傳輸協定: `POST (HTTP)` `WebSocket`
-- 說明: 使用 EID 為識別對象的資料獲取功能
+- 說明: 使用 UUID 為識別對象的資料獲取功能
 - FormatVersion: `1`
 - 範例: 
 ```
@@ -90,7 +90,7 @@
   "Function": "RDTS",
   "Type": "get",
   "FormatVersion": 1,
-  "EID": 1
+  "UUID": 1
 }
 ```
 
