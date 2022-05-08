@@ -1,5 +1,9 @@
 [
   {
+    "name":"ET_EEW",
+    "image":null
+  },
+  {
     "name":"ET_Smart_Socket",
     "image":null
   }
