@@ -4,7 +4,7 @@
         "Long": 120.292724,
         "PGA":12,
         "Loc":"臺南市 歸仁區",
-        "position":"-Y",
-        "pitch":"UP"
+        "North":"-Y",
+        "East":"-X",
     }
 }
