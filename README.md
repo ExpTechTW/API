@@ -18,15 +18,11 @@
 ## 資訊
 #### WebSocket
 ##### IP
-- `ws://150.117.110.118:910`
-##### DDNS
 - `ws://exptech.mywire.org:910`
 ##### SSL
 - `wss://exptech.mywire.org:1015`
 #### POST (HTTP)
 ##### IP
-- `http://150.117.110.118:10150`
-##### DDNS
 - `http://exptech.mywire.org:10150`
 ##### SSL
 - `https://exptech.mywire.org:1015`
