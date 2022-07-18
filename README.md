@@ -27,7 +27,7 @@
 ##### SSL
 - `https://exptech.mywire.org:1015`
 #### [Proxy 服務器 即時資料](http://exptech.mywire.org:10150/?Function=Proxy)
-#### [API 服務器 即時狀態](https://stats.uptimerobot.com/KElQPHqKVk/789445691)
+#### [API 服務器 即時狀態](https://stats.uptimerobot.com/KElQPHqKVk)
 
 ## 注意
 - 此 API 為 固定 IP DDNS 非必須
