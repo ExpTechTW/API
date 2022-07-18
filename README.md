@@ -16,18 +16,13 @@
 - [合作](#合作)
 
 ## 資訊
-#### WebSocket
-##### IP
-- `ws://exptech.mywire.org:910`
-##### SSL
-- `wss://exptech.mywire.org:1015`
-#### POST (HTTP)
-##### IP
-- `http://exptech.mywire.org:10150`
-##### SSL
-- `https://exptech.mywire.org:1015`
-#### [Proxy 服務器 即時資料](http://exptech.mywire.org:10150/?Function=Proxy)
-#### [API 服務器 即時狀態](https://stats.uptimerobot.com/KElQPHqKVk)
+#### 服務器
+- `exptech.freeddns.org` | `Websocket` `POST` `GET`
+- `exptech-http.mywire.org` | `POST` `GET`
+- `exptech-ws.mywire.org` | `Websocket`
+- `exptech-ssl.mywire.org` | `Websocket` `POST` `GET` `Websocket(SSL)` `POST(SSL)` `GET(SSL)`
+
+#### [服務器 即時狀態](https://stats.uptimerobot.com/KElQPHqKVk)
 
 ## 注意
 - 此 API 為 固定 IP DDNS 非必須
