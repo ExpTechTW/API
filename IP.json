@@ -2,15 +2,5 @@
     "Proxy": {
         "proxy-1": "exptech.mywire.org",
         "proxy-2": "singaporeserver.bnsh.pw"
-    },
-    "HTTP": {
-        "exptech.mywire.org": "10150",
-        "singaporeserver.bnsh.pw": "25579"
-    },
-    "WEBSOCKET": {
-        "exptech.mywire.org": "910"
-    },
-    "SSL": {
-        "exptech.mywire.org": "1015"
     }
 }
