@@ -17,7 +17,7 @@
 
 ## 資訊
 #### 服務器
-- `exptech.freeddns.org` | `Websocket` `POST` `GET`
+- `exptech.mywire.org` | `Websocket` `POST` `GET`
 - `exptech-http.mywire.org` | `POST` `GET`
 - `exptech-ws.mywire.org` | `Websocket`
 - `exptech-ssl.mywire.org` | `Websocket` `POST` `GET` `Websocket(SSL)` `POST(SSL)` `GET(SSL)`
