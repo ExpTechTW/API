@@ -1,6 +1,5 @@
 {
     "Proxy": {
-        "proxy-1": "exptech.mywire.org",
-        "proxy-2": "singaporeserver.bnsh.pw"
+        "proxy-1": "exptech.mywire.org"
     }
 }
