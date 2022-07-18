@@ -1,3 +1,11 @@
 {
-  "list":["exptech.mywire.org"]
+    "HTTP": [
+        "exptech.mywire.org:10150"
+    ],
+    "WEBSOCKET": [
+        "exptech.mywire.org:910"
+    ],
+    "SSL": [
+        "exptech.mywire.org:1015"
+    ]
 }
