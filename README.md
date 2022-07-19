@@ -17,10 +17,7 @@
 
 ## 資訊
 #### 服務器
-- `exptech.mywire.org` | `Websocket` `POST` `GET`
-- `exptech-http.mywire.org` | `POST` `GET`
-- `exptech-ws.mywire.org` | `Websocket`
-- `exptech-ssl.mywire.org` | `Websocket` `POST` `GET` `Websocket(SSL)` `POST(SSL)` `GET(SSL)`
+- `exptech.mywire.org` | **Proxy-1**
 
 #### [服務器 即時狀態](https://stats.uptimerobot.com/KElQPHqKVk)
 
