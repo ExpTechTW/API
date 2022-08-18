@@ -23,6 +23,7 @@
 - `https://exptech.com.tw/get` | **GET SSL**
 - `ws://exptech.com.tw/websocket` | **Websocket No SSL**
 - `wss://exptech.com.tw/websocket` | **Websocket SSL**
+- [網頁 | W](https://exptechtw.github.io/)
 
 #### [服務器 即時狀態](https://stats.uptimerobot.com/KElQPHqKVk)
 
