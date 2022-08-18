@@ -17,7 +17,12 @@
 
 ## 資訊
 #### 服務器
-- `exptech.mywire.org` | **Proxy-1**
+- `http://exptech.com.tw/post` | **POST No SSL**
+- `https://exptech.com.tw/post` | **POST SSL**
+- `http://exptech.com.tw/get` | **GET No SSL**
+- `https://exptech.com.tw/get` | **GET SSL**
+- `ws://exptech.com.tw/websocket` | **Websocket No SSL**
+- `wss://exptech.com.tw/websocket` | **Websocket SSL**
 
 #### [服務器 即時狀態](https://stats.uptimerobot.com/KElQPHqKVk)
 
