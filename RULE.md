@@ -3,194 +3,149 @@
 - [規則列表](#規則列表)
 
 ## 注意
-- 在 請求內容中 加入 `"Info":true` 可獲得 Service Info
-```json
-{
-  "APIkey":"<放入你的 API Key>",
-  "Info":true
-}
-```
-- Response
-```json5
-{
-    "state": "Success",
-    "response": null,
-    "ver": "5.1",
-    "service": {
-        "state": "Normal", // 服務狀態 [ Normal Unstable Busy Repair ]
-        "queue": 0, // API 等待隊列
-        "TimeUse": 1, // 從接收到回應費時 (單位 ms)
-        "StartTime": 1649154512513, // 接收到請求時的 UNIX 時間戳，可用於計算網路延遲 (單位 ms)
-        "EndTime": 1649154512514, // 回應時的 UNIX 時間戳 (單位 ms)
-        "Day": 189, // 今日累計服務次數 (所有用戶)
-        "Hour": 189, // 上個整點以來累計服務次數 (所有用戶)
-        "Speed": 0, // API 調用限速，代表此 APIkey 多少毫秒可以調用一次 API 服務
-        "Times": { // 此 APIkey 本日所有使用服務統計
-            "times": 189,
-            "data-earthquake": 189
-        }
-    }
-}
-```
+- `https://github.com/ExpTechTW` 為 公共密鑰 非全部功能皆可使用
 
 ## 規則列表
-#### [RDTS](#RDTS) `POST (HTTP)` `WebSocket`
-- [save](#save) `*`
-- [send](#send) `*`
-- [get](#get) `*`
-#### [et](#et) `POST (HTTP)`
-- [urlChecker](#urlchecker) `*`
-- [md5](#md5) `*`
-#### [data](#data) `POST (HTTP)`
-- [earthquake](#earthquake) `*`
-#### [serverData](#serverData) `POST (HTTP)` `棄用`
-- [BlockValue](#BlockValue) `*` `棄用`
-- [Inventory](#Inventory) `*` `棄用`
-- [Statistic](#Statistic) `*` `棄用`
+#### [et](#et)
+- [urlChecker](#urlchecker) | 網址安全檢查 ( Google提供服務 )
+- [md5](#md5) | MD5 加密
+#### [data](#data)
+- [radar](#radar) | 雷達迴波
+- [satellite](#satellite) | 衛星雲圖
+- [accumulation](#accumulation) | 累積雨量
+- [PrecipitationForecast](#PrecipitationForecast) | 降水預報
+- [earthquake](#earthquake) | 近 50 筆 地震報告 [小區域/編號]
+- [TREM](#TREM) | TREM 即時測站 & IRIS 測站 三向加速度資料
+- [report](#report) | 查詢編號地震詳細資料 (中央氣象局地震速報訊息)
+- [EEW-v1](#EEW-v1) | 強震即時警報 ( 最新一報 )
 
-# RDTS
-### save
-- 傳輸協定: `POST (HTTP)` `WebSocket`
-- 說明: 使用 UUID 為識別對象的資料儲存功能
-- FormatVersion: `1`
-- 範例: 
-```
-{
-  "APIkey": "<放入你的 API Key>",
-  "Function": "RDTS",
-  "Type": "save",
-  "FormatVersion": 1,
-  "UUID": 1,
-  "Value": "<欲儲存資料 String Int Json Array>"
-}
-```
-### send
-- 傳輸協定: `POST (HTTP)` `WebSocket`
-- 說明: 傳送資料到特定 UUID 設備的功能
-- FormatVersion: `1`
-- 範例: 
-```
-{
-  "APIkey": "<放入你的 API Key>",
-  "Function": "RDTS",
-  "Type": "send",
-  "FormatVersion": 1,
-  "UUID": 1,
-  "Value": "<欲傳送資料 String Int Json Array>"
-}
-```
-### get
-- 傳輸協定: `POST (HTTP)` `WebSocket`
-- 說明: 使用 UUID 為識別對象的資料獲取功能
-- FormatVersion: `1`
-- 範例: 
-```
-{
-  "APIkey": "<放入你的 API Key>",
-  "Function": "RDTS",
-  "Type": "get",
-  "FormatVersion": 1,
-  "UUID": 1
-}
-```
 
 # et
 ### urlChecker
 - 傳輸協定: `POST (HTTP)`
-- 說明: 用來檢測惡意網址的功能
 - [FormatVersion](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/FORMAT.md): `2`  `1`
 - 範例: 
-```
+```json5
 {
-  "APIkey": "<放入你的 API Key>",
+  "APIkey": "https://github.com/ExpTechTW",
   "Function": "et",
   "Type": "urlChecker",
-  "FormatVersion": 1,
   "Value": "<欲檢測文本>"
 }
 ```
 
 ### md5
 - 傳輸協定: `POST (HTTP)`
-- 說明: 用來計算 md5 值的功能
-- FormatVersion: ```1```
 - 範例: 
-```
+```json5
 {
-  "APIkey": "<放入你的 API Key>",
+  "APIkey": "https://github.com/ExpTechTW",
   "Function": "et",
   "Type": "md5",
-  "FormatVersion": 1,
   "Value": "<欲 md5 文本>"
 }
 ```
 
+
 # data
 ### earthquake
 - 傳輸協定: `POST (HTTP)`
-- 說明: 用來獲取地震資訊的功能
-- FormatVersion: `1`
 - 範例: 
-```
+```json5
 {
-  "APIkey": "<放入你的 API Key>",
+  "APIkey": "https://github.com/ExpTechTW",
   "Function": "data",
   "Type": "earthquake",
-  "FormatVersion": 1
+  "Value":50 // 最多 50 數量越多越慢
 }
 ```
 
-# serverData
-### BlockValue
-`棄用 由 Statistic 取代`
+### radar
 - 傳輸協定: `POST (HTTP)`
-- 說明: 用來獲取玩家方塊挖掘統計的功能
-- FormatVersion: ```1```
-- 附加參數: ```ServerUUID```
-- 依賴: [`ExpTech_Core`](https://github.com/ExpTechTW/ExpTech_Core) [`ExpTech_DataRecord`](https://github.com/ExpTechTW/ExpTech_DataRecord)
+- 注意: Response 須加上 `https://exptech.com.tw/get?Function=File&Path=`
 - 範例: 
-```
+```json5
 {
-  "APIkey": "<放入你的 API Key>",
-  "Function": "serverData",
-  "Type": "BlockValue",
-  "FormatVersion": 1,
-  "Value": "<欲獲取方塊挖掘統計的玩家 ID/name>"
+  "APIkey": "https://github.com/ExpTechTW",
+  "Function": "data",
+  "Type": "radar"
 }
 ```
 
-### Inventory
-`棄用 停止支援`
+### satellite
 - 傳輸協定: `POST (HTTP)`
-- 說明: 用來獲取玩家背包物品詳情的功能
-- FormatVersion: ```1```
-- 附加參數: ```ServerUUID```
-- 依賴: [`ExpTech_Core`](https://github.com/ExpTechTW/ExpTech_Core) [`ExpTech_Economy`](https://github.com/ExpTechTW/ExpTech_Economy)
+- 注意: Response 須加上 `https://exptech.com.tw/get?Function=File&Path=`
 - 範例: 
-```
+```json5
 {
-  "APIkey": "<放入你的 API Key>",
-  "Function": "serverData",
-  "Type": "Inventory",
-  "FormatVersion": 1,
-  "Value": "<欲獲取背包物品詳情的玩家 ID/name>"
+  "APIkey": "https://github.com/ExpTechTW",
+  "Function": "data",
+  "Type": "satellite"
 }
 ```
 
-### Statistic
-`棄用 停止支援`
+### accumulation
 - 傳輸協定: `POST (HTTP)`
-- 說明: 用來獲取玩家各項統計數據的功能
-- FormatVersion: ```1```
-- 附加參數: ```Addition.type``` ```ServerUUID```
-- 依賴: [`ExpTech_Core`](https://github.com/ExpTechTW/ExpTech_Core) [`ExpTech_DataRecord`](https://github.com/ExpTechTW/ExpTech_DataRecord)
+- 注意: Response 須加上 `https://exptech.com.tw/get?Function=File&Path=`
 - 範例: 
-```
+```json5
 {
-  "APIkey": "<放入你的 API Key>",
-  "Function": "serverData",
-  "Type": "Statistic",
-  "FormatVersion": 1,
-  "Value": "<欲獲取方塊挖掘統計的玩家 ID/name>"
+  "APIkey": "https://github.com/ExpTechTW",
+  "Function": "data",
+  "Type": "accumulation"
+}
+```
+
+### PrecipitationForecast
+- 傳輸協定: `POST (HTTP)`
+- 注意: Response 須加上 `https://exptech.com.tw/get?Function=File&Path=`
+- 範例: 
+```json5
+{
+  "APIkey": "https://github.com/ExpTechTW",
+  "Function": "data",
+  "Type": "PrecipitationForecast"
+}
+```
+
+### TREM
+- 傳輸協定: `POST (HTTP)`
+- 範例: 
+```json5
+{
+  "APIkey": "https://github.com/ExpTechTW",
+  "Function": "data",
+  "Type": "TREM",
+  "Value":0 // 0=即時資料 使用特定時間的 Unix(ms) 時間 可抓取特定時間資料
+}
+```
+
+### report
+- 傳輸協定: `POST (HTTP)`
+- 範例: 
+```json5
+{
+  "APIkey": "https://github.com/ExpTechTW",
+  "Function": "data",
+  "Type": "report",
+  "Value":"<地震編號>"
+}
+```
+
+### EEW-v1
+- 傳輸協定: `POST (HTTP)`
+- 範例: 
+```json5
+{
+  "APIkey": "https://github.com/ExpTechTW",
+  "Function": "data",
+  "Type": "EEW-v1",
+  // "Value":"earthquake" 指定發報單位
+  // • 日本氣象廳 JMA_earthquake
+  // • 韓國氣象廳 KMA_earthquake
+  // • 防災科研 NIED_earthquake
+  // • 交通部中央氣象局 earthquake 
+  // • 福建省地震局 FJDZJ_earthquake
+  // • 成都高新減災研究所 ICL_earthquake
 }
 ```
