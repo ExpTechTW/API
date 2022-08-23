@@ -35,7 +35,7 @@
 # et
 ### urlChecker
 - 傳輸協定: `POST (HTTP)`
-- [FormatVersion](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/FORMAT.md): `2`  `1`
+- [FormatVersion](https://github.com/ExpTechTW/API/blob/master/FORMAT.md): `2`  `1`
 - 範例: 
 ```json5
 {
