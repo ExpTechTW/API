@@ -6,6 +6,7 @@
 - `https://github.com/ExpTechTW` 為 公共密鑰 非全部功能皆可使用
 
 ## 規則列表
+#### [NTP](#NTP) | 獲取 UTC+8 標準時間 ( 誤差值 +-0.0005 秒 )
 #### [et](#et)
 - [urlChecker](#urlchecker) | 網址安全檢查 ( Google提供服務 )
 - [md5](#md5) | MD5 加密
@@ -18,6 +19,17 @@
 - [TREM](#TREM) | TREM 即時測站 & IRIS 測站 三向加速度資料
 - [report](#report) | 查詢編號地震詳細資料 (中央氣象局地震速報訊息)
 - [EEW-v1](#EEW-v1) | 強震即時警報 ( 最新一報 )
+
+
+# NTP
+- 傳輸協定: `POST (HTTP)`
+- 範例: 
+```json5
+{
+  "APIkey": "https://github.com/ExpTechTW",
+  "Function": "NTP"
+}
+```
 
 
 # et
