@@ -12,8 +12,6 @@
 #### `POST (HTTP)`
 - [OnlinePost](https://reqbin.com/)
 - 選 POST 模式
-- APIhost 
-`150.117.110.118:10150`
 - content-type 選 application/json
 - 複製下方文字到 Content
 `
@@ -23,8 +21,6 @@
 `
 #### `WebSocket`
 - [websocket-test](http://www.websocket-test.com/)
-- APIhost
-`ws://150.117.110.118:910`
 - 複製下方文字到 發送內容
 `
 {
