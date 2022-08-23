@@ -32,30 +32,30 @@
 ## 程式
 ### JavaScript
 #### `POST (HTTP)`
-- [urlChecker](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/urlChecker.js)
+- [urlChecker](https://github.com/ExpTechTW/API/blob/master/Example/HTTP_POST/urlChecker.js)
 #### `WebSocket`
 -----
 ### Python
 #### `POST (HTTP)`
-- [urlChecker](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/urlChecker.py)
+- [urlChecker](https://github.com/ExpTechTW/API/blob/master/Example/HTTP_POST/urlChecker.py)
 #### `WebSocket`
 -----
 ### Java
 #### `POST (HTTP)`
-- [function](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/function.java)
+- [function](https://github.com/ExpTechTW/API/blob/master/Example/HTTP_POST/function.java)
 #### `WebSocket`
 -----
 ### PHP
 #### `POST (HTTP)`
-- [function](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/function.php)
+- [function](https://github.com/ExpTechTW/API/blob/master/Example/HTTP_POST/function.php)
 #### `WebSocket`
 -----
 ### Dart
 #### `POST (HTTP)`
-- [function](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/function.dart)
+- [function](https://github.com/ExpTechTW/API/blob/master/Example/HTTP_POST/function.dart)
 #### `WebSocket`
 -----
 ### C++
 #### `POST (HTTP)`
-- [function](https://github.com/ExpTechTW/API/blob/%E4%B8%BB%E8%A6%81%E7%9A%84-(main)/Example/HTTP_POST/function.cpp)
+- [function](https://github.com/ExpTechTW/API/blob/master/Example/HTTP_POST/function.cpp)
 #### `WebSocket`
