@@ -16,9 +16,10 @@
 - [accumulation](#accumulation) | 累積雨量
 - [PrecipitationForecast](#PrecipitationForecast) | 降水預報
 - [earthquake](#earthquake) | 近 50 筆 地震報告 [小區域/編號]
-- [TREM](#TREM) | TREM 即時測站 & IRIS 測站 三向加速度資料
+- [TREM](#TREM) | TREM 即時測站 ( 延遲 2 秒 ) & IRIS 測站 ( 延遲 10~30 秒 ) 三向加速度資料
 - [report](#report) | 查詢編號地震詳細資料 (中央氣象局地震速報訊息)
 - [EEW-v1](#EEW-v1) | 強震即時警報 ( 最新一報 )
+- [palert](#palert) | P波警報器強震網 ( 延遲 25 秒 )
 
 
 # NTP
@@ -160,5 +161,16 @@
   // • 交通部中央氣象局 earthquake 
   // • 福建省地震局 FJDZJ_earthquake
   // • 成都高新減災研究所 ICL_earthquake
+}
+```
+
+### palert
+- 傳輸協定: `POST (HTTP)`
+- 範例: 
+```json5
+{
+  "APIkey": "https://github.com/ExpTechTW",
+  "Function": "data",
+  "Type": "palert"
 }
 ```
