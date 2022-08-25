@@ -46,6 +46,9 @@
 
 ## 項目
 ##### `ExpTech`
+- [TREM](https://github.com/ExpTechTW/TREM)
+- [TREM-Pocket](https://github.com/ExpTechTW/TREM-Pocket)
+- [NTP-Client](https://github.com/ExpTechTW/NTP-Client)
 - [ET_Smart_Socket](https://github.com/ExpTechTW/ET_Smart_Socket)
 - [DWHS](https://github.com/ExpTechTW/DWHS)
 - [ExpTech_Service](https://github.com/ExpTechTW/ExpTech_Service)
