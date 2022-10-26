@@ -7,7 +7,6 @@
 - [網站](https://exptech.com.tw/) | [Discord](https://exptech.com.tw/f?v=discord) | [服務器狀態](https://exptech.com.tw/f?v=stats)
 
 ## 索引
-- [資訊](#資訊)
 - [注意](#注意)
 - [文檔](#文檔)
 - [貢獻者](#貢獻者)
@@ -15,26 +14,14 @@
 - [發佈規則](#發佈規則)
 - [合作](#合作)
 
-## 資訊
-#### 服務器
-- `http://exptech.com.tw/post` | **POST No SSL**
-- `https://exptech.com.tw/post` | **POST SSL**
-- `http://exptech.com.tw/get` | **GET No SSL**
-- `https://exptech.com.tw/get` | **GET SSL**
-- `ws://exptech.com.tw/websocket` | **Websocket No SSL**
-- `wss://exptech.com.tw/websocket` | **Websocket SSL**
-
 
 ## 注意
-- 獲取 API Key 請前往 [這裡](https://service.exptech.com.tw/)
-- 每個 API Key 每日請求上限次數為 50000 次
-- 每個 IP 每秒超過 `RPS 50` 會觸發 Speed Limit 降低速率後即恢復正常 
+- 每個 IP 每秒超過 `RPS 50` 會觸發 Speed Limit 降低速率後即恢復正常
+- 每個 IP 每10分鐘 最大上限 `RPS 10000`
 
 
 ## 文檔
-- [規則文檔](https://github.com/ExpTechTW/API/blob/master/RULE.md)
-- [格式文檔](https://github.com/ExpTechTW/API/blob/master/FORMAT.md)
-- [程式文檔](https://github.com/ExpTechTW/API/blob/master/CODE.md)
+- [API v1](https://github.com/ExpTechTW/API/blob/master/docs/v1/v1.md)
 
 
 ## 貢獻者
