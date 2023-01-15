@@ -10,7 +10,7 @@ wss://exptech.com.tw/api
 {
   uuid     : UUID, // 用於識別不同設備
   function : "subscriptionService",
-  value    : ["earthquake-v3", "rts-v2"], // 接收的服務
+  value    : ["trem-rts-v2","eew-v1"], // 接收的服務
   key      : {key}, // 權限驗證
 }
 ```
@@ -19,130 +19,12 @@ wss://exptech.com.tw/api
 - key 用於驗證特殊服務接收權限
 
 ### 服務
-#### PWS
-`pws-v1`
-```json5
-{
-    "type": "pws",
-    "format": 1,
-    "timestamp": 1673424017605,
-    "raw": {
-        "id": "20230111-PWS_MESSAGE_CASE1_000000001",
-        "title": "系統測試",
-        "sent": "2023-01-11CST16:00:02+08:00:00",
-        "expires": "2023-01-11CST16:05:00+08:00:00",
-        "sender": {
-            "value": "災防告警細胞廣播訊息系統營運辦公室"
-        },
-        "status": "Actual",
-        "msgType": "Alert",
-        "eventCode": {
-            "value": "systemTest"
-        },
-        "area": {
-            "areaDesc": "Test_Geocode",
-            "geocode": [
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10002"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10004"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10005"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10007"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10008"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10009"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10010"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10013"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10014"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10015"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10016"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10017"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10018"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "10020"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "63"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "64"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "65"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "66"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "67"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "68"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "09007"
-                },
-                {
-                    "valueName": "Taiwan_Geocode_103",
-                    "value": "09020"
-                }
-            ]
-        },
-        "channel": {
-            "value": "4380"
-        },
-        "link": {
-            "rel": "alternate",
-            "href": "https://cbs.tw/23013ca3bb1e"
-        },
-        "description": {
-            "type": "html",
-            "$t": "﹝災防告警訊息測試﹞每月訊息發送測試，敬請見諒，電信業者共同關心您。Public Warning System is testing, please don&#8217;t panic."
-        }
-    }
-}
-```
+- `trem-eq-v1` TREM 地震檢知
+- `pws-v1` PWS 訊息
+- `eew-v1` EEW 訊息 (JMA、KMA、NIED、SCDZJ、FJDZJ)
+- `trem-rts-v1` `trem-rts-v2` TREM 即時測站
+- `report-v1` 地震報告
+- `tsunami-v1` 海嘯警報 (警報、資訊)
+- `intensity-v1` 鄉鎮震度速報
+- `trem-image-v1` TREM Image
+- `palert` P-Alert 近即時震度
