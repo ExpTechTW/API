@@ -28,3 +28,5 @@ wss://exptech.com.tw/api
 - `intensity-v1` 鄉鎮震度速報
 - `trem-image-v1` TREM Image
 - `palert` P-Alert 近即時震度
+- `trem-rts-original-v1` 即時 Z軸 波形資料
+- `trem-rts-image-v1` rts image 圖像
