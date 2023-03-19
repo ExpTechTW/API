@@ -72,6 +72,7 @@ POST `https://exptech.com.tw/api/v1/et/sign-in`
     "name":"ExpTechTW", // 名稱
     "pass":"1234567890", // 密碼
 }
+```
 
 ### 注意
 - 用戶名稱不得 `大於 30字元`
