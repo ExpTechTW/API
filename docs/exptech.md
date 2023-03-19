@@ -77,7 +77,7 @@ POST `https://exptech.com.tw/api/v1/et/sign-in`
 ## 查詢剩餘請求次數
 - 查詢剩餘請求次數
 ####
-GET `https://exptech.com.tw/api/v2/et/balance?key=${key}`
+GET `https://exptech.com.tw/api/v1/et/balance?key=${key}`
 
 ### 注意
 - 用戶名稱不得 `大於 30字元`
