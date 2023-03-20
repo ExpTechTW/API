@@ -30,7 +30,6 @@ POST `https://exptech.com.tw/api/v1/et/forget-email`
 #### Body
 ```json5
 {
-    "name":"ExpTechTW", // 名稱
     "email":"expTech.tw@gmail.com" // 電子郵件
 }
 ```
