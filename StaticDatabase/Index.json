@@ -1,6 +1,0 @@
-{
- "ExpTech":"https://raw.githubusercontent.com/ExpTechTW/API/master/StaticDatabase/Images/ExpTech.jpeg",
-  "LoginAnimation":"https://raw.githubusercontent.com/ExpTechTW/API/master/StaticDatabase/Lottie/Load-22.02.04.json",
-  "ErrorAnimation":"https://raw.githubusercontent.com/ExpTechTW/API/master/StaticDatabase/Lottie/Error-22.02.05.json",
- "NotSupportAnimation":"https://raw.githubusercontent.com/ExpTechTW/API/master/StaticDatabase/Lottie/NotSupport.json"
-}
