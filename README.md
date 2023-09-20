@@ -3,64 +3,65 @@
 
 ------
 
-- 這是一個由 ExpTech.tw 開發的集成 API 服務
-- [網站](https://exptech.com.tw/) | [Discord](https://exptech.com.tw/f?v=discord) | [服務器狀態](https://exptech.com.tw/f?v=stats)
-
-## 索引
-- [注意](#注意)
+# 目錄
+- [範例](#範例)
 - [文檔](#文檔)
-- [貢獻者](#貢獻者)
-- [項目](#項目)
-- [發佈規則](#發佈規則)
-- [合作](#合作)
+- [說明](#說明)
 
-
-## 注意
-- 每個 IP 每秒超過 `RPS 50` 會觸發 Speed Limit 降低速率後即恢復正常
-- 每個 IP 每10分鐘 最大上限 `RPS 10000`
-
+## 範例
 
 ## 文檔
-- [API v1](https://github.com/ExpTechTW/API/blob/master/docs/v1/v1.md)
+### Earthquake
+#### Earthquake List (v1)
+##### 介紹
+- 回傳地震列表 提供 震度 規模 深度 發震時間 等 資訊
+##### URL
+- `GET https://api.exptech.com.tw/api/v1/earthquake`
+##### 查詢參數
+- 無
+#### 權限
+- 無
+#### 回傳內容
+```json
+[
+    {
+        "identifier": "CWA-EQ112000-2023-0920-224526",
+        "earthquakeNo": 112000,
+        "epicenterLon": 121.43,
+        "epicenterLat": 23.22,
+        "location": "臺東縣政府北北東方  58.2  公里 (位於臺東縣近海)",
+        "depth": 35.8,
+        "magnitudeValue": 4.1,
+        "originTime": "2023/09/20 22:45:26",
+        "data": [
+            {
+                "areaName": "臺東縣",
+                "areaIntensity": 2,
+                "eqStation": [
+                    {
+                        "stationName": "長濱",
+                        "stationLon": 121.45,
+                        "stationLat": 23.32,
+                        "distance": 11.5,
+                        "stationIntensity": 2
+                    }
+                ]
+            }
+        ],
+        "ID": [],
+        "trem": [
+            "888"
+        ],
+        "timestamp": 1695221911071
+    }
+]
+```
+| 名稱 | 說明 |
+| ----------- | ----------- |
+| identifier | 地震 ID |
+| earthquakeNo | 地震編號 `末三碼 000 為 小區域有感地震` |
 
+#### Earthquake Event
 
-## 貢獻者
-- whes1015 `程式開發` `附加資料庫` `文檔`
-- jiajun190808 `附加資料庫`
-- darian-YT `附加資料庫`
-- smile-minecraft `附加資料庫` `第三方合作伙伴`
-
-
-## 項目
-##### `ExpTech`
-- [TREM](https://github.com/ExpTechTW/TREM)
-- [TREM-Pocket](https://github.com/ExpTechTW/TREM-Pocket)
-- [NTP-Client](https://github.com/ExpTechTW/NTP-Client)
-- [ET_Smart_Socket](https://github.com/ExpTechTW/ET_Smart_Socket)
-- [DWHS](https://github.com/ExpTechTW/DWHS)
-- [ExpTech_Service](https://github.com/ExpTechTW/ExpTech_Service)
-- [ExpTech-Home](https://github.com/ExpTechTW/ExpTech-Home)
-- [Answer](https://github.com/ExpTechTW/Answer)
-- [ExpTech_Website](https://github.com/ExpTechTW/ExpTech_Website)
-- [ExpTech_Core](https://github.com/ExpTechTW/ExpTech_Core)
-- [ExpTech_Economy](https://github.com/ExpTechTW/ExpTech_Economy)
-- [ExpTech_DataRecord](https://github.com/ExpTechTW/ExpTech_DataRecord)
-- [ExpTech_BanSystem](https://github.com/ExpTechTW/ExpTech_BanSystem)
-- [ExpTech_Here](https://github.com/ExpTechTW/ExpTech_Here)
-- [ExpTech_Organization](https://github.com/ExpTechTW/ExpTech_Organization)
-- [ExpTech_FreeCamera](https://github.com/ExpTechTW/ExpTech_FreeCamera)
-- [ExpTech_DC_Bot](https://github.com/ExpTechTW/ExpTech_DC_Bot)
-- [ExpTech_Discord_Bot](https://github.com/ExpTechTW/ExpTech_Discord_Bot)
-##### `第三方合作伙伴`
-- [bot](https://github.com/smile-minecraft/bot) `smile-minecraft`
-
-
-## 發佈規則
-- 如果新版本中有錯誤，且尚未列出，請將錯誤資訊提交到 ```issue```
-- 如果您使用任何形式的辱罵性或貶義性語言給其他用戶，您將永遠被封禁！
-- 不要發送重複無意義內容至 ```issue```，否則您將永遠被封禁！
-- 若有任何問題或建議，歡迎提出
-
-
-## 合作
-- 若有任何可以改進的地方，歡迎使用 ```Pull requests``` 來提交
+## 說明
+- 
