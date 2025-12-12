@@ -46,4 +46,4 @@ jobs:
           git config --local user.name "GitHub Action"
           git add resource/station.csv
           git diff --staged --quiet || git commit -m "chore: update station.csv from station-dev.csv [skip ci]"
-          git push
+          git push --force
