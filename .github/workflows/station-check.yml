@@ -40,7 +40,7 @@ jobs:
           cp resource/station-dev.csv resource/station.csv
 
       - name: Commit and push changes
-        if: success() && github.event_name == 'push'
+        if: success() && github.event_name == 'push' && github.ref_name == 'main'
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
@@ -52,4 +52,4 @@ jobs:
 
           git add resource/station.csv
           git diff --staged --quiet || git commit -m "chore: update station.csv from station-dev.csv [skip ci]"
-          git push origin ${{ github.ref_name }}
+          git push origin main

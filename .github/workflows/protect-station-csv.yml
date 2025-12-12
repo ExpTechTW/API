@@ -19,12 +19,20 @@ jobs:
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
+          BRANCH="${{ github.ref_name }}"
           ACTOR="${{ github.actor }}"
           COMMITTER_EMAIL="${{ github.event.commits[0].author.email }}"
           COMMITTER_NAME="${{ github.event.commits[0].author.name }}"
           COMMIT_MESSAGE="${{ github.event.commits[0].message }}"
           COMMIT_SHA="${{ github.event.commits[0].sha }}"
-          BRANCH="${{ github.ref_name }}"
+
+          echo "檢查分支: $BRANCH"
+
+          # 首先檢查是否在 main 分支上
+          if [ "$BRANCH" != "main" ]; then
+            echo "❌ 錯誤: 不允許直接修改 resource/station.csv"
+            exit 1
+          fi
 
           echo "檢查提交者信息:"
           echo "  Actor: $ACTOR"

@@ -170,14 +170,16 @@ function validateRecords(records: StationRecord[]): { valid: boolean; errors: st
   records.forEach((record, index) => {
     const lineNum = index + 2;
     
-    // 檢查 3: lat 範圍 10.3 < 正常 < 26.5
-    if (record.lat <= 10.3 || record.lat >= 26.5) {
-      errors.push(`第 ${lineNum} 行: lat 超出範圍 (10.3 < ${record.lat} < 26.5)`);
-    }
-    
-    // 檢查 4: lng 範圍 114 < 正常 < 122.2
-    if (record.lon <= 114 || record.lon >= 122.2) {
-      errors.push(`第 ${lineNum} 行: lng 超出範圍 (114 < ${record.lon} < 122.2)`);
+    // 檢查 3: lat 範圍 10.3 < 正常 < 26.5（如果 code = 0 則跳過）
+    if (record.code !== '0') {
+      if (record.lat <= 10.3 || record.lat >= 26.5) {
+        errors.push(`第 ${lineNum} 行: lat 超出範圍 (10.3 < ${record.lat} < 26.5)`);
+      }
+      
+      // 檢查 4: lng 範圍 114 < 正常 < 122.2（如果 code = 0 則跳過）
+      if (record.lon <= 114 || record.lon >= 122.2) {
+        errors.push(`第 ${lineNum} 行: lng 超出範圍 (114 < ${record.lon} < 122.2)`);
+      }
     }
     
     // 檢查 5: 時間必須是 YYYY-MM-DD 格式，不能是未來時間
