@@ -17,7 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
           fetch-depth: 0
           persist-credentials: true
           sparse-checkout: |
@@ -41,9 +41,15 @@ jobs:
 
       - name: Commit and push changes
         if: success() && github.event_name == 'push'
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+
+          # 設置 remote URL 包含 PAT token
+          git remote set-url origin https://x-access-token:$PAT_TOKEN@github.com/${{ github.repository }}.git
+
           git add resource/station.csv
           git diff --staged --quiet || git commit -m "chore: update station.csv from station-dev.csv [skip ci]"
-          git push --force
+          git push origin ${{ github.ref_name }}
