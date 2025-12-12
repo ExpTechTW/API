@@ -1,0 +1,88 @@
+name: Protect station.csv
+
+on:
+  push:
+    paths:
+      - "resource/station.csv"
+
+jobs:
+  protect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          fetch-depth: 0
+
+      - name: Check if committer is bot and revert if needed
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          ACTOR="${{ github.actor }}"
+          COMMITTER_EMAIL="${{ github.event.commits[0].author.email }}"
+          COMMITTER_NAME="${{ github.event.commits[0].author.name }}"
+          COMMIT_MESSAGE="${{ github.event.commits[0].message }}"
+          COMMIT_SHA="${{ github.event.commits[0].sha }}"
+          BRANCH="${{ github.ref_name }}"
+
+          echo "檢查提交者信息:"
+          echo "  Actor: $ACTOR"
+          echo "  提交者: $COMMITTER_NAME ($COMMITTER_EMAIL)"
+          echo "  提交訊息: $COMMIT_MESSAGE"
+          echo "  提交 SHA: $COMMIT_SHA"
+
+          # 檢查是否為 bot 提交
+          IS_BOT=false
+
+          # 檢查 actor 是否為 bot
+          if [[ "$ACTOR" == *"[bot]"* ]] || [[ "$ACTOR" == "github-actions[bot]" ]]; then
+            IS_BOT=true
+          fi
+
+          # 檢查提交者 email 是否為 GitHub Actions
+          if [[ "$COMMITTER_EMAIL" == *"noreply@github.com"* ]] || \
+             [[ "$COMMITTER_EMAIL" == "action@github.com" ]]; then
+            IS_BOT=true
+          fi
+
+          # 檢查提交者名稱
+          if [[ "$COMMITTER_NAME" == "GitHub Action" ]] || \
+             [[ "$COMMITTER_NAME" == *"[bot]"* ]]; then
+            IS_BOT=true
+          fi
+
+          # 檢查提交訊息是否包含 [skip ci]（我們的 workflow 使用這個標記）
+          if [[ "$COMMIT_MESSAGE" == *"[skip ci]"* ]]; then
+            IS_BOT=true
+          fi
+
+          if [ "$IS_BOT" = false ]; then
+            echo "❌ 錯誤: resource/station.csv 只能由 bot 或 GitHub Actions 更新"
+            echo "   當前提交者: $COMMITTER_NAME ($COMMITTER_EMAIL)"
+            echo "   操作者: $ACTOR"
+            echo ""
+            echo "正在 revert resource/station.csv 檔案..."
+            
+            # 配置 git
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            
+            # 設置 remote URL 包含 PAT token
+            git remote set-url origin https://x-access-token:$PAT_TOKEN@github.com/${{ github.repository }}.git
+            
+            # 只 revert station.csv 檔案（從上一個提交恢復）
+            git checkout HEAD~1 -- resource/station.csv
+            
+            # 提交恢復的檔案
+            git add resource/station.csv
+            git commit -m "Revert unauthorized change to station.csv [skip ci]"
+            
+            # 強制推送
+            git push origin $BRANCH --force
+            
+            echo "✅ 已 revert resource/station.csv 並強制推送"
+            exit 1
+          fi
+
+          echo "✅ 允許: 提交來自 bot 或 GitHub Actions"
