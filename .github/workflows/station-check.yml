@@ -3,9 +3,12 @@ name: Station CSV Check
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       - "resource/station-dev.csv"
   pull_request:
+    types: [opened, synchronize, reopened]
     paths:
       - "resource/station-dev.csv"
 
@@ -35,12 +38,12 @@ jobs:
         run: bun run scripts/station-check.ts
 
       - name: Copy station-dev.csv to station.csv
-        if: success()
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           cp resource/station-dev.csv resource/station.csv
 
       - name: Commit and push changes
-        if: success() && github.event_name == 'push' && github.ref_name == 'main'
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
