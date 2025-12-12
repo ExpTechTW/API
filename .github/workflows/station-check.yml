@@ -20,28 +20,19 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
           persist-credentials: true
+          sparse-checkout: |
+            resource/station-dev.csv
+            resource/station.csv
+            scripts/station-check.ts
+          sparse-checkout-cone-mode: false
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun/install/cache
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-${{ hashFiles('**/package.json') }}
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun install
-
       - name: Run station check
-        run: bun scripts/station-check.ts
+        run: bun run scripts/station-check.ts
 
       - name: Copy station-dev.csv to station.csv
         if: success()

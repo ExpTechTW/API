@@ -50,7 +50,7 @@ function parseCSV(filePath: string): StationRecord[] {
     const values = parseCSVLine(lines[i]);
     
     if (values.length !== headers.length) {
-      throw new Error(`第 ${i + 1} 行欄位數量不匹配: 期望 ${headers.length} 個欄位，實際 ${values.length} 個欄位`);
+      throw new Error(`第 ${i + 1} 行欄位數量不匹配: 期望 ${headers.length} 個欄位，實際 ${values.length} 個欄位。原始行: ${lines[i]}`);
     }
     
     const record: any = {};
@@ -93,10 +93,10 @@ function parseCSV(filePath: string): StationRecord[] {
 }
 
 function validateDate(dateStr: string): { valid: boolean; error?: string } {
-  // 解析時間格式 YYYY-MM-DD 或 YYYY-MM-DD HH:mm:ss
-  const dateMatch = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})(?:\s+(\d{2}):(\d{2}):(\d{2}))?$/);
+  // 解析時間格式必須是 YYYY-MM-DD
+  const dateMatch = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
   if (!dateMatch) {
-    return { valid: false, error: `時間格式錯誤: ${dateStr}` };
+    return { valid: false, error: `時間格式必須是 YYYY-MM-DD，當前值: ${dateStr}` };
   }
   
   const year = parseInt(dateMatch[1], 10);
@@ -140,17 +140,18 @@ function validateRecords(records: StationRecord[]): { valid: boolean; errors: st
     }
   });
   
-  // 檢查 2: loc_code 不能重複
-  const locCodeMap = new Map<string, number[]>();
+  // 檢查 2: code + loc_code 的組合不能重複
+  const codeLocCodeMap = new Map<string, { code: string; locCode: string; lineNumbers: number[] }>();
   records.forEach((record, index) => {
-    if (!locCodeMap.has(record.loc_code)) {
-      locCodeMap.set(record.loc_code, []);
+    const key = `${record.code}::${record.loc_code}`;
+    if (!codeLocCodeMap.has(key)) {
+      codeLocCodeMap.set(key, { code: record.code, locCode: record.loc_code, lineNumbers: [] });
     }
-    locCodeMap.get(record.loc_code)!.push(index + 2);
+    codeLocCodeMap.get(key)!.lineNumbers.push(index + 2);
   });
-  locCodeMap.forEach((lineNumbers, locCode) => {
-    if (lineNumbers.length > 1) {
-      errors.push(`loc_code 重複: ${locCode} (出現在第 ${lineNumbers.join(', ')} 行)`);
+  codeLocCodeMap.forEach((info, key) => {
+    if (info.lineNumbers.length > 1) {
+      errors.push(`code + loc_code 組合重複: code=${info.code}, loc_code=${info.locCode} (出現在第 ${info.lineNumbers.join(', ')} 行)`);
     }
   });
   
@@ -179,7 +180,7 @@ function validateRecords(records: StationRecord[]): { valid: boolean; errors: st
       errors.push(`第 ${lineNum} 行: lng 超出範圍 (114 < ${record.lon} < 122.2)`);
     }
     
-    // 檢查 5: 時間必須是 YYYY-MM-DD UTC+8 不能是未來時間
+    // 檢查 5: 時間必須是 YYYY-MM-DD 格式，不能是未來時間
     const dateValidation = validateDate(record.time);
     if (!dateValidation.valid) {
       errors.push(`第 ${lineNum} 行: ${dateValidation.error}`);
@@ -190,9 +191,14 @@ function validateRecords(records: StationRecord[]): { valid: boolean; errors: st
       errors.push(`第 ${lineNum} 行: floor 必須是正整數，當前值: ${record.floor}`);
     }
     
-    // 檢查 8: code 1 || 2 || 3 三選一
-    if (record.code !== '1' && record.code !== '2' && record.code !== '3') {
-      errors.push(`第 ${lineNum} 行: code 必須是 1、2 或 3，當前值: ${record.code}`);
+    // 檢查 8: net 1 || 2 || 3 三選一
+    if (record.net !== '1' && record.net !== '2' && record.net !== '3') {
+      errors.push(`第 ${lineNum} 行: net 必須是 1、2 或 3，當前值: ${record.net}`);
+    }
+    
+    // 檢查 9: work 必須是 0 或 1
+    if (record.work !== 0 && record.work !== 1) {
+      errors.push(`第 ${lineNum} 行: work 必須是 0 或 1，當前值: ${record.work}`);
     }
   });
   
