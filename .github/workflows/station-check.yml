@@ -1,0 +1,58 @@
+name: Station CSV Check
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "resource/station-dev.csv"
+  pull_request:
+    paths:
+      - "resource/station-dev.csv"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Cache Bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.bun/install/cache
+            node_modules
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-${{ hashFiles('**/package.json') }}
+            ${{ runner.os }}-bun-
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run station check
+        run: bun scripts/station-check.ts
+
+      - name: Copy station-dev.csv to station.csv
+        if: success()
+        run: |
+          cp resource/station-dev.csv resource/station.csv
+
+      - name: Commit and push changes
+        if: success() && github.event_name == 'push'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add resource/station.csv
+          git diff --staged --quiet || git commit -m "chore: update station.csv from station-dev.csv [skip ci]"
+          git push
