@@ -127,17 +127,7 @@ function validateRecords(records: StationRecord[]): { valid: boolean; errors: st
   // 檢查 7: id 不能重複（在 JSON 中，id 是唯一的 key，已在 parseJSON 中檢查，這裡為了與 CSV 版本一致保留）
   // 注意：在 JSON 中，同一個 id 可以有多個 info，所以同一個 id 會有多筆記錄是正常的
   
-  // 檢查 1: 同一個 id 不能有兩個 work=true（在 JSON 中，同一個 id 的所有記錄共享同一個 work 值，由結構保證）
-  // 但為了與 CSV 版本邏輯一致，我們仍然檢查
-  const idWorkMap = new Map<string, number>();
-  records.forEach((record, index) => {
-    if (record.work === true) {
-      if (idWorkMap.has(record.id)) {
-        errors.push(`第 ${index + 1} 筆記錄: id ${record.id} 已經有 work=true 的記錄`);
-      }
-      idWorkMap.set(record.id, index + 1);
-    }
-  });
+  // 檢查 1: 在 JSON 中，同一個 id 的所有記錄共享同一個 work 值（由結構保證），所以不需要檢查「同一個 id 不能有兩個 work=true」
   
   // 額外檢查：同一個 id 下，code + time 的組合不能重複（JSON 特有）
   const codeTimeMap = new Map<string, { code: string; time: string; id: string; recordNumbers: number[] }>();
