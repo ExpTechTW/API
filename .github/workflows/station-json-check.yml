@@ -1,0 +1,53 @@
+name: Station JSON Check
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "resource/station-dev.json"
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "resource/station-dev.json"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          fetch-depth: 0
+          persist-credentials: true
+          sparse-checkout: |
+            resource/station-dev.json
+            resource/station.json
+            scripts/station-json-check.ts
+          sparse-checkout-cone-mode: false
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Run station JSON check
+        run: bun run scripts/station-json-check.ts
+
+      - name: Commit and push changes
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          # 設置 remote URL 包含 PAT token
+          git remote set-url origin https://x-access-token:$PAT_TOKEN@github.com/${{ github.repository }}.git
+
+          git add resource/station.json
+          git diff --staged --quiet || git commit -m "chore: update station.json from station-dev.json [skip ci]"
+          git push origin main
