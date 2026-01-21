@@ -1,0 +1,21 @@
+ExpTech API Endpoints
+
+LB API (負載平衡 API)
+* api.lb.exptech.dev
+* api.lb-tpe1.exptech.dev
+* api.lb-khh1.exptech.dev
+
+LB Static (負載平衡 靜態資源)
+* static.lb.exptech.dev
+* static.lb-tpe1.exptech.dev
+* static.lb-khh1.exptech.dev
+
+Core API (核心服務 API)
+* api.core.exptech.dev
+* api.core-tyo1.exptech.dev
+* api.core-tnn1.exptech.dev
+
+Core Static (核心服務 靜態資源)
+* static.core.exptech.dev
+* static.core-tyo1.exptech.dev
+* static.core-tnn1.exptech.dev
