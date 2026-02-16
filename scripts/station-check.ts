@@ -193,9 +193,14 @@ function validateRecords(records: StationRecord[]): { valid: boolean; errors: st
       errors.push(`第 ${lineNum} 行: floor 必須是正整數，當前值: ${record.floor}`);
     }
     
-    // 檢查 8: net 1 || 2 || 3 三選一
-    if (record.net !== '1' && record.net !== '2' && record.net !== '3') {
-      errors.push(`第 ${lineNum} 行: net 必須是 1、2 或 3，當前值: ${record.net}`);
+    // 檢查 8: net 1 || 2 || 3 || 4 四選一
+    if (record.net !== '1' && record.net !== '2' && record.net !== '3' && record.net !== '4') {
+      errors.push(`第 ${lineNum} 行: net 必須是 1、2、3 或 4，當前值: ${record.net}`);
+    }
+
+    // 檢查 10: net 為 3 或 4 時，id 開頭必須為 1
+    if ((record.net === '3' || record.net === '4') && !record.id.startsWith('1')) {
+      errors.push(`第 ${lineNum} 行: net 為 ${record.net} 時，id 開頭必須為 1，當前 id: ${record.id}`);
     }
     
     // 檢查 9: work 必須是 0 或 1
