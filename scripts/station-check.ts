@@ -208,17 +208,24 @@ function generateStationCSV(records: StationRecord[], outputPath: string): void 
     codeGroups.get(record.code)!.push(record);
   }
 
-  // 為每個 code 群組內的站點排序並分配 loc_code
+  // 為每個 code 群組內 work=1 的站點排序並分配 loc_code
   // 排序規則：左到右（lon 升序），上到下（lat 降序）
-  const locCodeMap = new Map<StationRecord, number>();
+  // work=0 的站點 loc_code 留空
+  const locCodeMap = new Map<StationRecord, string>();
   for (const [, group] of codeGroups) {
-    const sorted = [...group].sort((a, b) => {
+    const workActive = group.filter(r => r.work === 1);
+    const sorted = [...workActive].sort((a, b) => {
       if (a.lon !== b.lon) return a.lon - b.lon;
       return b.lat - a.lat;
     });
     sorted.forEach((record, index) => {
-      locCodeMap.set(record, index + 1);
+      locCodeMap.set(record, String(index + 1));
     });
+    for (const record of group) {
+      if (record.work === 0) {
+        locCodeMap.set(record, '');
+      }
+    }
   }
 
   // 寫入 station.csv，保持原始行順序
