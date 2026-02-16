@@ -37,11 +37,6 @@ jobs:
       - name: Run station check
         run: bun run scripts/station-check.ts
 
-      - name: Copy station-dev.csv to station.csv
-        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          cp resource/station-dev.csv resource/station.csv
-
       - name: Commit and push changes
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         env:
