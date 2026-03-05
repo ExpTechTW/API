@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Remote install: curl -fsSL https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/alias.sh | bash
+# Remote install: curl -fsSL https://raw.githubusercontent.com/ExpTechTW/API/refs/heads/main/scripts/alias.sh | bash
 
 # Define aliases
 declare -A ALIASES=(
