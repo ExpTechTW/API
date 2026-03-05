@@ -211,8 +211,10 @@ echo -e "  ${BLUE}Skipped:${NC} $skipped"
 echo -e "${BLUE}════════════════════════════════════════${NC}"
 echo ""
 
-# Auto reload bashrc
-source "$BASHRC" 2>/dev/null
-
-echo -e "${GREEN}Aliases are now active!${NC}"
+echo -e "${YELLOW}╔═══════════════════════════════════════╗${NC}"
+echo -e "${YELLOW}║  Run this command to activate:        ║${NC}"
+echo -e "${YELLOW}║                                       ║${NC}"
+echo -e "${YELLOW}║  ${GREEN}source ~/.bashrc${YELLOW}                     ║${NC}"
+echo -e "${YELLOW}║                                       ║${NC}"
+echo -e "${YELLOW}╚═══════════════════════════════════════╝${NC}"
 echo ""
