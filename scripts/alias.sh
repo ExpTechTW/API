@@ -2,7 +2,7 @@
 
 # ============================================
 #  ExpTech Bash Aliases Installer
-#  Version: 1.0.1 (2025-03-06)
+#  Version: 1.1.1 (2025-03-06)
 #
 #  Install:
 #    curl -fsSL https://raw.githubusercontent.com/ExpTechTW/API/refs/heads/main/scripts/alias.sh | bash
@@ -108,23 +108,35 @@ FUNCTIONS=(
 #  Completions (use native completion)
 # ============================================
 COMPLETION_SCRIPT='
-# Load completion for docker and git aliases
-if type _completion_loader &>/dev/null; then
-    _completion_loader docker 2>/dev/null
-    _completion_loader git 2>/dev/null
-fi
+# ExpTech Alias Completions
 
-# Docker aliases completion
-if type _docker &>/dev/null; then
-    complete -F _docker dex dlog dstart dstop drestart drm drmi dps dip
-fi
+# Docker container name completion
+_exptech_docker_containers() {
+    local containers
+    containers=$(docker ps -a --format "{{.Names}}" 2>/dev/null)
+    COMPREPLY=($(compgen -W "$containers" -- "${COMP_WORDS[COMP_CWORD]}"))
+}
 
-# Git aliases completion
-if type __git_wrap__git_main &>/dev/null; then
-    complete -o bashdefault -o default -o nospace -F __git_wrap__git_main gco gcb gb gbd gm ga gc gp gpl gd gs gf gst gstp gstl grh grhh gaa gca gpf gds gba gloga
-elif type _git &>/dev/null; then
-    complete -o bashdefault -o default -o nospace -F _git gco gcb gb gbd gm ga gc gp gpl gd gs gf gst gstp gstl grh grhh gaa gca gpf gds gba gloga
-fi
+# Docker image name completion
+_exptech_docker_images() {
+    local images
+    images=$(docker images --format "{{.Repository}}:{{.Tag}}" 2>/dev/null | grep -v "<none>")
+    COMPREPLY=($(compgen -W "$images" -- "${COMP_WORDS[COMP_CWORD]}"))
+}
+
+# Git branch completion
+_exptech_git_branches() {
+    local branches
+    branches=$(git branch -a 2>/dev/null | sed "s/^[* ]*//" | sed "s/remotes\///" | sort -u)
+    COMPREPLY=($(compgen -W "$branches" -- "${COMP_WORDS[COMP_CWORD]}"))
+}
+
+# Apply Docker completions
+complete -F _exptech_docker_containers dlog dex dstart dstop drestart drm dip
+complete -F _exptech_docker_images drmi
+
+# Apply Git completions
+complete -F _exptech_git_branches gco gcb gbd gm
 '
 
 # ============================================
@@ -133,7 +145,7 @@ fi
 echo -e "${BLUE}"
 echo "  ╔════════════════════════════════════╗"
 echo "  ║  ExpTech Bash Aliases Installer    ║"
-echo "  ║       v1.1.0 (2025-03-06)          ║"
+echo "  ║       v1.1.1 (2025-03-06)          ║"
 echo "  ╚════════════════════════════════════╝"
 echo -e "${NC}"
 
@@ -176,7 +188,7 @@ done
 
 # Install completions
 echo -e "\n${BLUE}[Completions]${NC}"
-if ! grep -q "_completion_loader docker" "$BASHRC"; then
+if ! grep -q "_exptech_docker_containers" "$BASHRC"; then
     printf '%s\n' "$COMPLETION_SCRIPT" >> "$BASHRC"
     echo -e "  ${GREEN}[add]${NC}    docker & git completions"
 else
