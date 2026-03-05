@@ -2,41 +2,35 @@
 
 # ============================================
 #  ExpTech Bash Aliases Installer
-#  Version: 1.0.0
-#  Date: 2025-03-06
-#  Remote install:
+#  Version: 1.0.1 (2025-03-06)
+#
+#  Install:
 #    curl -fsSL https://raw.githubusercontent.com/ExpTechTW/API/refs/heads/main/scripts/alias.sh | bash
 # ============================================
 
-VERSION="1.0.0 (2025-03-06)"
+VERSION="1.0.1 (2025-03-06)"
 BASHRC="$HOME/.bashrc"
 
 # Colors
-RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
 # ============================================
-#  Aliases Definition
+#  Aliases
 # ============================================
 declare -A ALIASES=(
-    # Docker - Container
-    ["dps"]='docker ps -a --size --format "table {{.Names}}\t{{.Status}}\t{{.RunningFor}}\t{{.Size}}"'
+    # Docker
     ["di"]="docker images"
     ["dex"]="docker exec -it"
     ["dlog"]="docker logs -f"
     ["dstart"]="docker start"
     ["dstop"]="docker stop"
     ["drestart"]="docker restart"
-    ["dstopall"]="docker stop \$(docker ps -aq)"
     ["drm"]="docker rm"
-    ["drmall"]="docker rm \$(docker ps -aq)"
     ["drmi"]="docker rmi"
-    ["drmiall"]="docker rmi \$(docker images -q)"
     ["dprune"]="docker system prune -af"
-    ["dip"]='docker inspect --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"'
     ["dtop"]="docker stats --no-stream"
 
     # Docker Compose
@@ -49,7 +43,7 @@ declare -A ALIASES=(
     ["dcp"]="docker compose pull"
     ["dcps"]="docker compose ps"
 
-    # Git - Basic
+    # Git
     ["gs"]="git status"
     ["ga"]="git add"
     ["gaa"]="git add ."
@@ -59,68 +53,62 @@ declare -A ALIASES=(
     ["gpf"]="git push --force-with-lease"
     ["gpl"]="git pull"
     ["gf"]="git fetch"
-
-    # Git - Branch
     ["gb"]="git branch"
     ["gba"]="git branch -a"
     ["gbd"]="git branch -d"
     ["gco"]="git checkout"
     ["gcb"]="git checkout -b"
     ["gm"]="git merge"
-
-    # Git - Diff & Log
     ["gd"]="git diff"
     ["gds"]="git diff --staged"
     ["glog"]="git log --oneline --graph --decorate -15"
     ["gloga"]="git log --oneline --graph --decorate --all -15"
-
-    # Git - Stash
     ["gst"]="git stash"
     ["gstp"]="git stash pop"
     ["gstl"]="git stash list"
-
-    # Git - Reset
     ["grh"]="git reset HEAD"
     ["grhh"]="git reset HEAD --hard"
 
-    # General - Navigation
+    # Navigation
     ["cls"]="clear"
     [".."]="cd .."
     ["..."]="cd ../.."
     ["...."]="cd ../../.."
 
-    # General - List
+    # List
     ["ll"]="ls -lah"
     ["la"]="ls -A"
     ["l"]="ls -CF"
 
-    # General - Safety
-    ["cp"]="cp -i"
-    ["mv"]="mv -i"
-    ["rm"]="rm -i"
-
-    # General - Utils
+    # Utils
     ["h"]="history"
     ["hg"]="history | grep"
     ["myip"]="curl -s ipecho.net/plain; echo"
-    ["localip"]="hostname -I | awk '{print \$1}'"
     ["ports"]="netstat -tulanp"
     ["df"]="df -h"
-    ["du"]="du -h"
     ["free"]="free -h"
-    ["psg"]="ps aux | grep"
-
-    # General - Misc
-    ["now"]="date '+%Y-%m-%d %H:%M:%S'"
+    ["now"]="date +%Y-%m-%d_%H:%M:%S"
     ["week"]="date +%V"
-    ["path"]="echo \$PATH | tr ':' '\n'"
 )
 
 # ============================================
-#  Completions Definition
+#  Functions (special characters)
+# ============================================
+FUNCTIONS=(
+'dps() { docker ps -a --size --format "table {{.Names}}\t{{.Status}}\t{{.RunningFor}}\t{{.Size}}"; }'
+'dip() { docker inspect --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" "$@"; }'
+'dstopall() { docker stop $(docker ps -aq); }'
+'drmall() { docker rm $(docker ps -aq); }'
+'drmiall() { docker rmi $(docker images -q); }'
+'localip() { hostname -I | awk "{print \$1}"; }'
+'psg() { ps aux | grep "$1"; }'
+'path() { echo $PATH | tr ":" "\n"; }'
+)
+
+# ============================================
+#  Completions
 # ============================================
 COMPLETIONS=(
-    # Docker container completions
     "complete -F _docker_container_logs dlog"
     "complete -F _docker_container_exec dex"
     "complete -F _docker_container_start dstart"
@@ -128,9 +116,7 @@ COMPLETIONS=(
     "complete -F _docker_container_restart drestart"
     "complete -F _docker_container_rm drm"
     "complete -F _docker_inspect dip"
-    # Docker image completions
     "complete -F _docker_image_rm drmi"
-    # Git completions
     "complete -o bashdefault -o default -o nospace -F __git_wrap__git_main gco"
     "complete -o bashdefault -o default -o nospace -F __git_wrap__git_main gcb"
     "complete -o bashdefault -o default -o nospace -F __git_wrap__git_main gb"
@@ -139,88 +125,78 @@ COMPLETIONS=(
 )
 
 # ============================================
-#  Main Installation
+#  Install
 # ============================================
-
 echo -e "${BLUE}"
 echo "  ╔═══════════════════════════════════════╗"
 echo "  ║   ExpTech Bash Aliases Installer      ║"
-echo "  ║   Version: $VERSION            ║"
+echo "  ║   Version: ${VERSION}           ║"
 echo "  ╚═══════════════════════════════════════╝"
 echo -e "${NC}"
 
-# Ensure .bashrc exists
 touch "$BASHRC"
 
-# Backup .bashrc
+# Backup
 if [[ ! -f "$BASHRC.bak" ]]; then
     cp "$BASHRC" "$BASHRC.bak"
-    echo -e "${GREEN}[backup]${NC} Created ~/.bashrc.bak"
+    echo -e "${GREEN}[backup]${NC} ~/.bashrc.bak"
 fi
 
-echo ""
-echo "Installing aliases..."
-echo ""
+# Install aliases
+echo -e "\n${BLUE}[Aliases]${NC}"
+added=0; skipped=0; updated=0
 
-added=0
-skipped=0
-updated=0
+for name in "${!ALIASES[@]}"; do
+    cmd="${ALIASES[$name]}"
+    line="alias $name='$cmd'"
 
-for alias_name in "${!ALIASES[@]}"; do
-    alias_cmd="${ALIASES[$alias_name]}"
-    # Use double quotes for commands containing single quotes or {{
-    if [[ "$alias_cmd" == *"'"* ]] || [[ "$alias_cmd" == *"{{"* ]]; then
-        alias_line="alias $alias_name=\"$alias_cmd\""
-    else
-        alias_line="alias $alias_name='$alias_cmd'"
-    fi
-
-    if grep -q "^alias $alias_name=" "$BASHRC"; then
-        # Check if alias value is the same
-        existing=$(grep "^alias $alias_name=" "$BASHRC")
-        if [[ "$existing" != "$alias_line" ]]; then
-            # Remove old alias and add new one
-            sed -i "/^alias $alias_name=/d" "$BASHRC"
-            echo "$alias_line" >> "$BASHRC"
-            echo -e "  ${YELLOW}[update]${NC} $alias_name"
+    if grep -q "^alias $name=" "$BASHRC"; then
+        existing=$(grep "^alias $name=" "$BASHRC")
+        if [[ "$existing" != "$line" ]]; then
+            sed -i "/^alias $name=/d" "$BASHRC"
+            echo "$line" >> "$BASHRC"
+            echo -e "  ${YELLOW}[update]${NC} $name"
             ((updated++))
         else
-            echo -e "  ${BLUE}[skip]${NC}   $alias_name"
             ((skipped++))
         fi
     else
-        echo "$alias_line" >> "$BASHRC"
-        echo -e "  ${GREEN}[add]${NC}    $alias_name"
+        echo "$line" >> "$BASHRC"
+        echo -e "  ${GREEN}[add]${NC}    $name"
         ((added++))
     fi
 done
 
-# Add completions
-echo ""
-echo "Installing completions..."
-comp_added=0
+# Install functions
+echo -e "\n${BLUE}[Functions]${NC}"
+for func in "${FUNCTIONS[@]}"; do
+    name=$(echo "$func" | cut -d'(' -f1)
+    if grep -q "^${name}()" "$BASHRC"; then
+        sed -i "/^${name}()/d" "$BASHRC"
+    fi
+    echo "$func" >> "$BASHRC"
+    echo -e "  ${GREEN}[add]${NC}    $name"
+done
 
-for comp_line in "${COMPLETIONS[@]}"; do
-    if ! grep -qF "$comp_line" "$BASHRC"; then
-        echo "$comp_line" >> "$BASHRC"
+# Install completions
+echo -e "\n${BLUE}[Completions]${NC}"
+comp_added=0
+for comp in "${COMPLETIONS[@]}"; do
+    if ! grep -qF "$comp" "$BASHRC"; then
+        echo "$comp" >> "$BASHRC"
         ((comp_added++))
     fi
 done
+echo -e "  ${GREEN}[done]${NC}   $comp_added added"
 
-echo -e "  ${GREEN}[done]${NC}   $comp_added completions added"
-
+# Summary
 echo ""
 echo -e "${BLUE}════════════════════════════════════════${NC}"
-echo -e "  ${GREEN}Added:${NC}   $added"
-echo -e "  ${YELLOW}Updated:${NC} $updated"
-echo -e "  ${BLUE}Skipped:${NC} $skipped"
+echo -e "  ${GREEN}Added:${NC} $added  ${YELLOW}Updated:${NC} $updated  ${BLUE}Skipped:${NC} $skipped"
 echo -e "${BLUE}════════════════════════════════════════${NC}"
-echo ""
 
-echo -e "${YELLOW}╔═══════════════════════════════════════╗${NC}"
-echo -e "${YELLOW}║  Run this command to activate:        ║${NC}"
-echo -e "${YELLOW}║                                       ║${NC}"
-echo -e "${YELLOW}║  ${GREEN}source ~/.bashrc${YELLOW}                     ║${NC}"
-echo -e "${YELLOW}║                                       ║${NC}"
-echo -e "${YELLOW}╚═══════════════════════════════════════╝${NC}"
-echo ""
+echo -e "
+${YELLOW}╔═══════════════════════════════════════╗
+║  ${GREEN}source ~/.bashrc${YELLOW}                     ║
+╚═══════════════════════════════════════╝${NC}
+"
