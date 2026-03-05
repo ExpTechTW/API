@@ -105,23 +105,27 @@ FUNCTIONS=(
 )
 
 # ============================================
-#  Completions
+#  Completions (use native completion)
 # ============================================
-COMPLETIONS=(
-    "complete -F _docker_container_logs dlog"
-    "complete -F _docker_container_exec dex"
-    "complete -F _docker_container_start dstart"
-    "complete -F _docker_container_stop dstop"
-    "complete -F _docker_container_restart drestart"
-    "complete -F _docker_container_rm drm"
-    "complete -F _docker_inspect dip"
-    "complete -F _docker_image_rm drmi"
-    "complete -o bashdefault -o default -o nospace -F __git_wrap__git_main gco"
-    "complete -o bashdefault -o default -o nospace -F __git_wrap__git_main gcb"
-    "complete -o bashdefault -o default -o nospace -F __git_wrap__git_main gb"
-    "complete -o bashdefault -o default -o nospace -F __git_wrap__git_main gbd"
-    "complete -o bashdefault -o default -o nospace -F __git_wrap__git_main gm"
-)
+COMPLETION_SCRIPT='
+# Load completion for docker and git aliases
+if type _completion_loader &>/dev/null; then
+    _completion_loader docker 2>/dev/null
+    _completion_loader git 2>/dev/null
+fi
+
+# Docker aliases completion
+if type _docker &>/dev/null; then
+    complete -F _docker dex dlog dstart dstop drestart drm drmi dps dip
+fi
+
+# Git aliases completion
+if type __git_wrap__git_main &>/dev/null; then
+    complete -o bashdefault -o default -o nospace -F __git_wrap__git_main gco gcb gb gbd gm ga gc gp gpl gd gs gf gst gstp gstl grh grhh gaa gca gpf gds gba gloga
+elif type _git &>/dev/null; then
+    complete -o bashdefault -o default -o nospace -F _git gco gcb gb gbd gm ga gc gp gpl gd gs gf gst gstp gstl grh grhh gaa gca gpf gds gba gloga
+fi
+'
 
 # ============================================
 #  Install
@@ -129,7 +133,7 @@ COMPLETIONS=(
 echo -e "${BLUE}"
 echo "  ╔════════════════════════════════════╗"
 echo "  ║  ExpTech Bash Aliases Installer    ║"
-echo "  ║       v1.0.5 (2025-03-06)          ║"
+echo "  ║       v1.1.0 (2025-03-06)          ║"
 echo "  ╚════════════════════════════════════╝"
 echo -e "${NC}"
 
@@ -172,14 +176,12 @@ done
 
 # Install completions
 echo -e "\n${BLUE}[Completions]${NC}"
-comp_added=0
-for comp in "${COMPLETIONS[@]}"; do
-    if ! grep -qF "$comp" "$BASHRC"; then
-        echo "$comp" >> "$BASHRC"
-        ((comp_added++))
-    fi
-done
-echo -e "  ${GREEN}[done]${NC}   $comp_added added"
+if ! grep -q "_completion_loader docker" "$BASHRC"; then
+    printf '%s\n' "$COMPLETION_SCRIPT" >> "$BASHRC"
+    echo -e "  ${GREEN}[add]${NC}    docker & git completions"
+else
+    echo -e "  ${BLUE}[skip]${NC}   already installed"
+fi
 
 # Summary
 echo ""
