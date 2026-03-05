@@ -129,7 +129,7 @@ COMPLETIONS=(
 echo -e "${BLUE}"
 echo "  ╔════════════════════════════════════╗"
 echo "  ║  ExpTech Bash Aliases Installer    ║"
-echo "  ║       v1.0.4 (2025-03-06)          ║"
+echo "  ║       v1.0.5 (2025-03-06)          ║"
 echo "  ╚════════════════════════════════════╝"
 echo -e "${NC}"
 
@@ -152,18 +152,10 @@ for name in "${!ALIASES[@]}"; do
     cmd="${ALIASES[$name]}"
     line="alias $name='$cmd'"
 
-    if grep -q "^alias $name=" "$BASHRC"; then
-        existing=$(grep "^alias $name=" "$BASHRC")
-        if [[ "$existing" != "$line" ]]; then
-            sed -i "/^alias $name=/d" "$BASHRC"
-            echo "$line" >> "$BASHRC"
-            echo -e "  ${YELLOW}[update]${NC} $name"
-            ((updated++))
-        else
-            ((skipped++))
-        fi
+    if grep -q "^alias ${name}=" "$BASHRC"; then
+        ((skipped++))
     else
-        echo "$line" >> "$BASHRC"
+        printf '%s\n' "$line" >> "$BASHRC"
         echo -e "  ${GREEN}[add]${NC}    $name"
         ((added++))
     fi
