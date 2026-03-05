@@ -74,4 +74,7 @@ echo "================================"
 echo "  Added: $added | Skipped: $skipped"
 echo "================================"
 echo ""
-echo "Run 'source ~/.bashrc' or restart terminal to apply"
+
+# Auto reload bashrc
+source "$BASHRC"
+echo "Aliases are now active!"
