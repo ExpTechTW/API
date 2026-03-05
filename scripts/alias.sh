@@ -8,7 +8,8 @@
 #    curl -fsSL https://raw.githubusercontent.com/ExpTechTW/API/refs/heads/main/scripts/alias.sh | bash
 # ============================================
 
-VERSION="1.0.1 (2025-03-06)"
+VERSION="1.0.2"
+DATE="2025-03-06"
 BASHRC="$HOME/.bashrc"
 
 # Colors
@@ -130,17 +131,27 @@ COMPLETIONS=(
 echo -e "${BLUE}"
 echo "  ╔═══════════════════════════════════════╗"
 echo "  ║   ExpTech Bash Aliases Installer      ║"
-echo "  ║   Version: ${VERSION}           ║"
+echo "  ║   v${VERSION} (${DATE})                      ║"
 echo "  ╚═══════════════════════════════════════╝"
 echo -e "${NC}"
 
 touch "$BASHRC"
+
+# Fix Windows line endings
+sed -i 's/\r$//' "$BASHRC"
 
 # Backup
 if [[ ! -f "$BASHRC.bak" ]]; then
     cp "$BASHRC" "$BASHRC.bak"
     echo -e "${GREEN}[backup]${NC} ~/.bashrc.bak"
 fi
+
+# Clean up old broken entries
+for func in "${FUNCTIONS[@]}"; do
+    name=$(echo "$func" | cut -d'(' -f1)
+    sed -i "/^${name}()/d" "$BASHRC"
+    sed -i "/^function ${name}/d" "$BASHRC"
+done
 
 # Install aliases
 echo -e "\n${BLUE}[Aliases]${NC}"
@@ -171,10 +182,7 @@ done
 echo -e "\n${BLUE}[Functions]${NC}"
 for func in "${FUNCTIONS[@]}"; do
     name=$(echo "$func" | cut -d'(' -f1)
-    if grep -q "^${name}()" "$BASHRC"; then
-        sed -i "/^${name}()/d" "$BASHRC"
-    fi
-    echo "$func" >> "$BASHRC"
+    printf '%s\n' "$func" >> "$BASHRC"
     echo -e "  ${GREEN}[add]${NC}    $name"
 done
 
