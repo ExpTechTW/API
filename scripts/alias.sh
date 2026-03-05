@@ -23,7 +23,7 @@ NC='\033[0m' # No Color
 # ============================================
 declare -A ALIASES=(
     # Docker - Container
-    ["dps"]="docker ps -a --size --format \"table {{.Names}}\t{{.Status}}\t{{.RunningFor}}\t{{.Size}}\""
+    ["dps"]='docker ps -a --size --format "table {{.Names}}\t{{.Status}}\t{{.RunningFor}}\t{{.Size}}"'
     ["di"]="docker images"
     ["dex"]="docker exec -it"
     ["dlog"]="docker logs -f"
@@ -36,7 +36,7 @@ declare -A ALIASES=(
     ["drmi"]="docker rmi"
     ["drmiall"]="docker rmi \$(docker images -q)"
     ["dprune"]="docker system prune -af"
-    ["dip"]="docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
+    ["dip"]='docker inspect --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"'
     ["dtop"]="docker stats --no-stream"
 
     # Docker Compose
@@ -168,14 +168,20 @@ updated=0
 
 for alias_name in "${!ALIASES[@]}"; do
     alias_cmd="${ALIASES[$alias_name]}"
-    alias_line="alias $alias_name='$alias_cmd'"
+    # Use double quotes for commands containing single quotes or {{
+    if [[ "$alias_cmd" == *"'"* ]] || [[ "$alias_cmd" == *"{{"* ]]; then
+        alias_line="alias $alias_name=\"$alias_cmd\""
+    else
+        alias_line="alias $alias_name='$alias_cmd'"
+    fi
 
     if grep -q "^alias $alias_name=" "$BASHRC"; then
         # Check if alias value is the same
         existing=$(grep "^alias $alias_name=" "$BASHRC")
         if [[ "$existing" != "$alias_line" ]]; then
-            # Update existing alias
-            sed -i "s|^alias $alias_name=.*|$alias_line|" "$BASHRC"
+            # Remove old alias and add new one
+            sed -i "/^alias $alias_name=/d" "$BASHRC"
+            echo "$alias_line" >> "$BASHRC"
             echo -e "  ${YELLOW}[update]${NC} $alias_name"
             ((updated++))
         else
