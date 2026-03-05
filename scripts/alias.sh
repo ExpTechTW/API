@@ -144,13 +144,6 @@ if [[ ! -f "$BASHRC.bak" ]]; then
     echo -e "${GREEN}[backup]${NC} ~/.bashrc.bak"
 fi
 
-# Clean up old broken entries
-for func in "${FUNCTIONS[@]}"; do
-    name=$(echo "$func" | cut -d'(' -f1)
-    sed -i "/^${name}()/d" "$BASHRC"
-    sed -i "/^function ${name}/d" "$BASHRC"
-done
-
 # Install aliases
 echo -e "\n${BLUE}[Aliases]${NC}"
 added=0; skipped=0; updated=0
@@ -178,6 +171,7 @@ done
 
 # Install functions
 echo -e "\n${BLUE}[Functions]${NC}"
+echo "" >> "$BASHRC"  # Add blank line before functions
 for func in "${FUNCTIONS[@]}"; do
     name=$(echo "$func" | cut -d'(' -f1)
     printf '%s\n' "$func" >> "$BASHRC"
