@@ -129,7 +129,7 @@ COMPLETIONS=(
 echo -e "${BLUE}"
 echo "  ╔════════════════════════════════════╗"
 echo "  ║  ExpTech Bash Aliases Installer    ║"
-echo "  ║       v1.0.3 (2025-03-06)          ║"
+echo "  ║       v1.0.4 (2025-03-06)          ║"
 echo "  ╚════════════════════════════════════╝"
 echo -e "${NC}"
 
