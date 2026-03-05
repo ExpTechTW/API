@@ -8,8 +8,6 @@
 #    curl -fsSL https://raw.githubusercontent.com/ExpTechTW/API/refs/heads/main/scripts/alias.sh | bash
 # ============================================
 
-VERSION="1.0.2"
-DATE="2025-03-06"
 BASHRC="$HOME/.bashrc"
 
 # Colors
@@ -129,10 +127,10 @@ COMPLETIONS=(
 #  Install
 # ============================================
 echo -e "${BLUE}"
-echo "  ╔═══════════════════════════════════════╗"
-echo "  ║   ExpTech Bash Aliases Installer      ║"
-echo "  ║   v${VERSION} (${DATE})                      ║"
-echo "  ╚═══════════════════════════════════════╝"
+echo "  ╔════════════════════════════════════╗"
+echo "  ║  ExpTech Bash Aliases Installer    ║"
+echo "  ║       v1.0.3 (2025-03-06)          ║"
+echo "  ╚════════════════════════════════════╝"
 echo -e "${NC}"
 
 touch "$BASHRC"
