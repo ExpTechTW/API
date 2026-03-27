@@ -27,7 +27,7 @@
         "time": "2024-01-01"
       }
     ],
-    "work": true
+    "work": false
   },
   "1480496": {
     "net": "MS-Net",
@@ -46,7 +46,7 @@
         "time": "2025-07-19"
       }
     ],
-    "work": true
+    "work": false
   },
   "2012144": {
     "net": "SE-Net",
@@ -697,7 +697,7 @@
       },
       { "code": 643, "lat": 23.756233, "lon": 120.640301, "time": "2024-07-22" }
     ],
-    "work": true
+    "work": false
   },
   "7713716": {
     "net": "SE-Net",
