@@ -34,9 +34,10 @@ if [ -n "$TRUSTED" ]; then
     done
 fi
 
-# parse firewall rules
-PUBLIC_RULES=$(nft list ruleset 2>/dev/null | grep "dport" | grep -v "saddr" || true)
-PRIVATE_RULES=$(nft list ruleset 2>/dev/null | grep "dport" | grep "saddr" || true)
+# parse firewall rules (only from inet filter table, exclude Docker tables)
+INET_RULES=$(nft list table inet filter 2>/dev/null || true)
+PUBLIC_RULES=$(echo "$INET_RULES" | grep "dport" | grep -v "saddr" || true)
+PRIVATE_RULES=$(echo "$INET_RULES" | grep "dport" | grep "saddr" || true)
 
 get_ports() {
     echo "$1" | grep -oP "dport \K[0-9]+"
