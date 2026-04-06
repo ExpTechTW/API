@@ -2,6 +2,8 @@
 # firewall-status.sh - 防火牆 vs 實際端口 對比檢查
 # curl -fsSL https://raw.githubusercontent.com/ExpTechTW/API/refs/heads/main/scripts/firewall-status.sh | sudo bash
 
+VERSION="1.1.0"
+
 set -e
 
 HOSTNAME=$(hostname)
@@ -10,7 +12,7 @@ UPTIME=$(uptime -p)
 KERNEL=$(uname -r)
 
 echo "======================================"
-echo "  Firewall Check - $HOSTNAME"
+echo "  Firewall Check v$VERSION - $HOSTNAME"
 echo "======================================"
 echo "  IP:     $IP"
 echo "  Kernel: $KERNEL"
