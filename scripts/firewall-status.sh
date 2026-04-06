@@ -19,10 +19,12 @@ echo "  Date:   $(date '+%Y-%m-%d %H:%M:%S')"
 echo "======================================"
 
 # nftables status
-NFT_STATUS=$(systemctl is-active nftables 2>/dev/null || echo "inactive")
-NFT_ENABLED=$(systemctl is-enabled nftables 2>/dev/null || echo "disabled")
+NFT_STATUS=$(systemctl is-active nftables 2>/dev/null || true)
+NFT_ENABLED=$(systemctl is-enabled nftables 2>/dev/null || true)
+[ -z "$NFT_STATUS" ] && NFT_STATUS="not-found"
+[ -z "$NFT_ENABLED" ] && NFT_ENABLED="not-found"
 echo ""
-echo "[nftables] status: $NFT_STATUS | boot: $NFT_ENABLED"
+printf "[nftables] status: %s | boot: %s\n" "$NFT_STATUS" "$NFT_ENABLED"
 
 # trusted servers
 TRUSTED=$(nft list ruleset 2>/dev/null | grep -oP 'saddr \{ [^}]+\}' | head -1 | grep -oP '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | sort -u)
@@ -34,8 +36,16 @@ if [ -n "$TRUSTED" ]; then
     done
 fi
 
-# parse firewall rules (only from inet filter table, exclude Docker tables)
+# parse firewall rules (from inet filter table, fallback to ip filter excluding Docker tables)
 INET_RULES=$(nft list table inet filter 2>/dev/null || true)
+if [ -z "$INET_RULES" ]; then
+    # no inet filter table, try ip filter (iptables-nft) excluding Docker chains
+    INET_RULES=$(nft list table ip filter 2>/dev/null | grep -v "DOCKER" || true)
+fi
+if [ -z "$INET_RULES" ]; then
+    # last resort: full ruleset excluding Docker/docker-bridges tables
+    INET_RULES=$(nft list ruleset 2>/dev/null | sed '/^table.*docker/,/^}/d' | sed '/DOCKER/d' || true)
+fi
 PUBLIC_RULES=$(echo "$INET_RULES" | grep "dport" | grep -v "saddr" || true)
 PRIVATE_RULES=$(echo "$INET_RULES" | grep "dport" | grep "saddr" || true)
 
