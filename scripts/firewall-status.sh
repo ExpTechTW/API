@@ -61,15 +61,17 @@ done < <(ss -tulnp | tail -n +2)
 
 LISTEN_PORTS=$(printf '%s\n' "${!PORT_PROCESS[@]}" | sort -un)
 
-# output
+# classify ports
 ALL_PORTS=$(echo -e "$FW_ALL\n$LISTEN_PORTS" | grep -v '^$' | sort -un)
-
-echo ""
-printf "%-8s %-18s %-10s %-10s %-10s %s\n" "PORT" "PROCESS" "LISTEN" "FIREWALL" "ACCESS" "STATUS"
-printf "%-8s %-18s %-10s %-10s %-10s %s\n" "----" "-------" "------" "--------" "------" "------"
 
 OK=0
 WARN=0
+OUTPUT_PUBLIC=""
+OUTPUT_PRIVATE=""
+OUTPUT_BLOCKED=""
+
+HEADER=$(printf "%-8s %-18s %-10s %-10s %s\n" "PORT" "PROCESS" "LISTEN" "FIREWALL" "STATUS")
+DIVIDER=$(printf "%-8s %-18s %-10s %-10s %s\n" "----" "-------" "------" "--------" "------")
 
 for port in $ALL_PORTS; do
     listen="--"
@@ -102,8 +104,43 @@ for port in $ALL_PORTS; do
         OK=$((OK+1))
     fi
 
-    printf "%-8s %-18s %-10s %-10s %-10s %s\n" "$port" "$proc" "$listen" "$fw" "$access" "$status"
+    line=$(printf "%-8s %-18s %-10s %-10s %s\n" "$port" "$proc" "$listen" "$fw" "$status")
+
+    case "$access" in
+        PUBLIC)  OUTPUT_PUBLIC+="$line"$'\n' ;;
+        PRIVATE) OUTPUT_PRIVATE+="$line"$'\n' ;;
+        *)       OUTPUT_BLOCKED+="$line"$'\n' ;;
+    esac
 done
+
+# print grouped output
+echo ""
+echo "[PUBLIC] any IP"
+echo "$HEADER"
+echo "$DIVIDER"
+if [ -n "$OUTPUT_PUBLIC" ]; then
+    echo -n "$OUTPUT_PUBLIC"
+else
+    echo "  (none)"
+fi
+
+echo ""
+echo "[PRIVATE] trusted servers only"
+echo "$HEADER"
+echo "$DIVIDER"
+if [ -n "$OUTPUT_PRIVATE" ]; then
+    echo -n "$OUTPUT_PRIVATE"
+else
+    echo "  (none)"
+fi
+
+if [ -n "$OUTPUT_BLOCKED" ]; then
+    echo ""
+    echo "[BLOCKED] listening but no firewall rule"
+    echo "$HEADER"
+    echo "$DIVIDER"
+    echo -n "$OUTPUT_BLOCKED"
+fi
 
 # summary
 TOTAL=$((OK+WARN))
