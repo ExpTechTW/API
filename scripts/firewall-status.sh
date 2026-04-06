@@ -2,7 +2,7 @@
 # firewall-status.sh - 防火牆 vs 實際端口 對比檢查
 # curl -fsSL https://raw.githubusercontent.com/ExpTechTW/API/refs/heads/main/scripts/firewall-status.sh | sudo bash
 
-VERSION="1.1.0"
+VERSION="1.1.1"
 
 set -e
 
@@ -38,16 +38,46 @@ if [ -n "$TRUSTED" ]; then
     done
 fi
 
-# parse firewall rules (from inet filter table, fallback to ip filter excluding Docker tables)
+# parse firewall rules (from inet filter table, fallback to ip filter excluding Docker chains)
 INET_RULES=$(nft list table inet filter 2>/dev/null || true)
 if [ -z "$INET_RULES" ]; then
-    # no inet filter table, try ip filter (iptables-nft) excluding Docker chains
     INET_RULES=$(nft list table ip filter 2>/dev/null | grep -v "DOCKER" || true)
 fi
-if [ -z "$INET_RULES" ]; then
-    # last resort: full ruleset excluding Docker/docker-bridges tables
-    INET_RULES=$(nft list ruleset 2>/dev/null | sed '/^table.*docker/,/^}/d' | sed '/DOCKER/d' || true)
+if [ -z "$(echo "$INET_RULES" | grep "dport" || true)" ]; then
+    echo ""
+    echo "!! NO FIREWALL RULES DETECTED !!"
+    echo "!! All ports are exposed to the internet !!"
+    echo ""
+
+    # show listening ports
+    declare -A PORT_PROCESS
+    while IFS= read -r line; do
+        port=$(echo "$line" | awk '{split($5,a,":"); print a[length(a)]}')
+        proc=$(echo "$line" | grep -oP 'users:\(\("\K[^"]+' || echo "unknown")
+        addr=$(echo "$line" | awk '{print $5}')
+        if [[ "$addr" == 127.0.0.* ]] || [[ "$addr" == "::1:"* ]] || [[ "$addr" == *"%lo:"* ]]; then
+            continue
+        fi
+        PORT_PROCESS[$port]="$proc"
+    done < <(ss -tulnp | tail -n +2)
+
+    LISTEN_PORTS=$(printf '%s\n' "${!PORT_PROCESS[@]}" | sort -un)
+    TOTAL=$(echo "$LISTEN_PORTS" | grep -c . || true)
+
+    echo "[EXPOSED] no firewall"
+    printf "%-8s %-18s %s\n" "PORT" "PROCESS" "STATUS"
+    printf "%-8s %-18s %s\n" "----" "-------" "------"
+    for port in $LISTEN_PORTS; do
+        printf "%-8s %-18s %s\n" "$port" "${PORT_PROCESS[$port]:-unknown}" "!! EXPOSED"
+    done
+
+    echo ""
+    echo "======================================"
+    echo "  Total: $TOTAL | Exposed: $TOTAL"
+    echo "======================================"
+    exit 1
 fi
+
 PUBLIC_RULES=$(echo "$INET_RULES" | grep "dport" | grep -v "saddr" || true)
 PRIVATE_RULES=$(echo "$INET_RULES" | grep "dport" | grep "saddr" || true)
 
