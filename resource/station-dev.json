@@ -34,7 +34,7 @@
     "info": [
       {"code": 911, "lat": 22.565251, "lon": 120.522591, "time": "2023-11-27"}
     ],
-    "work": true
+    "work": false
   },
   "1936924": {
     "net": "SE-Net",
@@ -171,7 +171,7 @@
     "info": [
       { "code": 614, "lat": 23.427536, "lon": 120.187914, "time": "2024-04-11" }
     ],
-    "work": true
+    "work": false
   },
   "4714888": {
     "net": "SE-Net",
@@ -1372,7 +1372,7 @@
         "time": "2023-11-27"
       }
     ],
-    "work": true
+    "work": false
   },
   "12122300": {
     "net": "SE-Net",
