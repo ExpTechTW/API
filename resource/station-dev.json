@@ -267,7 +267,7 @@
         "time": "2024-04-09"
       }
     ],
-    "work": true
+    "work": false
   },
   "4760684": {
     "net": "SE-Net",
@@ -1125,7 +1125,7 @@
         "time": "2025-07-19"
       }
     ],
-    "work": true
+    "work": false
   },
   "11355624": {
     "net": "SE-Net",
@@ -1682,7 +1682,7 @@
         "time": "2024-12-03"
       }
     ],
-    "work": true
+    "work": false
   },
   "13379360": {
     "net": "MS-Net",
@@ -1880,7 +1880,7 @@
         "time": "2023-11-27"
       }
     ],
-    "work": true
+    "work": false
   },
   "15007248": {
     "net": "SE-Net",
@@ -2061,7 +2061,7 @@
     "info": [
       { "code": 800, "lat": 22.634407, "lon": 120.311479, "time": "2024-07-05" }
     ],
-    "work": true
+    "work": false
   },
   "15169592": {
     "net": "SE-Net",
