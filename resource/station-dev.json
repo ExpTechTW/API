@@ -303,7 +303,7 @@
         "time": "2023-11-27"
       }
     ],
-    "work": true
+    "work": false
   },
   "4823416": {
     "net": "SE-Net",
@@ -435,7 +435,7 @@
       },
       { "code": 235, "lat": 24.989934, "lon": 121.505601, "time": "2025-12-06" }
     ],
-    "work": true
+    "work": false
   },
   "6101688": {
     "net": "SE-Net",
@@ -728,7 +728,7 @@
         "time": "2026-01-29"
       }
     ],
-    "work": true
+    "work": false
   },
   "7715856": {
     "net": "SE-Net",
