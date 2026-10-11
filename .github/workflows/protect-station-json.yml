@@ -16,16 +16,18 @@ jobs:
           fetch-depth: 0
 
       - name: Check if committer is bot and revert if needed
+        # 一律經由環境變數傳入，不可寫成 "${{ ... }}" 嵌在 script 裡：GitHub 會先把
+        # 表達式文字替換進 script 才交給 bash，而分支名稱、作者名稱與提交訊息都由
+        # 推送者決定，嵌入就等於讓推送者在持有 PAT_TOKEN 的 step 裡執行任意指令
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
+          ACTOR: ${{ github.actor }}
+          COMMITTER_EMAIL: ${{ github.event.commits[0].author.email }}
+          COMMITTER_NAME: ${{ github.event.commits[0].author.name }}
+          COMMIT_MESSAGE: ${{ github.event.commits[0].message }}
+          COMMIT_SHA: ${{ github.event.commits[0].sha }}
         run: |
-          BRANCH="${{ github.ref_name }}"
-          ACTOR="${{ github.actor }}"
-          COMMITTER_EMAIL="${{ github.event.commits[0].author.email }}"
-          COMMITTER_NAME="${{ github.event.commits[0].author.name }}"
-          COMMIT_MESSAGE="${{ github.event.commits[0].message }}"
-          COMMIT_SHA="${{ github.event.commits[0].sha }}"
-
           echo "檢查分支: $BRANCH"
 
           # 首先檢查是否在 main 分支上
