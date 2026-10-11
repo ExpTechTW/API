@@ -9,18 +9,17 @@ on:
       - "resource/station-dev.json"
   pull_request:
     types: [opened, synchronize, reopened]
-    paths:
-      - "resource/station-dev.json"
 
 jobs:
-  check:
+  station-json-check:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT_TOKEN }}
+          # PR 只需讀取權限，且 fork 的 PR 拿不到 secrets
+          token: ${{ github.event_name == 'pull_request' && github.token || secrets.PAT_TOKEN }}
           fetch-depth: 0
           persist-credentials: true
           sparse-checkout: |
@@ -29,12 +28,26 @@ jobs:
             scripts/station-json-check.ts
           sparse-checkout-cone-mode: false
 
+      # 此 job 為必要檢查，所有 PR 都會觸發；未修改 resource/station-dev.json 時直接通過
+      - name: Detect changes
+        id: changes
+        run: |
+          if [ "${{ github.event_name }}" != "pull_request" ] || \
+             git diff --no-renames --name-only HEAD^1 HEAD | grep -qx "resource/station-dev.json"; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "未修改 resource/station-dev.json，略過檢查"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Setup Bun
+        if: steps.changes.outputs.changed == 'true'
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
       - name: Run station JSON check
+        if: steps.changes.outputs.changed == 'true'
         run: bun run scripts/station-json-check.ts
 
       - name: Commit and push changes
