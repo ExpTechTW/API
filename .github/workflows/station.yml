@@ -1,0 +1,241 @@
+name: Station
+
+# resource/station.csv 與 resource/station.json 是 bot 維護的副本：由
+# scripts/station-check.ts、scripts/station-json-check.ts 驗證 station-dev.* 後產生
+# （csv 多一欄依位置排序的 loc_code，json 是壓縮過的 dev 檔）。人只改 -dev 檔。
+#
+# 副本跟著產生它的 commit 一起進 main。PR 開啟或更新時，bot 在 PR 自己的 commit 裡
+# 重新產生副本，推回 PR 分支；rebase 合併之後，每次修改在 main 上就是一個 commit，
+# 不會再跟著一個 bot 補上的 "chore: update station.csv …"。
+#
+# 推上 main 之後再產生一次，是給 bot 推不回去的情況兜底：fork 的 PR 拿不到 secret，
+# 它的副本會在合併後由這裡補上；有人直接改了副本，也會在這裡被蓋回產生的結果。
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+    paths:
+      - "resource/station-dev.csv"
+      - "resource/station.csv"
+      - "resource/station-dev.json"
+      - "resource/station.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: station-${{ github.event.pull_request.number || github.ref }}
+  # PR 的新 push 取代舊的 run。main 則排隊：每次都從當下最新的 main 產生，兩個 run
+  # 不會同時推，後推的那個也就不會被拒絕。
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  # 把副本改進 PR 自己的 commit。
+  sync:
+    # 只處理同 repo 的分支：fork 的 PR 拿不到 PAT_TOKEN，也推不回它的分支。
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    outputs:
+      pushed: ${{ steps.push.outputs.pushed }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: oven-sh/setup-bun@v2
+
+      # 每個 commit 跑一次產生器，副本有變才 amend 進那個 commit：作者不變，
+      # committer 是 bot，沒動到的 commit 連 SHA 都不變。某個 commit 驗證不過時產生器
+      # 不寫檔，那個 commit 原樣保留，錯誤留給下面的檢查回報。
+      - name: Regenerate the copies in each commit
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          base="$(git merge-base "origin/$BASE_REF" HEAD)"
+
+          # rebase 會把 merge commit 攤平，改寫的就不只是副本了。
+          if [ -n "$(git rev-list --merges "$base..HEAD")" ]; then
+            echo "::notice::分支裡有 merge commit，不改寫；副本會在合併後由 bot 補上"
+            exit 0
+          fi
+
+          cat >"$RUNNER_TEMP/regen.sh" <<'EOF'
+          bun scripts/station-check.ts >/dev/null 2>&1
+          bun scripts/station-json-check.ts >/dev/null 2>&1
+          for f in resource/station.csv resource/station.json; do
+            [ -e "$f" ] && git add -- "$f"
+          done
+          git diff --cached --quiet || git commit --amend --no-edit --no-verify --quiet
+          EOF
+
+          if ! git rebase --exec "bash $RUNNER_TEMP/regen.sh" "$base"; then
+            git rebase --abort
+            echo "::warning::重新產生副本時 rebase 失敗，不改寫；副本會在合併後由 bot 補上"
+          fi
+
+      - name: Push the branch back
+        id: push
+        env:
+          # PAT，不是 GITHUB_TOKEN：GITHUB_TOKEN 推上去的 commit 不會觸發新的 run，
+          # PR 的必要檢查就永遠等不到結果。
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          HEAD_REF: ${{ github.head_ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [ "$(git rev-parse HEAD)" = "$HEAD_SHA" ]; then
+            echo "副本已經是最新的"
+            echo "pushed=false" >>"$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ -z "$PAT_TOKEN" ]; then
+            echo "::warning::這個 run 拿不到 PAT_TOKEN，推不回分支；副本會在合併後由 bot 補上"
+            echo "pushed=false" >>"$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # lease 釘在這次 run 看到的 head：作者在這之間又推了，就不蓋掉，交給那次
+          # push 觸發的 run。hook 一律關掉，因為前一步跑過 PR 裡的程式。
+          if git -c core.hooksPath=/dev/null push --no-verify \
+            --force-with-lease="refs/heads/$HEAD_REF:$HEAD_SHA" \
+            "https://x-access-token:$PAT_TOKEN@github.com/$REPO.git" "HEAD:refs/heads/$HEAD_REF"; then
+            echo "pushed=true" >>"$GITHUB_OUTPUT"
+            echo "已把副本改進 PR 的 commit 並推回 $HEAD_REF，檢查會在新的 run 重跑："
+            git --no-pager log --format='  %h %an | %s' "$(git merge-base "origin/$GITHUB_BASE_REF" HEAD)..HEAD"
+          else
+            echo "::notice::$HEAD_REF 在這次 run 之後又有新的 push，交給那次的 run"
+            echo "pushed=false" >>"$GITHUB_OUTPUT"
+          fi
+
+  # 必要檢查，所有 PR 都會跑；沒改到 -dev 檔就直接通過。
+  station-csv-check:
+    needs: sync
+    # sync 推回了分支，這次 run 的 commit 就不再是 PR 的 head，檢查交給推送觸發的
+    # run。sync 沒跑（fork）或失敗時照樣要檢查：前面的 job 沒成功就被略過的 job
+    # 會回報成功，必要檢查不能這樣放行。
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.sync.outputs.pushed != 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # PR 的 merge commit 與它的第一個 parent（base），比對這個 PR 改了什麼。
+          fetch-depth: 2
+          persist-credentials: false
+          sparse-checkout: |
+            resource/station-dev.csv
+            resource/station.csv
+            scripts/station-check.ts
+          sparse-checkout-cone-mode: false
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if git diff --no-renames --name-only HEAD^1 HEAD | grep -qx "resource/station-dev.csv"; then
+            echo "changed=true" >>"$GITHUB_OUTPUT"
+          else
+            echo "未修改 resource/station-dev.csv，略過檢查"
+            echo "changed=false" >>"$GITHUB_OUTPUT"
+          fi
+
+      - name: Setup Bun
+        if: steps.changes.outputs.changed == 'true'
+        uses: oven-sh/setup-bun@v2
+
+      - name: Run station check
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          bun run scripts/station-check.ts
+          if ! git diff --quiet -- resource/station.csv; then
+            echo "::warning::resource/station.csv 跟 station-dev.csv 產生的結果不一致，合併後由 bot 更新"
+          fi
+
+  station-json-check:
+    needs: sync
+    # 條件與 station-csv-check 相同，原因見那裡。
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.sync.outputs.pushed != 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+          sparse-checkout: |
+            resource/station-dev.json
+            resource/station.json
+            scripts/station-json-check.ts
+          sparse-checkout-cone-mode: false
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if git diff --no-renames --name-only HEAD^1 HEAD | grep -qx "resource/station-dev.json"; then
+            echo "changed=true" >>"$GITHUB_OUTPUT"
+          else
+            echo "未修改 resource/station-dev.json，略過檢查"
+            echo "changed=false" >>"$GITHUB_OUTPUT"
+          fi
+
+      - name: Setup Bun
+        if: steps.changes.outputs.changed == 'true'
+        uses: oven-sh/setup-bun@v2
+
+      - name: Run station JSON check
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          bun run scripts/station-json-check.ts
+          if ! git diff --quiet -- resource/station.json; then
+            echo "::warning::resource/station.json 跟 station-dev.json 產生的結果不一致，合併後由 bot 更新"
+          fi
+
+  # main 上的兜底：副本跟 -dev 檔對不上就重新產生並推上去。PR 帶著副本合併時，
+  # 這裡什麼都不會做。
+  update-copies:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # 分支當下的 head，不是觸發的那個 commit：排在前面的 run 可能剛推了一個。
+          ref: ${{ github.ref_name }}
+          persist-credentials: false
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Regenerate the copies
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          # 驗證不過的檔案不會被寫，另一個照樣更新，最後再讓 job 失敗。
+          failed=0
+          bun run scripts/station-check.ts || failed=1
+          bun run scripts/station-json-check.ts || failed=1
+
+          changed="$(git diff --name-only -- resource/station.csv resource/station.json)"
+          if [ -z "$changed" ]; then
+            echo "副本已經是最新的"
+            exit "$failed"
+          fi
+          if [ "$GITHUB_REF" != refs/heads/main ]; then
+            echo "::notice::不在 main，只檢查不推送：$changed"
+            exit "$failed"
+          fi
+
+          case "$changed" in
+          resource/station.csv) msg="chore: update station.csv from station-dev.csv [skip ci]" ;;
+          resource/station.json) msg="chore: update station.json from station-dev.json [skip ci]" ;;
+          *) msg="chore: update station.csv and station.json from their -dev files [skip ci]" ;;
+          esac
+          git add resource/station.csv resource/station.json
+          git -c user.name='github-actions[bot]' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -q -m "$msg"
+          git push "https://x-access-token:$PAT_TOKEN@github.com/$REPO.git" HEAD:main
+          exit "$failed"
